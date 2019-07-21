@@ -1,2 +1,2 @@
-# algorithemic-complexity-calculator
+# Algorithemic Complexity Calculator
 Measuring the complexity of a program
