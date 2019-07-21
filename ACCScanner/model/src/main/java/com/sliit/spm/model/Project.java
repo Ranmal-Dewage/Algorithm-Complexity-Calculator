@@ -1,14 +1,12 @@
 package com.sliit.spm.model;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Project {
 
     String projectKey;
     String sourcePath;
-    List<ProjectFile> files = new ArrayList();
-
+    List<ProjectFile> files;
 
     public List<ProjectFile> getFiles() {
         return files;
