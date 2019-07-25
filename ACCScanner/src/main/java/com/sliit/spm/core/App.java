@@ -1,5 +1,6 @@
 package com.sliit.spm.core;
 
+import com.sliit.spm.acc.FileHandler;
 import com.sliit.spm.model.Project;
 import com.sliit.spm.utils.ErrorMessages;
 import com.sun.javafx.fxml.PropertyNotFoundException;
@@ -15,6 +16,8 @@ public class App {
         LOGGER.info("Analyzing project " + project.getProjectKey() + "...");
         LOGGER.info("Found source path " + project.getSourcePath());
 
+        new FileHandler().readFiles(project);
+
     }
 
     /**
@@ -24,7 +27,7 @@ public class App {
      */
     public static void main(String[] args) {
 
-        org.apache.log4j.PropertyConfigurator.configure("./config/log4j.properties");
+        org.apache.log4j.PropertyConfigurator.configure("config/log4j.properties");
         LOGGER.debug("ACCScanner start analyzing...");
 
         Optional<String> projectKey = Optional.ofNullable(System.getProperty("projectKey"));
