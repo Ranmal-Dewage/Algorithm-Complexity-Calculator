@@ -7,12 +7,9 @@ import org.apache.commons.io.FilenameUtils;
 import org.apache.log4j.Logger;
 
 import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import java.util.stream.Stream;
 
 /**
  * @author vimukthi_r
@@ -65,26 +62,25 @@ public class FileHandler {
 
                 List<Line> lines = new ArrayList<>();
 
-                for (String line = null; (line = lnr.readLine()) != null; ) {
+                for (String line; (line = lnr.readLine()) != null; ) {
                     Line lineObj = new Line();
                     lineObj.setLineNo(lnr.getLineNumber());
 
-                    Cs.calcCs(lineObj);
+                    Cs.calcCs(lineObj, line);
 
+                    lines.add(lineObj);
                 }
 
 
                 projectFile.setLinesData(lines);
 
-                // TODO calc and set Cp
+//                 TODO calc and set Cp
 //                projectFile.setCp();
 
                 projectFiles.add(projectFile);
 
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
             } catch (IOException e) {
-                e.printStackTrace();
+                LOGGER.error("Error reading file", e);
             }
         }
     }

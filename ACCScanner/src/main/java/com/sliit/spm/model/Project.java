@@ -6,6 +6,7 @@ public class Project {
 
     String projectKey;
     String sourcePath;
+    String language;
     List<ProjectFile> files;
 
     public List<ProjectFile> getFiles() {
@@ -30,5 +31,23 @@ public class Project {
 
     public void setSourcePath(String sourcePath) {
         this.sourcePath = sourcePath;
+    }
+
+    public String getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(String language) {
+        this.language = language;
+    }
+
+    @Override
+    public String toString() {
+        return "Project{" +
+                "projectKey='" + projectKey + '\'' +
+                ", sourcePath='" + sourcePath + '\'' +
+                ", language='" + language + '\'' +
+                ", files=" + files +
+                '}';
     }
 }

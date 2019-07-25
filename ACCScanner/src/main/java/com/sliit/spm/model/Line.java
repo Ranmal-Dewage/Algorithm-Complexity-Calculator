@@ -74,4 +74,18 @@ public class Line {
     public void setCr(int cr) {
         this.cr = cr;
     }
+
+    @Override
+    public String toString() {
+        return "Line{" +
+                "lineNo=" + lineNo +
+                ", cs=" + cs +
+                ", ctc=" + ctc +
+                ", cnc=" + cnc +
+                ", ci=" + ci +
+                ", cps=" + cps +
+                ", tw=" + tw +
+                ", cr=" + cr +
+                '}';
+    }
 }

@@ -32,4 +32,12 @@ public class ProjectFile {
         this.cp = cp;
     }
 
+    @Override
+    public String toString() {
+        return "ProjectFile{" +
+                "relativePath='" + relativePath + '\'' +
+                ", linesData=" + linesData +
+                ", cp=" + cp +
+                '}';
+    }
 }
