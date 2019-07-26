@@ -65,15 +65,16 @@ public class FileHandler {
                 for (String line; (line = lnr.readLine()) != null; ) {
                     Line lineObj = new Line();
                     lineObj.setLineNo(lnr.getLineNumber());
+                    lineObj.setData(line);
+
 
                     Cs.calcCs(lineObj, line);
 
                     lines.add(lineObj);
                 }
 
-
                 projectFile.setLinesData(lines);
-
+                System.out.println(projectFile);
 //                 TODO calc and set Cp
 //                projectFile.setCp();
 

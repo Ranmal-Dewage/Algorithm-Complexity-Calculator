@@ -3,6 +3,7 @@ package com.sliit.spm.model;
 public class Line {
 
     int lineNo;
+    String data;
     int cs;
     int ctc;
     int cnc;
@@ -10,6 +11,14 @@ public class Line {
     int cps;
     int tw;
     int cr;
+
+    public String getData() {
+        return data;
+    }
+
+    public void setData(String data) {
+        this.data = data;
+    }
 
     public int getLineNo() {
         return lineNo;
@@ -79,6 +88,7 @@ public class Line {
     public String toString() {
         return "Line{" +
                 "lineNo=" + lineNo +
+                ", data=" + data +
                 ", cs=" + cs +
                 ", ctc=" + ctc +
                 ", cnc=" + cnc +
