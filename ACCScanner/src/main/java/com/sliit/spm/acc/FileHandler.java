@@ -3,6 +3,7 @@ package com.sliit.spm.acc;
 import com.sliit.spm.model.Line;
 import com.sliit.spm.model.Project;
 import com.sliit.spm.model.ProjectFile;
+import com.sliit.spm.utils.MethodAndVariableFinder;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.log4j.Logger;
 
@@ -59,7 +60,7 @@ public class FileHandler {
 
                 LOGGER.debug("Analyzing file " + file.getCanonicalPath().replace(projectRoot, ""));
                 projectFile.setRelativePath(file.getCanonicalPath().replace(projectRoot, ""));
-
+                List<String> methodsAndVariables = MethodAndVariableFinder.getMethodandVariables(lnr);
                 List<Line> lines = new ArrayList<>();
 
                 for (String line; (line = lnr.readLine()) != null; ) {
