@@ -71,10 +71,10 @@ public class FileHandler {
                     Cs.calcCs(lineObj, line);
 
                     lines.add(lineObj);
+                    System.out.println(lineObj);
                 }
 
                 projectFile.setLinesData(lines);
-                System.out.println(projectFile);
 //                 TODO calc and set Cp
 //                projectFile.setCp();
 
