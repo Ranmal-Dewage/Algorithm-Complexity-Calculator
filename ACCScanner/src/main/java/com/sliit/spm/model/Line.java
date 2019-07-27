@@ -88,7 +88,6 @@ public class Line {
     public String toString() {
         return "Line{" +
                 "lineNo=" + lineNo +
-                ", data=" + data +
                 ", cs=" + cs +
                 ", ctc=" + ctc +
                 ", cnc=" + cnc +
@@ -96,6 +95,7 @@ public class Line {
                 ", cps=" + cps +
                 ", tw=" + tw +
                 ", cr=" + cr +
+                ", data=" + data +
                 '}';
     }
 }

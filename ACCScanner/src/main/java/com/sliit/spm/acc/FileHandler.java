@@ -53,26 +53,52 @@ public class FileHandler {
 
     private void calculateComplexity() {
         LOGGER.info("Found " + fileList.size() + " Files in source path");
-        for (File file : fileList) {
+        fileList.parallelStream().forEach(file -> {
             ProjectFile projectFile = new ProjectFile();
 
             try (LineNumberReader lnr = new LineNumberReader(new FileReader(file))) {
 
                 LOGGER.debug("Analyzing file " + file.getCanonicalPath().replace(projectRoot, ""));
                 projectFile.setRelativePath(file.getCanonicalPath().replace(projectRoot, ""));
-                List<String> methodsAndVariables = MethodAndVariableFinder.getMethodandVariables(lnr);
                 List<Line> lines = new ArrayList<>();
+                boolean singleLineCommented = false;
+                boolean multiLineCommented = false;
+
+                // helper for Cs calculation
+                List<String> methodsAndVariables = MethodAndVariableFinder.getMethodAndVariables(file);
 
                 for (String line; (line = lnr.readLine()) != null; ) {
                     Line lineObj = new Line();
                     lineObj.setLineNo(lnr.getLineNumber());
                     lineObj.setData(line);
 
+                    // ignore comment lines
+                    if (line.trim().startsWith("//")) {
+                        singleLineCommented = true;
+                    } else {
+                        singleLineCommented = false;
+                    }
+                    if (line.trim().startsWith("/*")) {
+                        multiLineCommented = true;
+                    }
+                    if (line.trim().startsWith("*/")) {
+                        line = line.replaceFirst("\\*/", "");
+                        multiLineCommented = false;
+                    }
+                    if (line.contains("//")) {
+                        line = line.replace(line.substring(line.indexOf("//")), "");
+                    }
 
-                    Cs.calcCs(lineObj, line);
+                    //calculate complexity if line is not commented
+                    if (!singleLineCommented && !multiLineCommented) {
+                        Cs.calcCs(lineObj, line, methodsAndVariables);
+                    }
+
+                    if (line.trim().endsWith("*/")) {
+                        multiLineCommented = false;
+                    }
 
                     lines.add(lineObj);
-                    System.out.println(lineObj);
                 }
 
                 projectFile.setLinesData(lines);
@@ -84,6 +110,6 @@ public class FileHandler {
             } catch (IOException e) {
                 LOGGER.error("Error reading file", e);
             }
-        }
+        });
     }
 }

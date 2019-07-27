@@ -4,6 +4,7 @@ import com.sliit.spm.model.Line;
 import com.sliit.spm.utils.PropertyReader;
 import org.apache.commons.lang3.StringUtils;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -16,13 +17,24 @@ public class Cs {
 
     private static Pattern numeric = Pattern.compile("\\d+");
     private static Pattern textInsideDoubleQuoted = Pattern.compile("\"(.*?)\"");
+    private static List<String> keywordsOne = Arrays.asList(PropertyReader.getInstance().getProperty("cs.one").split(","));
+    private static List<String> keywordsTwo = Arrays.asList(PropertyReader.getInstance().getProperty("cs.two").split(","));
+    private static List<String> keywordsTwoStartWith = Arrays.asList(PropertyReader.getInstance().getProperty("cs.two.start.with").split(","));
 
-    public static void calcCs(Line lineObj, String line) {
+    public static void calcCs(Line lineObj, String line, List<String> methodsAndVariables) {
 
         int cs = 0;
-        List<String> keywordsOne = Arrays.asList(PropertyReader.getInstance().getProperty("cs.one").split(","));
-        List<String> keywordsTwo = Arrays.asList(PropertyReader.getInstance().getProperty("cs.two").split(","));
-        List<String> keywordsTwoStartWith = Arrays.asList(PropertyReader.getInstance().getProperty("cs.two.start.with").split(","));
+
+        line = line.trim();
+
+        /*
+        find Text inside a pair of double quotes
+         */
+        Matcher q = textInsideDoubleQuoted.matcher(line);
+        while (q.find()) {
+            line = line.replace(q.group(0), "");
+            cs++;
+        }
 
         /*
         count of occurrences with score of 1
@@ -39,7 +51,8 @@ public class Cs {
          */
         for (String keyword : keywordsTwo) {
             if (!line.isEmpty() && line.toLowerCase().indexOf(keyword) != -1) {
-                int score = StringUtils.countMatches(line.toLowerCase(), keyword) * 2;
+                int score = StringUtils.countMatches(line.toLowerCase(), keyword);
+                score *= 2;
                 cs += score;
             }
         }
@@ -62,18 +75,38 @@ public class Cs {
         find numeric values
          */
         Matcher n = numeric.matcher(line);
-        while(n.find()) {
+        while (n.find()) {
             cs++;
         }
 
         /*
-        find Text inside a pair of double quotes
+        find methods and variables
          */
-        Matcher q = textInsideDoubleQuoted.matcher(line);
-        while(q.find()) {
-            cs++;
+        for (String keyword : methodsAndVariables) {
+            List<String> lineDataList = Arrays.asList(line.replaceAll("[\\(\\+\\-\\)\\:\\;\\[\\]\\.\\{\\}]", " ").split(" "));
+            for (String lineData : lineDataList) {
+                if (lineData.equals(keyword)) {
+                    cs += 1;
+                }
+            }
+        }
+
+        // temp solution for bug
+        List<String> remove = new ArrayList<>();
+        remove.add("print");
+        remove.add("println");
+        for (String val : remove) {
+            if (!line.isEmpty() && line.toLowerCase().indexOf(val) != -1) {
+                List<String> lineDataList = Arrays.asList(line.replaceAll("[\\(\\+\\-\\)\\:\\;\\[\\]\\.]", " ").split(" "));
+                for (String lineData : lineDataList) {
+                    if (lineData.equals(val)) {
+                        cs -= 1;
+                    }
+                }
+            }
         }
 
         lineObj.setCs(cs);
+        System.out.println(lineObj);
     }
 }
