@@ -3,9 +3,9 @@ package com.sliit.spm.core;
 import com.sliit.spm.acc.FileHandler;
 import com.sliit.spm.model.Project;
 import com.sliit.spm.utils.ErrorMessages;
-import com.sun.javafx.fxml.PropertyNotFoundException;
 import org.apache.log4j.Logger;
 
+import java.util.NoSuchElementException;
 import java.util.Optional;
 
 public class App {
@@ -38,13 +38,13 @@ public class App {
             project.setProjectKey(projectKey.get());
         } else {
             LOGGER.error(ErrorMessages.PK_NOT_FOUND_ERR);
-            throw new PropertyNotFoundException(ErrorMessages.PK_NOT_FOUND_ERR);
+            throw new NoSuchElementException(ErrorMessages.PK_NOT_FOUND_ERR);
         }
         if (sourcePath.isPresent()) {
             project.setSourcePath(sourcePath.get());
         } else {
             LOGGER.error(ErrorMessages.SP_NOT_FOUND_ERR);
-            throw new PropertyNotFoundException(ErrorMessages.SP_NOT_FOUND_ERR);
+            throw new NoSuchElementException(ErrorMessages.SP_NOT_FOUND_ERR);
         }
 
         execute(project);
