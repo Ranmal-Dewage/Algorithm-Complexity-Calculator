@@ -18,4 +18,6 @@ public interface ProjectService {
 	public Optional<Project> getByKey(String projectKey);
 
 	public List<Project> getAll();
+
+	public List<Project> getAllByCreatedTime();
 }

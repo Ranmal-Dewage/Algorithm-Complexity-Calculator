@@ -4,7 +4,6 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.data.annotation.Id;
-import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -17,8 +16,8 @@ public class Project {
 	String sourcePath;
 	String language;
 	List<ProjectFile> files;
-	@LastModifiedDate
-	private LocalDateTime lastUpdatedDate;
+	@Indexed
+	private LocalDateTime createdTime;
 
 	public String getId() {
 		return id;
@@ -60,19 +59,12 @@ public class Project {
 		this.language = language;
 	}
 
-	/**
-	 * @return the lastUpdatedDate
-	 */
-	public LocalDateTime getLastUpdatedDate() {
-		return lastUpdatedDate;
+	public LocalDateTime getCreatedTime() {
+		return createdTime;
 	}
 
-	/**
-	 * @param lastUpdatedDate
-	 *            the lastUpdatedDate to set
-	 */
-	public void setLastUpdatedDate(LocalDateTime lastUpdatedDate) {
-		this.lastUpdatedDate = lastUpdatedDate;
+	public void setCreatedTime(LocalDateTime createdTime) {
+		this.createdTime = createdTime;
 	}
 
 	@Override
