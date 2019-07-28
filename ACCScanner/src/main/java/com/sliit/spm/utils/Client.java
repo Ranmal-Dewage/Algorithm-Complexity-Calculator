@@ -1,6 +1,7 @@
 package com.sliit.spm.utils;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.sliit.spm.model.Project;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
@@ -17,6 +18,7 @@ public class Client {
     private static final Logger LOGGER = Logger.getLogger(Client.class);
     private static String accUrl = PropertyReader.getInstance().getProperty("accUrl");
     private static HttpClient httpClient = HttpClientBuilder.create().build();
+    private static Gson gson = new GsonBuilder().disableHtmlEscaping().create();
 
     public static void sendAnalysisData(Project project) {
         try {
@@ -26,8 +28,8 @@ public class Client {
             HttpPost request = new HttpPost(accUrl);
             request.addHeader("content-type", "application/json");
 
-            Gson gson = new Gson();
             String json = gson.toJson(project); //convert
+            System.out.println(json);
 
             StringEntity params = new StringEntity(json);
             request.setEntity(params);
