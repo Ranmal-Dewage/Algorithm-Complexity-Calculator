@@ -107,6 +107,5 @@ public class Cs {
         }
 
         lineObj.setCs(cs);
-        System.out.println(lineObj);
     }
 }

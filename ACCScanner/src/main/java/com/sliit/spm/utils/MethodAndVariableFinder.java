@@ -3,6 +3,7 @@ package com.sliit.spm.utils;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -14,7 +15,7 @@ public class MethodAndVariableFinder {
     private static Pattern variable = Pattern.compile("\"[^\"]*\"|((?=_[a-z_0-9]|[a-z])([a-z_0-9]|[a-z0-9\\[\\]])+(?=\\s*=))");
     private static Pattern param = Pattern.compile("\\((.*?)\\)");
     private static Pattern newPattern = Pattern.compile("(new)+\\s\\w+");
-//    private static Pattern methodCalls = Pattern.compile("[a-zA-Z]+\\([^\\)]*\\)(\\.[^\\)]*\\))?");
+    private static Pattern methodCalls = Pattern.compile("([^\\W:.,()\\s]+)\\s*\\(|::([^W:.,()\\s]+)");
 
     public static List<String> getMethodAndVariables(File file) {
         List<String> list = new ArrayList<>();
@@ -31,11 +32,13 @@ public class MethodAndVariableFinder {
                 }
 
                 // method call finder
-//                Matcher mc = methodCalls.matcher(line);
-//                while (mc.find()) {
-//                    String name = mc.group(0);
-//                    System.out.println(name);
-//                }
+                Matcher mc = methodCalls.matcher(line);
+                while (mc.find()) {
+                    String name = mc.group(0).trim().replaceAll("[\\s\\(]", "");
+                    if (!list.contains(name)) {
+                        list.add(name);
+                    }
+                }
 
                 // parameter finder example(String a)
                 Matcher p = param.matcher(line);
@@ -80,9 +83,10 @@ public class MethodAndVariableFinder {
                     }
                 }
 
-                for (String item : list) {
-                    if (keywordsOne.contains(item.toLowerCase())) {
-                        list.remove(item);
+                for (Iterator<String> iterator = list.iterator(); iterator.hasNext(); ) {
+                    String value = iterator.next();
+                    if (keywordsOne.contains(value)) {
+                        iterator.remove();
                     }
                 }
 

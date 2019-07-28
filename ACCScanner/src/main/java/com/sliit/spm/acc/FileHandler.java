@@ -3,6 +3,7 @@ package com.sliit.spm.acc;
 import com.sliit.spm.model.Line;
 import com.sliit.spm.model.Project;
 import com.sliit.spm.model.ProjectFile;
+import com.sliit.spm.utils.Client;
 import com.sliit.spm.utils.MethodAndVariableFinder;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.log4j.Logger;
@@ -12,12 +13,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-/**
- * @author vimukthi_r
- * @Date Jul 23, 2019
- * @Description
- * @Version
- */
 public class FileHandler {
 
     private static final Logger LOGGER = Logger.getLogger(FileHandler.class);
@@ -30,9 +25,13 @@ public class FileHandler {
     public void readFiles(Project p) {
         this.project = p;
         this.projectRoot = project.getSourcePath();
+
         getFiles(projectRoot);
         calculateComplexity();
         this.project.setFiles(projectFiles);
+
+        Client.sendAnalysisData(project);
+
     }
 
     public void getFiles(String projectPath) {
@@ -53,7 +52,7 @@ public class FileHandler {
 
     private void calculateComplexity() {
         LOGGER.info("Found " + fileList.size() + " Files in source path");
-        fileList.parallelStream().forEach(file -> {
+        fileList.forEach(file -> {
             ProjectFile projectFile = new ProjectFile();
 
             try (LineNumberReader lnr = new LineNumberReader(new FileReader(file))) {
@@ -73,7 +72,7 @@ public class FileHandler {
                     lineObj.setData(line);
 
                     // ignore comment lines
-                    if (line.trim().startsWith("//")) {
+                    if (line.trim().startsWith("//") || line.trim().startsWith("import") || line.trim().startsWith("include")) {
                         singleLineCommented = true;
                     } else {
                         singleLineCommented = false;
