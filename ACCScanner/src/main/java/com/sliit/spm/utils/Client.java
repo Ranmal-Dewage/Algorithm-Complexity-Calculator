@@ -23,7 +23,7 @@ public class Client {
     public static void sendAnalysisData(Project project) {
         try {
 
-            LOGGER.debug("Submitting analysis data to the server ");
+            LOGGER.debug("Submitting analysis data to the server...");
 
             HttpPost request = new HttpPost(accUrl);
             request.addHeader("content-type", "application/json");
