@@ -33,7 +33,6 @@ public class Cs {
         Matcher q = textInsideDoubleQuoted.matcher(line);
         while (q.find()) {
             line = line.replace(q.group(0), "");
-            System.out.println("text:" + 1);
             cs++;
         }
 
@@ -44,7 +43,6 @@ public class Cs {
             if (!line.isEmpty() && line.toLowerCase().indexOf(keyword) != -1) {
                 int score = StringUtils.countMatches(line.toLowerCase(), keyword);
                 cs += score;
-                System.out.println(keyword + ":" + 1);
             }
         }
 
@@ -56,7 +54,6 @@ public class Cs {
                 int score = StringUtils.countMatches(line.toLowerCase(), keyword);
                 score *= 2;
                 cs += score;
-                System.out.println(keyword + ":" + 2);
             }
         }
 
@@ -69,7 +66,6 @@ public class Cs {
                 for (String word : words) {
                     if (word.startsWith(keyword)) {
                         cs += 2;
-                        System.out.println(keyword + ":" + 2);
                     }
                 }
             }
@@ -81,7 +77,6 @@ public class Cs {
         Matcher n = numeric.matcher(line);
         while (n.find()) {
             cs++;
-            System.out.println("number" + ":" + 1);
         }
 
         /*
@@ -92,7 +87,6 @@ public class Cs {
             for (String lineData : lineDataList) {
                 if (lineData.toLowerCase().equals(keyword.toLowerCase())) {
                     cs += 1;
-                    System.out.println(keyword + ":" + 1);
                 }
             }
         }
@@ -111,7 +105,6 @@ public class Cs {
                 }
             }
         }
-        System.out.println(line);
         lineObj.setCs(cs);
     }
 }
