@@ -91,6 +91,7 @@ public class FileHandler {
                     //calculate complexity if line is not commented
                     if (!singleLineCommented && !multiLineCommented) {
                         Cs.calcCs(lineObj, line, methodsAndVariables);
+                        Ci.calcCi(lineObj, line);
                     }
 
                     if (line.trim().endsWith("*/")) {
@@ -105,6 +106,7 @@ public class FileHandler {
 //                projectFile.setCp();
 
                 projectFiles.add(projectFile);
+                Ci.resetCi();
 
             } catch (IOException e) {
                 LOGGER.error("Error reading file", e);

@@ -4,6 +4,10 @@
 target/
 bin/
 
+*.classpath
+**/.project
+**/target/
+
 # Log file
 *.log
 
