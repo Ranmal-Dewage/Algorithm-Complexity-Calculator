@@ -85,7 +85,7 @@ public class MethodAndVariableFinder {
 
                 for (Iterator<String> iterator = list.iterator(); iterator.hasNext(); ) {
                     String value = iterator.next();
-                    if (keywordsOne.contains(value)) {
+                    if (keywordsOne.contains(value.toLowerCase())) {
                         iterator.remove();
                     }
                 }
