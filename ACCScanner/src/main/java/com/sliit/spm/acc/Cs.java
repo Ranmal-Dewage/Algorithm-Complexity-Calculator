@@ -86,7 +86,7 @@ public class Cs {
         find methods and variables
          */
             for (String keyword : methodsAndVariables) {
-                List<String> lineDataList = Arrays.asList(line.replaceAll("[\\(\\+\\-\\)\\:\\;\\[\\]\\.\\{\\}]", " ").split(" "));
+                List<String> lineDataList = Arrays.asList(line.replaceAll("[\\(\\+\\-\\)\\:\\;\\[\\]\\.\\{\\}\\=]", " ").split(" "));
                 for (String lineData : lineDataList) {
                     if (lineData.toLowerCase().equals(keyword.toLowerCase())) {
                         cs += 1;
