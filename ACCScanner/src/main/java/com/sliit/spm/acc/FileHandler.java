@@ -92,6 +92,7 @@ public class FileHandler {
                     if (!singleLineCommented && !multiLineCommented) {
                         Cs.calcCs(lineObj, line, methodsAndVariables);
                         Ci.calcCi(lineObj, line);
+                        Ctc.calcCtc(lineObj, line);
                     }
 
                     if (line.trim().endsWith("*/")) {
@@ -107,6 +108,7 @@ public class FileHandler {
 
                 projectFiles.add(projectFile);
                 Ci.resetCi();
+                Ctc.setSwitchCtc();
 
             } catch (IOException e) {
                 LOGGER.error("Error reading file", e);
