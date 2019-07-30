@@ -45,9 +45,12 @@ public class FileHandler {
                 if (file.isDirectory()) {
                     getFiles(file.getPath());
                 }
-                if (FilenameUtils.getExtension(file.getName()).equalsIgnoreCase("java")
-                        || FilenameUtils.getExtension(file.getName()).equalsIgnoreCase("cpp")) {
+                if (FilenameUtils.getExtension(file.getName()).equalsIgnoreCase("java")) {
                     fileList.add(file);
+                    project.setLanguage("Java");
+                }else if(FilenameUtils.getExtension(file.getName()).equalsIgnoreCase("cpp")){
+                    fileList.add(file);
+                    project.setLanguage("C++");
                 }
             }
         }
