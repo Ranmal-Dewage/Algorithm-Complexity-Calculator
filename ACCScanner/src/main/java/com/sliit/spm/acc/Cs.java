@@ -11,7 +11,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * calculete Cs of a line
+ * calculate Cs of a line
  */
 public class Cs {
 

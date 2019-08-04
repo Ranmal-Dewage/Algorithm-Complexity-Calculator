@@ -5,12 +5,17 @@ import com.sliit.spm.model.Project;
 import com.sliit.spm.model.ProjectFile;
 import com.sliit.spm.utils.Client;
 import com.sliit.spm.utils.MethodAndVariableFinder;
+import com.sliit.spm.utils.RecursiveMethodLineNumberFinder;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.log4j.Logger;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.LineNumberReader;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 public class FileHandler {
@@ -65,6 +70,7 @@ public class FileHandler {
 
                 // helper for Cs calculation
                 List<String> methodsAndVariables = MethodAndVariableFinder.getMethodAndVariables(file);
+                Map<Integer,Integer> recursiveLineNumbers = RecursiveMethodLineNumberFinder.getRecursiveMethodLineNumbers(file);
 
                 for (String line; (line = lnr.readLine()) != null; ) {
                     Line lineObj = new Line();
