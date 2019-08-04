@@ -13,10 +13,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.LineNumberReader;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 
 public class FileHandler {
 
@@ -70,7 +67,7 @@ public class FileHandler {
 
                 // helper for Cs calculation
                 List<String> methodsAndVariables = MethodAndVariableFinder.getMethodAndVariables(file);
-                Map<Integer,Integer> recursiveLineNumbers = RecursiveMethodLineNumberFinder.getRecursiveMethodLineNumbers(file);
+                HashMap<Integer,Integer> recursiveLineNumbers = RecursiveMethodLineNumberFinder.getRecursiveMethodLineNumbers(file);
 
                 for (String line; (line = lnr.readLine()) != null; ) {
                     Line lineObj = new Line();
@@ -97,6 +94,14 @@ public class FileHandler {
                     //calculate complexity if line is not commented
                     if (!singleLineCommented && !multiLineCommented) {
                         Cs.calcCs(lineObj, line, methodsAndVariables);
+                    }
+
+                    //calculate CR complexity if line is not commented
+                    //IMPORTANT THIS FUNCTION SHOULD BE CALLED AFTER ALL THE OTHER COMPLEXITIES ARE CALCULATED AND "CPS" VALUE IS ADDED.
+                    //THIS FUNCTION SHOULD BE CALLED AFTER EVERYTHING IS DONE.
+                    //ADDED HERE FOR TESTING PURPOSES
+                    if (!singleLineCommented && !multiLineCommented) {
+                        Cr.calcCr(lineObj,line,recursiveLineNumbers);
                     }
 
                     if (line.trim().endsWith("*/")) {

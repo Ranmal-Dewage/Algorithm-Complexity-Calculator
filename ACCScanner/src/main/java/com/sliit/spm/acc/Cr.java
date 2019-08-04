@@ -1,26 +1,22 @@
 package com.sliit.spm.acc;
 
 import com.sliit.spm.model.Line;
-
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
-import java.util.List;
+
+class Cr {
 
 
-public class Cr {
+    static void calcCr(Line lineObj, String line, HashMap<Integer, Integer> recursiveLines) {
 
+        //Iterates through the hashmap of line numbers
+        for (Map.Entry<Integer, Integer> pair : recursiveLines.entrySet()) {
 
-    public static void getRecursiveLine(Line lineObj, String line, HashMap<Integer,Integer> recursiveLines) {
-
-        Iterator noOfPairs = recursiveLines.entrySet().iterator();
-        while (noOfPairs.hasNext()) {
-            Map.Entry pair = (Map.Entry)noOfPairs.next();
-
-            if( 0 > Integer.parseInt(pair.getKey().toString()) && 0 < Integer.parseInt(pair.getValue().toString())) {
-                //Get the line object line number an update the CR value
+            //Checks if the line number of  the code segment is within the recursive method
+            if (lineObj.getLineNo() > Integer.parseInt(((Map.Entry) pair).getKey().toString()) && lineObj.getLineNo() < Integer.parseInt(((Map.Entry) pair).getValue().toString())) {
+                int lineCRValue = (lineObj.getCps() * 2);
+                lineObj.setCr(lineCRValue);
             }
-            noOfPairs.remove(); // avoids a ConcurrentModificationException
         }
     }
 }
