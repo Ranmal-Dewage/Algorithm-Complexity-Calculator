@@ -13,7 +13,13 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.LineNumberReader;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.LineNumberReader;
 
 public class FileHandler {
 
@@ -44,9 +50,12 @@ public class FileHandler {
                 if (file.isDirectory()) {
                     getFiles(file.getPath());
                 }
-                if (FilenameUtils.getExtension(file.getName()).equalsIgnoreCase("java")
-                        || FilenameUtils.getExtension(file.getName()).equalsIgnoreCase("cpp")) {
+                if (FilenameUtils.getExtension(file.getName()).equalsIgnoreCase("java")) {
                     fileList.add(file);
+                    project.setLanguage("Java");
+                }else if(FilenameUtils.getExtension(file.getName()).equalsIgnoreCase("cpp")){
+                    fileList.add(file);
+                    project.setLanguage("C++");
                 }
             }
         }
@@ -94,6 +103,8 @@ public class FileHandler {
                     //calculate complexity if line is not commented
                     if (!singleLineCommented && !multiLineCommented) {
                         Cs.calcCs(lineObj, line, methodsAndVariables);
+                        Ci.calcCi(lineObj, line);
+                        Ctc.calcCtc(lineObj, line);
                     }
 
                     //calculate CR complexity if line is not commented
@@ -116,6 +127,8 @@ public class FileHandler {
 //                projectFile.setCp();
 
                 projectFiles.add(projectFile);
+                Ci.resetCi();
+                Ctc.setSwitchCtc();
 
             } catch (IOException e) {
                 LOGGER.error("Error reading file", e);

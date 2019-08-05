@@ -4,6 +4,10 @@
 target/
 bin/
 
+*.classpath
+**/.project
+**/target/
+
 # Log file
 *.log
 
@@ -26,5 +30,4 @@ bin/
 hs_err_pid*
 
 .idea/
-
 *.iml
