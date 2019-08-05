@@ -14,12 +14,9 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.LineNumberReader;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Objects;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.LineNumberReader;
 
 public class FileHandler {
 
@@ -53,7 +50,7 @@ public class FileHandler {
                 if (FilenameUtils.getExtension(file.getName()).equalsIgnoreCase("java")) {
                     fileList.add(file);
                     project.setLanguage("Java");
-                }else if(FilenameUtils.getExtension(file.getName()).equalsIgnoreCase("cpp")){
+                } else if (FilenameUtils.getExtension(file.getName()).equalsIgnoreCase("cpp")) {
                     fileList.add(file);
                     project.setLanguage("C++");
                 }
@@ -71,12 +68,12 @@ public class FileHandler {
                 LOGGER.debug("Analyzing file " + file.getCanonicalPath().replace(projectRoot, ""));
                 projectFile.setRelativePath(file.getCanonicalPath().replace(projectRoot, ""));
                 List<Line> lines = new ArrayList<>();
-                boolean singleLineCommented = false;
+                boolean singleLineCommented;
                 boolean multiLineCommented = false;
 
                 // helper for Cs calculation
                 List<String> methodsAndVariables = MethodAndVariableFinder.getMethodAndVariables(file);
-                HashMap<Integer,Integer> recursiveLineNumbers = RecursiveMethodLineNumberFinder.getRecursiveMethodLineNumbers(file);
+                HashMap<Integer, Integer> recursiveLineNumbers = RecursiveMethodLineNumberFinder.getRecursiveMethodLineNumbers(file);
 
                 for (String line; (line = lnr.readLine()) != null; ) {
                     Line lineObj = new Line();
@@ -105,14 +102,11 @@ public class FileHandler {
                         Cs.calcCs(lineObj, line, methodsAndVariables);
                         Ci.calcCi(lineObj, line);
                         Ctc.calcCtc(lineObj, line);
-                    }
 
-                    //calculate CR complexity if line is not commented
-                    //IMPORTANT THIS FUNCTION SHOULD BE CALLED AFTER ALL THE OTHER COMPLEXITIES ARE CALCULATED AND "CPS" VALUE IS ADDED.
-                    //THIS FUNCTION SHOULD BE CALLED AFTER EVERYTHING IS DONE.
-                    //ADDED HERE FOR TESTING PURPOSES
-                    if (!singleLineCommented && !multiLineCommented) {
-                        Cr.calcCr(lineObj,line,recursiveLineNumbers);
+                        //IMPORTANT THIS FUNCTION SHOULD BE CALLED AFTER ALL THE OTHER COMPLEXITIES ARE CALCULATED AND "CPS" VALUE IS ADDED.
+                        //THIS FUNCTION SHOULD BE CALLED AFTER EVERYTHING IS DONE.
+                        //ADDED HERE FOR TESTING PURPOSES
+                        Cr.calcCr(lineObj, line, recursiveLineNumbers);
                     }
 
                     if (line.trim().endsWith("*/")) {
