@@ -99,6 +99,7 @@ public class FileHandler {
                         Cs.calcCs(lineObj, line, methodsAndVariables);
                         Ci.calcCi(lineObj, line);
                         Ctc.calcCtc(lineObj, line);
+                        //my code cnc ctc
                     }
 
                     if (line.trim().endsWith("*/")) {
