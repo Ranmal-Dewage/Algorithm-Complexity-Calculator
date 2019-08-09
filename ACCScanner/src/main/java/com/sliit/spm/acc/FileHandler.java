@@ -3,6 +3,7 @@ package com.sliit.spm.acc;
 import com.sliit.spm.model.Line;
 import com.sliit.spm.model.Project;
 import com.sliit.spm.model.ProjectFile;
+import com.sliit.spm.model.Stack;
 import com.sliit.spm.utils.Client;
 import com.sliit.spm.utils.MethodAndVariableFinder;
 import org.apache.commons.io.FilenameUtils;
@@ -20,6 +21,7 @@ public class FileHandler {
 
     private static final Logger LOGGER = Logger.getLogger(FileHandler.class);
 
+    public static Stack stack;
     private Project project;
     private String projectRoot = "";
     private List<File> fileList = new ArrayList<>();
@@ -48,7 +50,7 @@ public class FileHandler {
                 if (FilenameUtils.getExtension(file.getName()).equalsIgnoreCase("java")) {
                     fileList.add(file);
                     project.setLanguage("Java");
-                }else if(FilenameUtils.getExtension(file.getName()).equalsIgnoreCase("cpp")){
+                } else if (FilenameUtils.getExtension(file.getName()).equalsIgnoreCase("cpp")) {
                     fileList.add(file);
                     project.setLanguage("C++");
                 }
@@ -60,6 +62,7 @@ public class FileHandler {
         LOGGER.info("Found " + fileList.size() + " Files in source path");
         fileList.forEach(file -> {
             ProjectFile projectFile = new ProjectFile();
+            stack = new Stack();
 
             try (LineNumberReader lnr = new LineNumberReader(new FileReader(file))) {
 
@@ -99,7 +102,7 @@ public class FileHandler {
                         Cs.calcCs(lineObj, line, methodsAndVariables);
                         Ci.calcCi(lineObj, line);
                         Ctc.calcCtc(lineObj, line);
-                        //my code cnc ctc
+                        Cnc.calcCnc(lineObj, line);
                     }
 
                     if (line.trim().endsWith("*/")) {
