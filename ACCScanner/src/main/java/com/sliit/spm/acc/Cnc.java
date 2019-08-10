@@ -17,8 +17,10 @@ public class Cnc {
     private static Pattern doWhileTopPattern = Pattern.compile("(do\\s*\\{)");
     private static Pattern doWhileBottomPattern = Pattern.compile("(\\}\\s*while\\s*\\()(\\w+\\s*[><=!]*[=]*\\s*[a-zA-Z0-9]*)((\\s*\\&\\&|\\s*\\|\\||\\s*\\&|\\s*\\|)(\\s*\\w+\\s*[><=!]*[=]*\\s*[a-zA-Z0-9]*))*(\\.\\w+\\(\\\"*\\w*\\\"*\\))*(\\)\\;)");
     private static Pattern forEachPattern = Pattern.compile("(for\\s*\\()([a-zA-Z]*\\s*\\w+\\s*:\\s*\\w+)(\\)\\s*\\{)");
-    private static Pattern ifPattern = Pattern.compile("(if\\s*\\()(\\(*\\w+\\s*[><=!]*[=]*\\s*[a-zA-Z0-9]*\\)*)((\\s*\\&\\&|\\s*\\|\\||\\s*\\&|\\s*\\|)(\\s*\\(*\\w+\\s*[><=!]*[=]*\\s*[a-zA-Z0-9]*\\)*))*(\\.\\w+\\(\\\"*\\w*\\\"*\\))*(\\)\\s*\\{)");
+    private static Pattern ifPattern = Pattern.compile("(\\w*\\s*if\\s*\\()(\\(*\\w+\\s*[><=!]*[=]*\\s*[a-zA-Z0-9]*\\)*)((\\s*\\&\\&|\\s*\\|\\||\\s*\\&|\\s*\\|)(\\s*\\(*\\w+\\s*[><=!]*[=]*\\s*[a-zA-Z0-9]*\\)*))*(\\.\\w+\\(\\\"*\\w*\\\"*\\))*(\\)\\s*\\{)");
     private static Pattern switchPattern = Pattern.compile("(switch\\s*\\()(\\w+)(\\)\\s*\\{)");
+    private static Pattern elsePattern = Pattern.compile("(else\\s*\\{)");
+
 
     public static void calcCnc(Line lineObj, String line) {
 
@@ -65,6 +67,17 @@ public class Cnc {
                 List<String> doWhileTopWords = Arrays.asList(line.split(" "));
                 for (String doWhileTopChar : doWhileTopWords) {
                     if (doWhileTopChar.equals("{") || doWhileTopChar.contains("{")) {
+                        FileHandler.stack.push("{");
+                    }
+                }
+            }
+
+            Matcher elseMatcher = elsePattern.matcher(line);
+
+            if (elseMatcher.matches() && line.startsWith(doWhileTopMatcher.group(1))) {
+                List<String> elseWords = Arrays.asList(line.split(" "));
+                for (String elseChar : elseWords) {
+                    if (elseChar.equals("{") || elseChar.contains("{")) {
                         FileHandler.stack.push("{");
                     }
                 }
@@ -122,6 +135,8 @@ public class Cnc {
                     }
                 }
             }
+
+
 
             if (FileHandler.stack.peek() != 0 && (line.startsWith("}") || line.endsWith("}"))) {
                 String val = FileHandler.stack.pop();
