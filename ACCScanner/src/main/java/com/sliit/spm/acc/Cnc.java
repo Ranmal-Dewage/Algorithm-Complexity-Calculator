@@ -19,7 +19,7 @@ public class Cnc {
     private static Pattern forEachPattern = Pattern.compile("(for\\s*\\()([a-zA-Z]*\\s*\\w+\\s*:\\s*\\w+)(\\)\\s*\\{)");
     private static Pattern ifPattern = Pattern.compile("(\\w*\\s*if\\s*\\()(\\(*\\w+\\s*[><=!]*[=]*\\s*[a-zA-Z0-9]*\\)*)((\\s*\\&\\&|\\s*\\|\\||\\s*\\&|\\s*\\|)(\\s*\\(*\\w+\\s*[><=!]*[=]*\\s*[a-zA-Z0-9]*\\)*))*(\\.\\w+\\(\\\"*\\w*\\\"*\\))*(\\)\\s*\\{)");
     private static Pattern switchPattern = Pattern.compile("(switch\\s*\\()(\\w+)(\\)\\s*\\{)");
-    private static Pattern elsePattern = Pattern.compile("(else\\s*\\{)");
+    private static Pattern elsePattern = Pattern.compile("(\\}*\\s*else\\s*\\{)");
 
 
     public static void calcCnc(Line lineObj, String line) {
