@@ -37,6 +37,13 @@ public class FileHandler {
         calculateComplexity();
         this.project.setFiles(projectFiles);
 
+        //calculate project cp
+        int projectcCp = 0;
+        for (ProjectFile pf : projectFiles) {
+            projectcCp += pf.getCp();
+        }
+        project.setCp(projectcCp);
+
         Client.sendAnalysisData(project);
 
     }
@@ -120,9 +127,17 @@ public class FileHandler {
                     lines.add(lineObj);
                 }
 
+                int fileCp = 0;
+                for (Line line : lines) {
+                    if (line.getCr() != 0) {
+                        fileCp += line.getCr();
+                    } else {
+                        fileCp += line.getCps();
+                    }
+                }
+
+                projectFile.setCp(fileCp);
                 projectFile.setLinesData(lines);
-//                 TODO calc and set Cp
-//                projectFile.setCp();
 
                 projectFiles.add(projectFile);
                 Ci.resetCi();

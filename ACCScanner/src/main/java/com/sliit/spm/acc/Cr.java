@@ -26,6 +26,7 @@ class Cr {
 
     private static void calcCPS(Line lineObj) {
         int tw = lineObj.getCtc() + lineObj.getCnc() + lineObj.getCi();
+        lineObj.setTw(tw);
         lineObj.setCps(lineObj.getCs() * tw);
     }
 }
