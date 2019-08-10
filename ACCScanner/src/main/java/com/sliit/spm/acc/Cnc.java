@@ -10,7 +10,7 @@ import java.util.regex.Pattern;
 
 public class Cnc {
 
-    private static final Logger LOGGER = Logger.getLogger(Cnc.class);
+    private static final Logger logger = Logger.getLogger(Cnc.class);
 
     private static Pattern forPattern = Pattern.compile("(for\\s*\\()([a-zA-Z]*\\s*\\w*\\s*=?\\s*[a-zA-Z0-9]*;+\\s*)(\\w+\\s*[><=!][=]*\\s*[a-zA-Z0-9]+)((\\s*\\&\\&|\\s*\\|\\||\\s*\\&|\\s*\\|)(\\s*\\w+\\s*[><=!][=]*\\s*[a-zA-Z0-9]+))*(;\\s*[a-zA-Z]+\\+\\+)(\\)\\s*\\{)");
     private static Pattern whilePattern = Pattern.compile("(while\\s*\\()(\\w+\\s*[><=!]*[=]*\\s*[a-zA-Z0-9]*)((\\s*\\&\\&|\\s*\\|\\||\\s*\\&|\\s*\\|)(\\s*\\w+\\s*[><=!]*[=]*\\s*[a-zA-Z0-9]*))*(\\.\\w+\\(\\\"*\\w*\\\"*\\))*(\\)\\s*\\{)");
@@ -136,18 +136,15 @@ public class Cnc {
                 }
             }
 
-
-
             if (FileHandler.stack.peek() != 0 && (line.startsWith("}") || line.endsWith("}"))) {
-                String val = FileHandler.stack.pop();
+                FileHandler.stack.pop();
             }
 
             cnc = cnc + FileHandler.stack.peek();
             lineObj.setCnc(cnc);
-            //System.out.println(cnc);
 
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+
         }
     }
 }

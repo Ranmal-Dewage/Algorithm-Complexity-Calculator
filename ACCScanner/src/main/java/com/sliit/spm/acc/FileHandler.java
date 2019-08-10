@@ -38,11 +38,11 @@ public class FileHandler {
         this.project.setFiles(projectFiles);
 
         //calculate project cp
-        int projectcCp = 0;
+        int projectCp = 0;
         for (ProjectFile pf : projectFiles) {
-            projectcCp += pf.getCp();
+            projectCp += pf.getCp();
         }
-        project.setCp(projectcCp);
+        project.setCp(projectCp);
 
         Client.sendAnalysisData(project);
 
@@ -113,10 +113,6 @@ public class FileHandler {
                         Ci.calcCi(lineObj, line);
                         Ctc.calcCtc(lineObj, line);
                         Cnc.calcCnc(lineObj, line);
-
-                        //IMPORTANT THIS FUNCTION SHOULD BE CALLED AFTER ALL THE OTHER COMPLEXITIES ARE CALCULATED AND "CPS" VALUE IS ADDED.
-                        //THIS FUNCTION SHOULD BE CALLED AFTER EVERYTHING IS DONE.
-                        //ADDED HERE FOR TESTING PURPOSES
                         Cr.calcCr(lineObj, recursiveLineNumbers);
                     }
 
