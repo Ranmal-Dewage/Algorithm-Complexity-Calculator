@@ -74,7 +74,7 @@ public class Cnc {
 
             Matcher elseMatcher = elsePattern.matcher(line);
 
-            if (elseMatcher.matches() && line.startsWith(doWhileTopMatcher.group(1))) {
+            if (elseMatcher.matches() && line.startsWith(elseMatcher.group(1))) {
                 List<String> elseWords = Arrays.asList(line.split(" "));
                 for (String elseChar : elseWords) {
                     if (elseChar.equals("{") || elseChar.contains("{")) {
@@ -137,7 +137,6 @@ public class Cnc {
             }
 
 
-
             if (FileHandler.stack.peek() != 0 && (line.startsWith("}") || line.endsWith("}"))) {
                 String val = FileHandler.stack.pop();
             }
@@ -147,7 +146,8 @@ public class Cnc {
             //System.out.println(cnc);
 
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            String errMsg = "Error calculating Cnc";
+            LOGGER.error(errMsg);
         }
     }
 }
