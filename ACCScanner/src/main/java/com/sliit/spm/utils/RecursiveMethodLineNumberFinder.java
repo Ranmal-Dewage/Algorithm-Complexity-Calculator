@@ -83,7 +83,6 @@ public class RecursiveMethodLineNumberFinder {
         } catch (IOException e) {
             LOGGER.error("Error reading file", e);
         }
-        System.out.println(recursionLineNumbers);
         return recursionLineNumbers;
     }
 }

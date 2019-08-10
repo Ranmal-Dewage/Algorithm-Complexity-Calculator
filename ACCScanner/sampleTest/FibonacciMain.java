@@ -1,4 +1,4 @@
-public class FibonacciMain extends a implements c, v {
+public class FibonacciMain {
     public static long fibonacci(long number) {
         if ((number == 0) || (number == 1)) {
             return number;

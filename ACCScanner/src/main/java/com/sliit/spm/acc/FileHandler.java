@@ -110,7 +110,7 @@ public class FileHandler {
                         //IMPORTANT THIS FUNCTION SHOULD BE CALLED AFTER ALL THE OTHER COMPLEXITIES ARE CALCULATED AND "CPS" VALUE IS ADDED.
                         //THIS FUNCTION SHOULD BE CALLED AFTER EVERYTHING IS DONE.
                         //ADDED HERE FOR TESTING PURPOSES
-                        Cr.calcCr(lineObj, line, recursiveLineNumbers);
+                        Cr.calcCr(lineObj, recursiveLineNumbers);
                     }
 
                     if (line.trim().endsWith("*/")) {
