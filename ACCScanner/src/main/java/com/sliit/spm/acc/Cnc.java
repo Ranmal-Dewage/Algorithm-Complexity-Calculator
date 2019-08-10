@@ -12,7 +12,7 @@ public class Cnc {
 
     private static final Logger LOGGER = Logger.getLogger(Cnc.class);
 
-    private static Pattern forPattern = Pattern.compile("(for\\s*\\()([a-zA-Z]*\\s*\\w*\\s*=?\\s*[a-zA-Z0-9]*;+\\s*)(\\w+\\s*[><=!][=]*\\s*[a-zA-Z0-9]+)((\\s*\\&\\&|\\s*\\|\\||\\s*\\&|\\s*\\|)(\\s*\\w+\\s*[><=!][=]*\\s*[a-zA-Z0-9]+))*(;\\s*[a-zA-Z]\\+\\+)(\\)\\s*\\{)");
+    private static Pattern forPattern = Pattern.compile("(for\\s*\\()([a-zA-Z]*\\s*\\w*\\s*=?\\s*[a-zA-Z0-9]*;+\\s*)(\\w+\\s*[><=!][=]*\\s*[a-zA-Z0-9]+)((\\s*\\&\\&|\\s*\\|\\||\\s*\\&|\\s*\\|)(\\s*\\w+\\s*[><=!][=]*\\s*[a-zA-Z0-9]+))*(;\\s*[a-zA-Z]+\\+\\+)(\\)\\s*\\{)");
     private static Pattern whilePattern = Pattern.compile("(while\\s*\\()(\\w+\\s*[><=!]*[=]*\\s*[a-zA-Z0-9]*)((\\s*\\&\\&|\\s*\\|\\||\\s*\\&|\\s*\\|)(\\s*\\w+\\s*[><=!]*[=]*\\s*[a-zA-Z0-9]*))*(\\.\\w+\\(\\\"*\\w*\\\"*\\))*(\\)\\s*\\{)");
     private static Pattern doWhileTopPattern = Pattern.compile("(do\\s*\\{)");
     private static Pattern doWhileBottomPattern = Pattern.compile("(\\}\\s*while\\s*\\()(\\w+\\s*[><=!]*[=]*\\s*[a-zA-Z0-9]*)((\\s*\\&\\&|\\s*\\|\\||\\s*\\&|\\s*\\|)(\\s*\\w+\\s*[><=!]*[=]*\\s*[a-zA-Z0-9]*))*(\\.\\w+\\(\\\"*\\w*\\\"*\\))*(\\)\\;)");
@@ -26,17 +26,16 @@ public class Cnc {
         //int ctc = 0;
 
         line = line.trim();
+
         try {
             Matcher forMatcher = forPattern.matcher(line);
 
-            if (line.startsWith(forMatcher.group(1))) {
+            if (forMatcher.matches() && line.startsWith(forMatcher.group(1))) {
                 //ctc = ctc + 2;
-                System.out.println("for");
                 List<String> forWords = Arrays.asList(line.replaceAll("[\\(\\+\\=\\)\\;\\>\\<\\!]", " ").split(" "));
                 for (String forChar : forWords) {
                     if (forChar.equals("&&") || forChar.equals("&") || forChar.equals("||") || forChar.equals("|")) {
                         //ctc = ctc + 2;
-                        System.out.println("for hit");
                     }
                     if (forChar.equals("{")) {
                         FileHandler.stack.push("{");
@@ -46,14 +45,12 @@ public class Cnc {
 
             Matcher whileMatcher = whilePattern.matcher(line);
 
-            if (line.startsWith(whileMatcher.group(1))) {
+            if (whileMatcher.matches() && line.startsWith(whileMatcher.group(1))) {
                 //ctc = ctc + 2;
-                System.out.println("while");
                 List<String> whileWords = Arrays.asList(line.replaceAll("[\\(\\.\\=\\)\\>\\<\\!\\\"]", " ").split(" "));
                 for (String whileChar : whileWords) {
                     if (whileChar.equals("&&") || whileChar.equals("&") || whileChar.equals("||") || whileChar.equals("|")) {
                         //ctc = ctc + 2;
-                        System.out.println("while hit");
                     }
                     if (whileChar.equals("{")) {
                         FileHandler.stack.push("{");
@@ -63,9 +60,8 @@ public class Cnc {
 
             Matcher doWhileTopMatcher = doWhileTopPattern.matcher(line);
 
-            if (line.startsWith(doWhileTopMatcher.group(1))) {
+            if (doWhileTopMatcher.matches() && line.startsWith(doWhileTopMatcher.group(1))) {
                 //ctc = ctc + 2;
-                System.out.println("do while start");
                 List<String> doWhileTopWords = Arrays.asList(line.split(" "));
                 for (String doWhileTopChar : doWhileTopWords) {
                     if (doWhileTopChar.equals("{") || doWhileTopChar.contains("{")) {
@@ -76,28 +72,24 @@ public class Cnc {
 
             Matcher doWhileBottomMatcher = doWhileBottomPattern.matcher(line);
 
-            if (line.startsWith(doWhileBottomMatcher.group(1))) {
+            if (doWhileBottomMatcher.matches() && line.startsWith(doWhileBottomMatcher.group(1))) {
                 //ctc = ctc + 2;
-                System.out.println("do while end");
                 List<String> doWhileBottomWords = Arrays.asList(line.replaceAll("[\\(\\.\\=\\)\\>\\<\\!\\\"\\;]", " ").split(" "));
                 for (String doWhileBottomChar : doWhileBottomWords) {
                     if (doWhileBottomChar.equals("&&") || doWhileBottomChar.equals("&") || doWhileBottomChar.equals("||") || doWhileBottomChar.equals("|")) {
                         //ctc = ctc + 2;
-                        System.out.println("do while end hit");
                     }
                 }
             }
 
             Matcher forEachMatcher = forEachPattern.matcher(line);
 
-            if (line.startsWith(forEachMatcher.group(1))) {
+            if (forEachMatcher.matches() && line.startsWith(forEachMatcher.group(1))) {
                 //ctc = ctc + 2;
-                System.out.println("for each");
                 List<String> forEachWords = Arrays.asList(line.replaceAll("[\\(\\)\\:]", " ").split(" "));
                 for (String forEachChar : forEachWords) {
                     if (forEachChar.equals("&&") || forEachChar.equals("&") || forEachChar.equals("||") || forEachChar.equals("|")) {
                         //ctc = ctc + 2;
-                        System.out.println("for each hit");
                     }
                     if (forEachChar.equals("{")) {
                         FileHandler.stack.push("{");
@@ -107,14 +99,12 @@ public class Cnc {
 
             Matcher ifMatcher = ifPattern.matcher(line);
 
-            if (line.startsWith(ifMatcher.group(1))) {
+            if (ifMatcher.matches() && line.startsWith(ifMatcher.group(1))) {
                 //ctc = ctc + 1;
-                System.out.println("if");
                 List<String> ifWords = Arrays.asList(line.replaceAll("[\\(\\.\\=\\)\\>\\<\\!\\\"]", " ").split(" "));
                 for (String ifChar : ifWords) {
                     if (ifChar.equals("&&") || ifChar.equals("&") || ifChar.equals("||") || ifChar.equals("|")) {
                         //ctc = ctc + 1;
-                        System.out.println("if hit");
                     }
                     if (ifChar.equals("{")) {
                         FileHandler.stack.push("{");
@@ -124,8 +114,7 @@ public class Cnc {
 
             Matcher switchMatcher = switchPattern.matcher(line);
 
-            if (line.startsWith(switchMatcher.group(1))) {
-                System.out.println("switch start");
+            if (switchMatcher.matches() && line.startsWith(switchMatcher.group(1))) {
                 List<String> switchWords = Arrays.asList(line.replaceAll("[\\(\\)]", " ").split(" "));
                 for (String switchChar : switchWords) {
                     if (switchChar.equals("{")) {
@@ -134,18 +123,16 @@ public class Cnc {
                 }
             }
 
-            if (line.startsWith("}") || line.endsWith("}")) {
+            if (FileHandler.stack.peek() != 0 && (line.startsWith("}") || line.endsWith("}"))) {
                 String val = FileHandler.stack.pop();
-                System.out.println(val);
-                System.out.println("pop");
             }
 
             cnc = cnc + FileHandler.stack.peek();
             lineObj.setCnc(cnc);
+            //System.out.println(cnc);
 
         } catch (Exception e) {
-            String errMsg = "Error calculating Cnc";
-            LOGGER.error(errMsg);
+            System.out.println(e.getMessage());
         }
     }
 }
