@@ -3,6 +3,7 @@ package com.sliit.spm.acc;
 import com.sliit.spm.model.Line;
 import com.sliit.spm.model.Project;
 import com.sliit.spm.model.ProjectFile;
+import com.sliit.spm.model.Stack;
 import com.sliit.spm.utils.Client;
 import com.sliit.spm.utils.MethodAndVariableFinder;
 import com.sliit.spm.utils.RecursiveMethodLineNumberFinder;
@@ -22,6 +23,7 @@ public class FileHandler {
 
     private static final Logger LOGGER = Logger.getLogger(FileHandler.class);
 
+    public static Stack stack;
     private Project project;
     private String projectRoot = "";
     private List<File> fileList = new ArrayList<>();
@@ -62,6 +64,7 @@ public class FileHandler {
         LOGGER.info("Found " + fileList.size() + " Files in source path");
         fileList.forEach(file -> {
             ProjectFile projectFile = new ProjectFile();
+            stack = new Stack();
 
             try (LineNumberReader lnr = new LineNumberReader(new FileReader(file))) {
 
@@ -107,6 +110,7 @@ public class FileHandler {
                         //THIS FUNCTION SHOULD BE CALLED AFTER EVERYTHING IS DONE.
                         //ADDED HERE FOR TESTING PURPOSES
                         Cr.calcCr(lineObj, line, recursiveLineNumbers);
+                        Cnc.calcCnc(lineObj, line);
                     }
 
                     if (line.trim().endsWith("*/")) {
