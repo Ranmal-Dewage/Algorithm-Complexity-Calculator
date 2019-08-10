@@ -24,6 +24,9 @@ public class Cs {
     private static List<String> keywordsTwo = Arrays.asList(PropertyReader.getInstance().getProperty("cs.two").split(","));
     private static List<String> keywordsTwoStartWith = Arrays.asList(PropertyReader.getInstance().getProperty("cs.two.start.with").split(","));
 
+    private Cs() {
+    }
+
     public static void calcCs(Line lineObj, String line, List<String> methodsAndVariables) {
 
         int cs = 0;
@@ -88,7 +91,7 @@ public class Cs {
             for (String keyword : methodsAndVariables) {
                 List<String> lineDataList = Arrays.asList(line.replaceAll("[\\(\\+\\-\\)\\:\\;\\[\\]\\.\\{\\}\\=]", " ").split(" "));
                 for (String lineData : lineDataList) {
-                    if (lineData.toLowerCase().equals(keyword.toLowerCase())) {
+                    if (lineData.equalsIgnoreCase(keyword.toLowerCase())) {
                         cs += 1;
                     }
                 }
