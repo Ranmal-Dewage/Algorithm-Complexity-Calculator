@@ -1,6 +1,11 @@
 package com.sliit.spm.utils;
 
-import java.io.*;
+import org.apache.log4j.Logger;
+
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.LineNumberReader;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
@@ -9,6 +14,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class MethodAndVariableFinder {
+
+    private static final Logger LOGGER = Logger.getLogger(MethodAndVariableFinder.class);
 
     private static List<String> keywordsOne = Arrays.asList(PropertyReader.getInstance().getProperty("cs.one").split(","));
     private static Pattern method = Pattern.compile("(public|protected|private|static|\\s) +[\\w\\<\\>\\[\\]]+\\s+(\\w+) *\\([^\\)]*\\) *(\\{?|[^;])");
@@ -92,7 +99,7 @@ public class MethodAndVariableFinder {
 
             });
         } catch (IOException e) {
-            e.printStackTrace();
+            LOGGER.error("Error reading file", e);
         }
         return list;
     }

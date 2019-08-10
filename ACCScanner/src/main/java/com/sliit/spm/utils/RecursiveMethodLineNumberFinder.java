@@ -1,5 +1,7 @@
 package com.sliit.spm.utils;
 
+import org.apache.log4j.Logger;
+
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
@@ -11,6 +13,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class RecursiveMethodLineNumberFinder {
+
+    private static final Logger LOGGER = Logger.getLogger(RecursiveMethodLineNumberFinder.class);
 
     private static Pattern method = Pattern.compile("(public|protected|private|static|\\s) +[\\w\\<\\>\\[\\]]+\\s+(\\w+) *\\([^\\)]*\\) *(\\{?|[^;])");
 
@@ -77,7 +81,7 @@ public class RecursiveMethodLineNumberFinder {
                 }
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            LOGGER.error("Error reading file", e);
         }
         System.out.println(recursionLineNumbers);
         return recursionLineNumbers;
