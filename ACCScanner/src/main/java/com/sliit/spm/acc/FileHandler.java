@@ -6,6 +6,7 @@ import com.sliit.spm.model.ProjectFile;
 import com.sliit.spm.model.Stack;
 import com.sliit.spm.utils.Client;
 import com.sliit.spm.utils.MethodAndVariableFinder;
+import com.sliit.spm.utils.RecursiveMethodLineNumberFinder;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.log4j.Logger;
 
@@ -14,6 +15,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.LineNumberReader;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Objects;
 
@@ -69,11 +71,12 @@ public class FileHandler {
                 LOGGER.debug("Analyzing file " + file.getCanonicalPath().replace(projectRoot, ""));
                 projectFile.setRelativePath(file.getCanonicalPath().replace(projectRoot, ""));
                 List<Line> lines = new ArrayList<>();
-                boolean singleLineCommented = false;
+                boolean singleLineCommented;
                 boolean multiLineCommented = false;
 
                 // helper for Cs calculation
                 List<String> methodsAndVariables = MethodAndVariableFinder.getMethodAndVariables(file);
+                HashMap<Integer, Integer> recursiveLineNumbers = RecursiveMethodLineNumberFinder.getRecursiveMethodLineNumbers(file);
 
                 for (String line; (line = lnr.readLine()) != null; ) {
                     Line lineObj = new Line();
@@ -103,6 +106,11 @@ public class FileHandler {
                         Ci.calcCi(lineObj, line);
                         Ctc.calcCtc(lineObj, line);
                         Cnc.calcCnc(lineObj, line);
+
+                        //IMPORTANT THIS FUNCTION SHOULD BE CALLED AFTER ALL THE OTHER COMPLEXITIES ARE CALCULATED AND "CPS" VALUE IS ADDED.
+                        //THIS FUNCTION SHOULD BE CALLED AFTER EVERYTHING IS DONE.
+                        //ADDED HERE FOR TESTING PURPOSES
+                        Cr.calcCr(lineObj, recursiveLineNumbers);
                     }
 
                     if (line.trim().endsWith("*/")) {

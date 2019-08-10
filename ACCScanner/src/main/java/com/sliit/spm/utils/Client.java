@@ -16,9 +16,13 @@ import java.io.IOException;
 public class Client {
 
     private static final Logger LOGGER = Logger.getLogger(Client.class);
+    public static final String FAILED_TO_SUBMIT_DATA_TO_THE_SERVER = "Failed to submit data to the server ";
     private static String accUrl = PropertyReader.getInstance().getProperty("accUrl");
     private static HttpClient httpClient = HttpClientBuilder.create().build();
     private static Gson gson = new GsonBuilder().disableHtmlEscaping().create();
+
+    private Client() {
+    }
 
     public static void sendAnalysisData(Project project) {
         try {
@@ -29,7 +33,7 @@ public class Client {
             request.addHeader("content-type", "application/json");
 
             String json = gson.toJson(project); //convert
-            System.out.println(json);
+            LOGGER.info(json);
 
             StringEntity params = new StringEntity(json);
             request.setEntity(params);
@@ -39,13 +43,11 @@ public class Client {
             if (response.getStatusLine().getStatusCode() == 200) {
                 LOGGER.info("Analysis data submitted to the server " + response.getStatusLine());
             } else {
-                LOGGER.error("Failed to submit data to the server " + response.getStatusLine());
+                LOGGER.error(FAILED_TO_SUBMIT_DATA_TO_THE_SERVER + response.getStatusLine());
             }
 
-        } catch (ClientProtocolException e) {
-            LOGGER.error("Failed to submit data to the server ");
         } catch (IOException e) {
-            LOGGER.error("Failed to submit data to the server ");
+            LOGGER.error(FAILED_TO_SUBMIT_DATA_TO_THE_SERVER);
         }
     }
 }

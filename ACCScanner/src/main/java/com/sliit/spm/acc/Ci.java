@@ -3,12 +3,11 @@
  */
 package com.sliit.spm.acc;
 
-import java.util.Arrays;
-import java.util.List;
-
+import com.sliit.spm.model.Line;
 import org.apache.commons.lang3.StringUtils;
 
-import com.sliit.spm.model.Line;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * @author Vimukthi Rajapaksha
@@ -17,7 +16,11 @@ import com.sliit.spm.model.Line;
 public class Ci {
 
     private static final List<String> keywords = Arrays.asList("extends ", "implements ", ",", ":");
+    private static final List<String> excludedKeywords = Arrays.asList("else ", "class ");
     private static int ci = 0;
+
+    private Ci() {
+    }
 
     public static void calcCi(Line lineObj, String line) {
         line = line.trim();
@@ -32,11 +35,29 @@ public class Ci {
                 ci += StringUtils.countMatches(line, keyword);
             }
         }
-        lineObj.setCi((ci != 0 && !line.isEmpty() && !line.contains("class ")) ? ci : 0);
+        lineObj.setCi((ci != 0 && !line.isEmpty() && !isExcludedListValue(line)) ? ci : 0);
     }
 
     public static void resetCi() {
         Ci.ci = 0;
     }
 
+    private static boolean isExcludedListValue(String line) {
+        try {
+            line = line.trim();
+            if ("}".equals(line)) {
+                return true;
+            }
+
+            for (String item : excludedKeywords) {
+                if (line.contains(item)) {
+                    return true;
+                }
+            }
+
+        } catch (Exception e) {
+            return false;
+        }
+        return false;
+    }
 }
