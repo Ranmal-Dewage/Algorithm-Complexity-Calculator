@@ -136,6 +136,7 @@ public class FileHandler {
                 projectFile.setLinesData(lines);
 
                 projectFiles.add(projectFile);
+                RecursiveMethodLineNumberFinder.resetData();
                 Ci.resetCi();
                 Ctc.setSwitchCtc();
 

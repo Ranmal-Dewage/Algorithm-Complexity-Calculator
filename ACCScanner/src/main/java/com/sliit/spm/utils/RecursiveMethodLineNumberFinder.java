@@ -85,4 +85,11 @@ public class RecursiveMethodLineNumberFinder {
         }
         return recursionLineNumbers;
     }
+
+    public static void resetData() {
+        recursionLineNumbers.clear();
+        tempMethodNameHolder = "";
+        methodNameLineNumber = 0;
+        recursiveMethodCallLineNumber = 0;
+    }
 }

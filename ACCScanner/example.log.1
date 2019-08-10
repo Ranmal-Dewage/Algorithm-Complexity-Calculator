@@ -1,645 +1,3 @@
-DEBUG main org.apache.http.wire - http-outgoing-0 << "HTTP/1.1 200 OK[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "X-Powered-By: Express[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "Access-Control-Allow-Origin: *[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "Content-Type: application/json; charset=utf-8[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "Content-Length: 80321[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "ETag: W/"139c1-vgQ6nAR6iihTJ5AnpPkb/Taj+3E"[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "Date: Sun, 28 Jul 2019 02:15:20 GMT[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "Connection: keep-alive[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "{"projectKey":"ACC","sourcePath":"E:\\Development\\algorithemic-complexity-calculator","files":[{"relativePath":"\\ACCScanner\\sampleTest\\test.java","linesData":[{"lineNo":1,"data":"public class FibonacciMain {","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":2,"data":" public static long fibonacci(long number) {","cs":4,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":3,"data":"  if ((number == 0) || (number == 1)) {","cs":8,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":4,"data":"   return number;","cs":1,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":5,"data":"  } else {","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":6,"data":"   // recursion step","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":7,"data":"   return fibonacci(number - 1) + fibonacci(number - 2);","cs":9,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":8,"data":"  }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":9,"data":" }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":10,"data":" public static void main(String args[]) {","cs":5,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":11,"data":"  for (int count = 0; count <= 10; count++) {","cs":10,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":12,"data":"","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":13,"data":"   System.out.println(\"Fibonacci of \" + count + \" is \" + fibonacci(count));","cs":13,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":14,"data":"  }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":15,"data":" }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":16,"data":"}","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0}],"cp":0},{"relativePath":"\\ACCScanner\\src\\main\\java\\com\\sliit\\spm\\acc\\Cs.java","linesData":[{"lineNo":1,"data":"package com.sliit.spm.acc;","cs":3,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":2,"data":"","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":3,"data":"import com.sliit.spm.model.Line;","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":4,"data":"import com.sliit.spm.utils.PropertyReader;","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":5,"data":"import org.apache.commons.lang3.StringUtils;","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":6,"data":"","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":7,"data":"import java.util.ArrayList;","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":8,"data":"import java.util.Arrays;","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":9,"data":"import java.util.List;","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":10,"data":"import java.util.regex.Matcher;","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":11,"data":"import java.util.regex.Pattern;","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":12,"data":"","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":13,"data":"/**","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":14,"data":" * calculete Cs of a line","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":15,"data":" */","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":16,"data":"public class Cs {","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":17,"data":"","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":18,"data":"    private static Pattern numeric = Pattern.compile(\"\\\\d+\");","cs":5,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":19,"data":"    private static Pattern textInsideDoubleQuoted = Pattern.compile(\"\\\"(.*?)\\\"\");","cs":8,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":20,"data":"    private static List<String> keywordsOne = Arrays.asList(PropertyReader.getInstance().getProperty(\"cs.one\").split(\",\"));","cs":15,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":21,"data":"    private static List<String> keywordsTwo = Arrays.asList(PropertyReader.getInstance().getProperty(\"cs.two\").split(\",\"));","cs":15,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":22,"data":"    private static List<String> keywordsTwoStartWith = Arrays.asList(PropertyReader.getInstance().getProperty(\"cs.two.start.with\").split(\",\"));","cs":15,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":23,"data":"","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":24,"data":"    public static void calcCs(Line lineObj, String line, List<String> methodsAndVariables) {","cs":9,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":25,"data":"","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":26,"data":"        int cs = 0;","cs":4,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":27,"data":"","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":28,"data":"        line = line.trim();","cs":5,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":29,"data":"","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":30,"data":"        /*","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":31,"data":"        find Text inside a pair of double quotes","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":32,"data":"         */","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":33,"data":"        Matcher q = textInsideDoubleQuoted.matcher(line);","cs":7,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":34,"data":"        while (q.find()) {","cs":4,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":35,"data":"            line = line.replace(q.group(0), \"\");","cs":10,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":36,"data":"            cs++;","cs":2,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":37,"data":"        }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":38,"data":"","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":39,"data":"        /*","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":40,"data":"        count of occurrences with score of 1","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":41,"data":"         */","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":42,"data":"        for (String keyword : keywordsOne) {","cs":3,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":43,"data":"            if (!line.isEmpty() && line.toLowerCase().indexOf(keyword) != -1) {","cs":16,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":44,"data":"                int score = StringUtils.countMatches(line.toLowerCase(), keyword);","cs":10,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":45,"data":"                cs += score;","cs":3,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":46,"data":"            }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":47,"data":"        }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":48,"data":"","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":49,"data":"        /*","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":50,"data":"        count of occurrences with score of 2","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":51,"data":"         */","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":52,"data":"        for (String keyword : keywordsTwo) {","cs":3,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":53,"data":"            if (!line.isEmpty() && line.toLowerCase().indexOf(keyword) != -1) {","cs":16,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":54,"data":"                int score = StringUtils.countMatches(line.toLowerCase(), keyword);","cs":10,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0}"
-DEBUG main org.apache.http.headers - http-outgoing-0 << HTTP/1.1 200 OK
-DEBUG main org.apache.http.headers - http-outgoing-0 << X-Powered-By: Express
-DEBUG main org.apache.http.headers - http-outgoing-0 << Access-Control-Allow-Origin: *
-DEBUG main org.apache.http.headers - http-outgoing-0 << Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept
-DEBUG main org.apache.http.headers - http-outgoing-0 << Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE
-DEBUG main org.apache.http.headers - http-outgoing-0 << Content-Type: application/json; charset=utf-8
-DEBUG main org.apache.http.headers - http-outgoing-0 << Content-Length: 80321
-DEBUG main org.apache.http.headers - http-outgoing-0 << ETag: W/"139c1-vgQ6nAR6iihTJ5AnpPkb/Taj+3E"
-DEBUG main org.apache.http.headers - http-outgoing-0 << Date: Sun, 28 Jul 2019 02:15:20 GMT
-DEBUG main org.apache.http.headers - http-outgoing-0 << Connection: keep-alive
-DEBUG main org.apache.http.impl.execchain.MainClientExec - Connection can be kept alive indefinitely
-DEBUG main com.sliit.spm.core.App - ACCScanner start analyzing...
-INFO main com.sliit.spm.core.App - Analyzing project ACC...
-INFO main com.sliit.spm.core.App - Found source path E:\Development\algorithemic-complexity-calculator\TestData
-INFO main com.sliit.spm.acc.FileHandler - Found 0 Files in source path
-DEBUG main org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: best-match
-DEBUG main org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
-DEBUG main org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {}->http://localhost:3001][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
-DEBUG main org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 0][route: {}->http://localhost:3001][total kept alive: 0; route allocated: 1 of 2; total allocated: 1 of 20]
-DEBUG main org.apache.http.impl.execchain.MainClientExec - Opening connection {}->http://localhost:3001
-DEBUG main org.apache.http.impl.conn.HttpClientConnectionOperator - Connecting to localhost/127.0.0.1:3001
-DEBUG main org.apache.http.impl.conn.HttpClientConnectionOperator - Connection established 127.0.0.1:49749<->127.0.0.1:3001
-DEBUG main org.apache.http.impl.execchain.MainClientExec - Executing request POST /railway/contact HTTP/1.1
-DEBUG main org.apache.http.impl.execchain.MainClientExec - Target auth state: UNCHALLENGED
-DEBUG main org.apache.http.impl.execchain.MainClientExec - Proxy auth state: UNCHALLENGED
-DEBUG main org.apache.http.headers - http-outgoing-0 >> POST /railway/contact HTTP/1.1
-DEBUG main org.apache.http.headers - http-outgoing-0 >> content-type: application/json
-DEBUG main org.apache.http.headers - http-outgoing-0 >> Content-Length: 108
-DEBUG main org.apache.http.headers - http-outgoing-0 >> Host: localhost:3001
-DEBUG main org.apache.http.headers - http-outgoing-0 >> Connection: Keep-Alive
-DEBUG main org.apache.http.headers - http-outgoing-0 >> User-Agent: Apache-HttpClient/4.3.5 (java 1.5)
-DEBUG main org.apache.http.headers - http-outgoing-0 >> Accept-Encoding: gzip,deflate
-DEBUG main org.apache.http.wire - http-outgoing-0 >> "POST /railway/contact HTTP/1.1[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 >> "content-type: application/json[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 >> "Content-Length: 108[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 >> "Host: localhost:3001[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 >> "Connection: Keep-Alive[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 >> "User-Agent: Apache-HttpClient/4.3.5 (java 1.5)[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 >> "Accept-Encoding: gzip,deflate[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 >> "[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 >> "{"projectKey":"ACC","sourcePath":"E:\\Development\\algorithemic-complexity-calculator\\TestData","files":[]}"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "HTTP/1.1 200 OK[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "X-Powered-By: Express[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "Access-Control-Allow-Origin: *[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "Content-Type: application/json; charset=utf-8[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "Content-Length: 108[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "ETag: W/"6c-47X8KIxKkVsFGV7ufx5NJz0eL/Q"[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "Date: Sun, 28 Jul 2019 02:17:37 GMT[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "Connection: keep-alive[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "{"projectKey":"ACC","sourcePath":"E:\\Development\\algorithemic-complexity-calculator\\TestData","files":[]}"
-DEBUG main org.apache.http.headers - http-outgoing-0 << HTTP/1.1 200 OK
-DEBUG main org.apache.http.headers - http-outgoing-0 << X-Powered-By: Express
-DEBUG main org.apache.http.headers - http-outgoing-0 << Access-Control-Allow-Origin: *
-DEBUG main org.apache.http.headers - http-outgoing-0 << Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept
-DEBUG main org.apache.http.headers - http-outgoing-0 << Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE
-DEBUG main org.apache.http.headers - http-outgoing-0 << Content-Type: application/json; charset=utf-8
-DEBUG main org.apache.http.headers - http-outgoing-0 << Content-Length: 108
-DEBUG main org.apache.http.headers - http-outgoing-0 << ETag: W/"6c-47X8KIxKkVsFGV7ufx5NJz0eL/Q"
-DEBUG main org.apache.http.headers - http-outgoing-0 << Date: Sun, 28 Jul 2019 02:17:37 GMT
-DEBUG main org.apache.http.headers - http-outgoing-0 << Connection: keep-alive
-DEBUG main org.apache.http.impl.execchain.MainClientExec - Connection can be kept alive indefinitely
-DEBUG main com.sliit.spm.core.App - ACCScanner start analyzing...
-INFO main com.sliit.spm.core.App - Analyzing project ACC...
-INFO main com.sliit.spm.core.App - Found source path E:\Development\algorithemic-complexity-calculator\TestData
-INFO main com.sliit.spm.acc.FileHandler - Found 0 Files in source path
-DEBUG main org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: best-match
-DEBUG main org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
-DEBUG main org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {}->http://localhost:3001][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
-DEBUG main org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 0][route: {}->http://localhost:3001][total kept alive: 0; route allocated: 1 of 2; total allocated: 1 of 20]
-DEBUG main org.apache.http.impl.execchain.MainClientExec - Opening connection {}->http://localhost:3001
-DEBUG main org.apache.http.impl.conn.HttpClientConnectionOperator - Connecting to localhost/127.0.0.1:3001
-DEBUG main org.apache.http.impl.conn.HttpClientConnectionOperator - Connection established 127.0.0.1:49769<->127.0.0.1:3001
-DEBUG main org.apache.http.impl.execchain.MainClientExec - Executing request POST /railway/contact HTTP/1.1
-DEBUG main org.apache.http.impl.execchain.MainClientExec - Target auth state: UNCHALLENGED
-DEBUG main org.apache.http.impl.execchain.MainClientExec - Proxy auth state: UNCHALLENGED
-DEBUG main org.apache.http.headers - http-outgoing-0 >> POST /railway/contact HTTP/1.1
-DEBUG main org.apache.http.headers - http-outgoing-0 >> content-type: application/json
-DEBUG main org.apache.http.headers - http-outgoing-0 >> Content-Length: 108
-DEBUG main org.apache.http.headers - http-outgoing-0 >> Host: localhost:3001
-DEBUG main org.apache.http.headers - http-outgoing-0 >> Connection: Keep-Alive
-DEBUG main org.apache.http.headers - http-outgoing-0 >> User-Agent: Apache-HttpClient/4.3.5 (java 1.5)
-DEBUG main org.apache.http.headers - http-outgoing-0 >> Accept-Encoding: gzip,deflate
-DEBUG main org.apache.http.wire - http-outgoing-0 >> "POST /railway/contact HTTP/1.1[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 >> "content-type: application/json[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 >> "Content-Length: 108[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 >> "Host: localhost:3001[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 >> "Connection: Keep-Alive[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 >> "User-Agent: Apache-HttpClient/4.3.5 (java 1.5)[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 >> "Accept-Encoding: gzip,deflate[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 >> "[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 >> "{"projectKey":"ACC","sourcePath":"E:\\Development\\algorithemic-complexity-calculator\\TestData","files":[]}"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "HTTP/1.1 200 OK[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "X-Powered-By: Express[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "Access-Control-Allow-Origin: *[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "Content-Type: application/json; charset=utf-8[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "Content-Length: 108[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "ETag: W/"6c-47X8KIxKkVsFGV7ufx5NJz0eL/Q"[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "Date: Sun, 28 Jul 2019 02:18:06 GMT[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "Connection: keep-alive[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "{"projectKey":"ACC","sourcePath":"E:\\Development\\algorithemic-complexity-calculator\\TestData","files":[]}"
-DEBUG main org.apache.http.headers - http-outgoing-0 << HTTP/1.1 200 OK
-DEBUG main org.apache.http.headers - http-outgoing-0 << X-Powered-By: Express
-DEBUG main org.apache.http.headers - http-outgoing-0 << Access-Control-Allow-Origin: *
-DEBUG main org.apache.http.headers - http-outgoing-0 << Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept
-DEBUG main org.apache.http.headers - http-outgoing-0 << Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE
-DEBUG main org.apache.http.headers - http-outgoing-0 << Content-Type: application/json; charset=utf-8
-DEBUG main org.apache.http.headers - http-outgoing-0 << Content-Length: 108
-DEBUG main org.apache.http.headers - http-outgoing-0 << ETag: W/"6c-47X8KIxKkVsFGV7ufx5NJz0eL/Q"
-DEBUG main org.apache.http.headers - http-outgoing-0 << Date: Sun, 28 Jul 2019 02:18:06 GMT
-DEBUG main org.apache.http.headers - http-outgoing-0 << Connection: keep-alive
-DEBUG main org.apache.http.impl.execchain.MainClientExec - Connection can be kept alive indefinitely
-DEBUG main com.sliit.spm.core.App - ACCScanner start analyzing...
-INFO main com.sliit.spm.core.App - Analyzing project ACC...
-INFO main com.sliit.spm.core.App - Found source path E:\Development\algorithemic-complexity-calculator\TestData
-INFO main com.sliit.spm.acc.FileHandler - Found 0 Files in source path
-DEBUG main org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: best-match
-DEBUG main org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
-DEBUG main org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {}->http://localhost:3001][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
-DEBUG main org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 0][route: {}->http://localhost:3001][total kept alive: 0; route allocated: 1 of 2; total allocated: 1 of 20]
-DEBUG main org.apache.http.impl.execchain.MainClientExec - Opening connection {}->http://localhost:3001
-DEBUG main org.apache.http.impl.conn.HttpClientConnectionOperator - Connecting to localhost/127.0.0.1:3001
-DEBUG main org.apache.http.impl.conn.HttpClientConnectionOperator - Connection established 127.0.0.1:49798<->127.0.0.1:3001
-DEBUG main org.apache.http.impl.execchain.MainClientExec - Executing request POST /railway/contact HTTP/1.1
-DEBUG main org.apache.http.impl.execchain.MainClientExec - Target auth state: UNCHALLENGED
-DEBUG main org.apache.http.impl.execchain.MainClientExec - Proxy auth state: UNCHALLENGED
-DEBUG main org.apache.http.headers - http-outgoing-0 >> POST /railway/contact HTTP/1.1
-DEBUG main org.apache.http.headers - http-outgoing-0 >> content-type: application/json
-DEBUG main org.apache.http.headers - http-outgoing-0 >> Content-Length: 108
-DEBUG main org.apache.http.headers - http-outgoing-0 >> Host: localhost:3001
-DEBUG main org.apache.http.headers - http-outgoing-0 >> Connection: Keep-Alive
-DEBUG main org.apache.http.headers - http-outgoing-0 >> User-Agent: Apache-HttpClient/4.3.5 (java 1.5)
-DEBUG main org.apache.http.headers - http-outgoing-0 >> Accept-Encoding: gzip,deflate
-DEBUG main org.apache.http.wire - http-outgoing-0 >> "POST /railway/contact HTTP/1.1[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 >> "content-type: application/json[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 >> "Content-Length: 108[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 >> "Host: localhost:3001[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 >> "Connection: Keep-Alive[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 >> "User-Agent: Apache-HttpClient/4.3.5 (java 1.5)[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 >> "Accept-Encoding: gzip,deflate[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 >> "[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 >> "{"projectKey":"ACC","sourcePath":"E:\\Development\\algorithemic-complexity-calculator\\TestData","files":[]}"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "HTTP/1.1 200 OK[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "X-Powered-By: Express[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "Access-Control-Allow-Origin: *[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "Content-Type: application/json; charset=utf-8[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "Content-Length: 108[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "ETag: W/"6c-47X8KIxKkVsFGV7ufx5NJz0eL/Q"[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "Date: Sun, 28 Jul 2019 02:18:53 GMT[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "Connection: keep-alive[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "{"projectKey":"ACC","sourcePath":"E:\\Development\\algorithemic-complexity-calculator\\TestData","files":[]}"
-DEBUG main org.apache.http.headers - http-outgoing-0 << HTTP/1.1 200 OK
-DEBUG main org.apache.http.headers - http-outgoing-0 << X-Powered-By: Express
-DEBUG main org.apache.http.headers - http-outgoing-0 << Access-Control-Allow-Origin: *
-DEBUG main org.apache.http.headers - http-outgoing-0 << Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept
-DEBUG main org.apache.http.headers - http-outgoing-0 << Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE
-DEBUG main org.apache.http.headers - http-outgoing-0 << Content-Type: application/json; charset=utf-8
-DEBUG main org.apache.http.headers - http-outgoing-0 << Content-Length: 108
-DEBUG main org.apache.http.headers - http-outgoing-0 << ETag: W/"6c-47X8KIxKkVsFGV7ufx5NJz0eL/Q"
-DEBUG main org.apache.http.headers - http-outgoing-0 << Date: Sun, 28 Jul 2019 02:18:53 GMT
-DEBUG main org.apache.http.headers - http-outgoing-0 << Connection: keep-alive
-DEBUG main org.apache.http.impl.execchain.MainClientExec - Connection can be kept alive indefinitely
-DEBUG main com.sliit.spm.core.App - ACCScanner start analyzing...
-INFO main com.sliit.spm.core.App - Analyzing project ACC...
-INFO main com.sliit.spm.core.App - Found source path E:\Development\algorithemic-complexity-calculator\TestData
-INFO main com.sliit.spm.acc.FileHandler - Found 0 Files in source path
-DEBUG main org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: best-match
-DEBUG main org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
-DEBUG main org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {}->http://localhost:3001][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
-DEBUG main org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 0][route: {}->http://localhost:3001][total kept alive: 0; route allocated: 1 of 2; total allocated: 1 of 20]
-DEBUG main org.apache.http.impl.execchain.MainClientExec - Opening connection {}->http://localhost:3001
-DEBUG main org.apache.http.impl.conn.HttpClientConnectionOperator - Connecting to localhost/127.0.0.1:3001
-DEBUG main org.apache.http.impl.conn.HttpClientConnectionOperator - Connection established 127.0.0.1:49925<->127.0.0.1:3001
-DEBUG main org.apache.http.impl.execchain.MainClientExec - Executing request POST /railway/contact HTTP/1.1
-DEBUG main org.apache.http.impl.execchain.MainClientExec - Target auth state: UNCHALLENGED
-DEBUG main org.apache.http.impl.execchain.MainClientExec - Proxy auth state: UNCHALLENGED
-DEBUG main org.apache.http.headers - http-outgoing-0 >> POST /railway/contact HTTP/1.1
-DEBUG main org.apache.http.headers - http-outgoing-0 >> content-type: application/json
-DEBUG main org.apache.http.headers - http-outgoing-0 >> Content-Length: 108
-DEBUG main org.apache.http.headers - http-outgoing-0 >> Host: localhost:3001
-DEBUG main org.apache.http.headers - http-outgoing-0 >> Connection: Keep-Alive
-DEBUG main org.apache.http.headers - http-outgoing-0 >> User-Agent: Apache-HttpClient/4.3.5 (java 1.5)
-DEBUG main org.apache.http.headers - http-outgoing-0 >> Accept-Encoding: gzip,deflate
-DEBUG main org.apache.http.wire - http-outgoing-0 >> "POST /railway/contact HTTP/1.1[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 >> "content-type: application/json[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 >> "Content-Length: 108[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 >> "Host: localhost:3001[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 >> "Connection: Keep-Alive[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 >> "User-Agent: Apache-HttpClient/4.3.5 (java 1.5)[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 >> "Accept-Encoding: gzip,deflate[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 >> "[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 >> "{"projectKey":"ACC","sourcePath":"E:\\Development\\algorithemic-complexity-calculator\\TestData","files":[]}"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "HTTP/1.1 200 OK[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "X-Powered-By: Express[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "Access-Control-Allow-Origin: *[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "Content-Type: application/json; charset=utf-8[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "Content-Length: 108[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "ETag: W/"6c-47X8KIxKkVsFGV7ufx5NJz0eL/Q"[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "Date: Sun, 28 Jul 2019 02:22:48 GMT[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "Connection: keep-alive[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "{"projectKey":"ACC","sourcePath":"E:\\Development\\algorithemic-complexity-calculator\\TestData","files":[]}"
-DEBUG main org.apache.http.headers - http-outgoing-0 << HTTP/1.1 200 OK
-DEBUG main org.apache.http.headers - http-outgoing-0 << X-Powered-By: Express
-DEBUG main org.apache.http.headers - http-outgoing-0 << Access-Control-Allow-Origin: *
-DEBUG main org.apache.http.headers - http-outgoing-0 << Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept
-DEBUG main org.apache.http.headers - http-outgoing-0 << Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE
-DEBUG main org.apache.http.headers - http-outgoing-0 << Content-Type: application/json; charset=utf-8
-DEBUG main org.apache.http.headers - http-outgoing-0 << Content-Length: 108
-DEBUG main org.apache.http.headers - http-outgoing-0 << ETag: W/"6c-47X8KIxKkVsFGV7ufx5NJz0eL/Q"
-DEBUG main org.apache.http.headers - http-outgoing-0 << Date: Sun, 28 Jul 2019 02:22:48 GMT
-DEBUG main org.apache.http.headers - http-outgoing-0 << Connection: keep-alive
-DEBUG main org.apache.http.impl.execchain.MainClientExec - Connection can be kept alive indefinitely
-INFO main com.sliit.spm.utils.Client - analysis data submitted to the server HTTP/1.1 200 OK
-DEBUG main com.sliit.spm.core.App - ACCScanner start analyzing...
-INFO main com.sliit.spm.core.App - Analyzing project ACC...
-INFO main com.sliit.spm.core.App - Found source path E:\Development\algorithemic-complexity-calculator\TestData
-INFO main com.sliit.spm.acc.FileHandler - Found 0 Files in source path
-DEBUG main org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: best-match
-DEBUG main org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
-DEBUG main org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {}->http://localhost:3001][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
-DEBUG main org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 0][route: {}->http://localhost:3001][total kept alive: 0; route allocated: 1 of 2; total allocated: 1 of 20]
-DEBUG main org.apache.http.impl.execchain.MainClientExec - Opening connection {}->http://localhost:3001
-DEBUG main org.apache.http.impl.conn.HttpClientConnectionOperator - Connecting to localhost/127.0.0.1:3001
-DEBUG main org.apache.http.impl.conn.HttpClientConnectionOperator - Connection established 127.0.0.1:50091<->127.0.0.1:3001
-DEBUG main org.apache.http.impl.execchain.MainClientExec - Executing request POST /railway/contact HTTP/1.1
-DEBUG main org.apache.http.impl.execchain.MainClientExec - Target auth state: UNCHALLENGED
-DEBUG main org.apache.http.impl.execchain.MainClientExec - Proxy auth state: UNCHALLENGED
-DEBUG main org.apache.http.headers - http-outgoing-0 >> POST /railway/contact HTTP/1.1
-DEBUG main org.apache.http.headers - http-outgoing-0 >> content-type: application/json
-DEBUG main org.apache.http.headers - http-outgoing-0 >> Content-Length: 108
-DEBUG main org.apache.http.headers - http-outgoing-0 >> Host: localhost:3001
-DEBUG main org.apache.http.headers - http-outgoing-0 >> Connection: Keep-Alive
-DEBUG main org.apache.http.headers - http-outgoing-0 >> User-Agent: Apache-HttpClient/4.3.5 (java 1.5)
-DEBUG main org.apache.http.headers - http-outgoing-0 >> Accept-Encoding: gzip,deflate
-DEBUG main org.apache.http.wire - http-outgoing-0 >> "POST /railway/contact HTTP/1.1[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 >> "content-type: application/json[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 >> "Content-Length: 108[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 >> "Host: localhost:3001[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 >> "Connection: Keep-Alive[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 >> "User-Agent: Apache-HttpClient/4.3.5 (java 1.5)[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 >> "Accept-Encoding: gzip,deflate[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 >> "[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 >> "{"projectKey":"ACC","sourcePath":"E:\\Development\\algorithemic-complexity-calculator\\TestData","files":[]}"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "HTTP/1.1 200 OK[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "X-Powered-By: Express[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "Access-Control-Allow-Origin: *[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "Content-Type: application/json; charset=utf-8[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "Content-Length: 108[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "ETag: W/"6c-47X8KIxKkVsFGV7ufx5NJz0eL/Q"[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "Date: Sun, 28 Jul 2019 02:27:15 GMT[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "Connection: keep-alive[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "{"projectKey":"ACC","sourcePath":"E:\\Development\\algorithemic-complexity-calculator\\TestData","files":[]}"
-DEBUG main org.apache.http.headers - http-outgoing-0 << HTTP/1.1 200 OK
-DEBUG main org.apache.http.headers - http-outgoing-0 << X-Powered-By: Express
-DEBUG main org.apache.http.headers - http-outgoing-0 << Access-Control-Allow-Origin: *
-DEBUG main org.apache.http.headers - http-outgoing-0 << Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept
-DEBUG main org.apache.http.headers - http-outgoing-0 << Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE
-DEBUG main org.apache.http.headers - http-outgoing-0 << Content-Type: application/json; charset=utf-8
-DEBUG main org.apache.http.headers - http-outgoing-0 << Content-Length: 108
-DEBUG main org.apache.http.headers - http-outgoing-0 << ETag: W/"6c-47X8KIxKkVsFGV7ufx5NJz0eL/Q"
-DEBUG main org.apache.http.headers - http-outgoing-0 << Date: Sun, 28 Jul 2019 02:27:15 GMT
-DEBUG main org.apache.http.headers - http-outgoing-0 << Connection: keep-alive
-DEBUG main org.apache.http.impl.execchain.MainClientExec - Connection can be kept alive indefinitely
-INFO main com.sliit.spm.utils.Client - analysis data submitted to the server HTTP/1.1 200 OK
-DEBUG main com.sliit.spm.core.App - ACCScanner start analyzing...
-INFO main com.sliit.spm.core.App - Analyzing project ACC...
-INFO main com.sliit.spm.core.App - Found source path E:\Development\algorithemic-complexity-calculator\TestData
-INFO main com.sliit.spm.acc.FileHandler - Found 0 Files in source path
-DEBUG main org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: best-match
-DEBUG main org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
-DEBUG main org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {}->http://localhost:3001][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
-DEBUG main org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 0][route: {}->http://localhost:3001][total kept alive: 0; route allocated: 1 of 2; total allocated: 1 of 20]
-DEBUG main org.apache.http.impl.execchain.MainClientExec - Opening connection {}->http://localhost:3001
-DEBUG main org.apache.http.impl.conn.HttpClientConnectionOperator - Connecting to localhost/127.0.0.1:3001
-DEBUG main org.apache.http.impl.conn.HttpClientConnectionOperator - Connection established 127.0.0.1:50112<->127.0.0.1:3001
-DEBUG main org.apache.http.impl.execchain.MainClientExec - Executing request POST /railway/contact HTTP/1.1
-DEBUG main org.apache.http.impl.execchain.MainClientExec - Target auth state: UNCHALLENGED
-DEBUG main org.apache.http.impl.execchain.MainClientExec - Proxy auth state: UNCHALLENGED
-DEBUG main org.apache.http.headers - http-outgoing-0 >> POST /railway/contact HTTP/1.1
-DEBUG main org.apache.http.headers - http-outgoing-0 >> content-type: application/json
-DEBUG main org.apache.http.headers - http-outgoing-0 >> Content-Length: 108
-DEBUG main org.apache.http.headers - http-outgoing-0 >> Host: localhost:3001
-DEBUG main org.apache.http.headers - http-outgoing-0 >> Connection: Keep-Alive
-DEBUG main org.apache.http.headers - http-outgoing-0 >> User-Agent: Apache-HttpClient/4.3.5 (java 1.5)
-DEBUG main org.apache.http.headers - http-outgoing-0 >> Accept-Encoding: gzip,deflate
-DEBUG main org.apache.http.wire - http-outgoing-0 >> "POST /railway/contact HTTP/1.1[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 >> "content-type: application/json[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 >> "Content-Length: 108[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 >> "Host: localhost:3001[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 >> "Connection: Keep-Alive[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 >> "User-Agent: Apache-HttpClient/4.3.5 (java 1.5)[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 >> "Accept-Encoding: gzip,deflate[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 >> "[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 >> "{"projectKey":"ACC","sourcePath":"E:\\Development\\algorithemic-complexity-calculator\\TestData","files":[]}"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "HTTP/1.1 200 OK[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "X-Powered-By: Express[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "Access-Control-Allow-Origin: *[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "Content-Type: application/json; charset=utf-8[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "Content-Length: 108[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "ETag: W/"6c-47X8KIxKkVsFGV7ufx5NJz0eL/Q"[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "Date: Sun, 28 Jul 2019 02:27:46 GMT[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "Connection: keep-alive[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "[\r][\n]"
-DEBUG main org.apache.http.wire - http-outgoing-0 << "{"projectKey":"ACC","sourcePath":"E:\\Development\\algorithemic-complexity-calculator\\TestData","files":[]}"
-DEBUG main org.apache.http.headers - http-outgoing-0 << HTTP/1.1 200 OK
-DEBUG main org.apache.http.headers - http-outgoing-0 << X-Powered-By: Express
-DEBUG main org.apache.http.headers - http-outgoing-0 << Access-Control-Allow-Origin: *
-DEBUG main org.apache.http.headers - http-outgoing-0 << Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept
-DEBUG main org.apache.http.headers - http-outgoing-0 << Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE
-DEBUG main org.apache.http.headers - http-outgoing-0 << Content-Type: application/json; charset=utf-8
-DEBUG main org.apache.http.headers - http-outgoing-0 << Content-Length: 108
-DEBUG main org.apache.http.headers - http-outgoing-0 << ETag: W/"6c-47X8KIxKkVsFGV7ufx5NJz0eL/Q"
-DEBUG main org.apache.http.headers - http-outgoing-0 << Date: Sun, 28 Jul 2019 02:27:46 GMT
-DEBUG main org.apache.http.headers - http-outgoing-0 << Connection: keep-alive
-DEBUG main org.apache.http.impl.execchain.MainClientExec - Connection can be kept alive indefinitely
-INFO main com.sliit.spm.utils.Client - analysis data submitted to the server HTTP/1.1 200 OK
-DEBUG main com.sliit.spm.core.App - ACCScanner start analyzing...
-INFO main com.sliit.spm.core.App - Analyzing project ACC...
-INFO main com.sliit.spm.core.App - Found source path E:\Development\algorithemic-complexity-calculator\TestData
-INFO main com.sliit.spm.acc.FileHandler - Found 0 Files in source path
-INFO main com.sliit.spm.utils.Client - analysis data submitted to the server HTTP/1.1 200 OK
-DEBUG main com.sliit.spm.core.App - ACCScanner start analyzing...
-INFO main com.sliit.spm.core.App - Analyzing project ACC...
-INFO main com.sliit.spm.core.App - Found source path E:\Development\algorithemic-complexity-calculator\TestData
-INFO main com.sliit.spm.acc.FileHandler - Found 0 Files in source path
-INFO main com.sliit.spm.utils.Client - analysis data submitted to the server HTTP/1.1 200 OK
-DEBUG main com.sliit.spm.core.App - ACCScanner start analyzing...
-INFO main com.sliit.spm.core.App - Analyzing project ACC...
-INFO main com.sliit.spm.core.App - Found source path E:\Development\algorithemic-complexity-calculator\TestData
-INFO main com.sliit.spm.acc.FileHandler - Found 2 Files in source path
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \FibonacciMain.java
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \MyException.java
-INFO main com.sliit.spm.utils.Client - analysis data submitted to the server HTTP/1.1 200 OK
-DEBUG main com.sliit.spm.core.App - ACCScanner start analyzing...
-INFO main com.sliit.spm.core.App - Analyzing project ACC...
-INFO main com.sliit.spm.core.App - Found source path E:\Development\algorithemic-complexity-calculator\TestData
-INFO main com.sliit.spm.acc.FileHandler - Found 2 Files in source path
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \FibonacciMain.java
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \MyException.java
-INFO main com.sliit.spm.utils.Client - submitting analysis data to the server 
-INFO main com.sliit.spm.utils.Client - analysis data submitted to the server HTTP/1.1 200 OK
-DEBUG main com.sliit.spm.core.App - ACCScanner start analyzing...
-INFO main com.sliit.spm.core.App - Analyzing project ACC...
-INFO main com.sliit.spm.core.App - Found source path E:\Development\algorithemic-complexity-calculator\TestData
-INFO main com.sliit.spm.acc.FileHandler - Found 2 Files in source path
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \FibonacciMain.java
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \MyException.java
-DEBUG main com.sliit.spm.utils.Client - submitting analysis data to the server 
-INFO main com.sliit.spm.utils.Client - analysis data submitted to the server HTTP/1.1 200 OK
-DEBUG main com.sliit.spm.core.App - ACCScanner start analyzing...
-INFO main com.sliit.spm.core.App - Analyzing project ACC...
-INFO main com.sliit.spm.core.App - Found source path E:\Development\algorithemic-complexity-calculator\TestData
-INFO main com.sliit.spm.acc.FileHandler - Found 2 Files in source path
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \FibonacciMain.java
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \MyException.java
-DEBUG main com.sliit.spm.utils.Client - Submitting analysis data to the server 
-INFO main com.sliit.spm.utils.Client - Analysis data submitted to the server HTTP/1.1 200 OK
-DEBUG main com.sliit.spm.core.App - ACCScanner start analyzing...
-INFO main com.sliit.spm.core.App - Analyzing project ACC...
-INFO main com.sliit.spm.core.App - Found source path E:\Development\algorithemic-complexity-calculator\TestData
-INFO main com.sliit.spm.acc.FileHandler - Found 2 Files in source path
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \FibonacciMain.java
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \MyException.java
-DEBUG main com.sliit.spm.utils.Client - Submitting analysis data to the server 
-DEBUG main com.sliit.spm.core.App - ACCScanner start analyzing...
-INFO main com.sliit.spm.core.App - Analyzing project ACC...
-INFO main com.sliit.spm.core.App - Found source path E:\Development\algorithemic-complexity-calculator\TestData
-INFO main com.sliit.spm.acc.FileHandler - Found 2 Files in source path
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \FibonacciMain.java
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \MyException.java
-DEBUG main com.sliit.spm.utils.Client - Submitting analysis data to the server 
-DEBUG main com.sliit.spm.core.App - ACCScanner start analyzing...
-INFO main com.sliit.spm.core.App - Analyzing project ACC...
-INFO main com.sliit.spm.core.App - Found source path E:\Development\algorithemic-complexity-calculator\TestData
-INFO main com.sliit.spm.acc.FileHandler - Found 2 Files in source path
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \FibonacciMain.java
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \MyException.java
-DEBUG main com.sliit.spm.utils.Client - Submitting analysis data to the server 
-ERROR main com.sliit.spm.utils.Client - Failed to submit data to the server 
-DEBUG main com.sliit.spm.core.App - ACCScanner start analyzing...
-INFO main com.sliit.spm.core.App - Analyzing project ACC...
-INFO main com.sliit.spm.core.App - Found source path E:\Development\algorithemic-complexity-calculator\TestData
-INFO main com.sliit.spm.acc.FileHandler - Found 0 Files in source path
-DEBUG main com.sliit.spm.utils.Client - Submitting analysis data to the server 
-ERROR main com.sliit.spm.utils.Client - Failed to submit data to the server 
-DEBUG main com.sliit.spm.core.App - ACCScanner start analyzing...
-INFO main com.sliit.spm.core.App - Analyzing project ACC...
-INFO main com.sliit.spm.core.App - Found source path E:\Development\algorithemic-complexity-calculator\ACCScanner\sampleTest
-INFO main com.sliit.spm.acc.FileHandler - Found 2 Files in source path
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \FibonacciMain.java
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \MyException.java
-DEBUG main com.sliit.spm.utils.Client - Submitting analysis data to the server 
-ERROR main com.sliit.spm.utils.Client - Failed to submit data to the server 
-DEBUG main com.sliit.spm.core.App - ACCScanner start analyzing...
-INFO main com.sliit.spm.core.App - Analyzing project ACC...
-INFO main com.sliit.spm.core.App - Found source path E:\Development\algorithemic-complexity-calculator\ACCScanner\sampleTest
-INFO main com.sliit.spm.acc.FileHandler - Found 2 Files in source path
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \FibonacciMain.java
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \MyException.java
-DEBUG main com.sliit.spm.utils.Client - Submitting analysis data to the server 
-ERROR main com.sliit.spm.utils.Client - Failed to submit data to the server 
-DEBUG main com.sliit.spm.core.App - ACCScanner start analyzing...
-INFO main com.sliit.spm.core.App - Analyzing project ACC...
-INFO main com.sliit.spm.core.App - Found source path E:\Development\algorithemic-complexity-calculator\ACCScanner\sampleTest
-INFO main com.sliit.spm.acc.FileHandler - Found 2 Files in source path
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \FibonacciMain.java
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \MyException.java
-DEBUG main com.sliit.spm.utils.Client - Submitting analysis data to the server...
-ERROR main com.sliit.spm.utils.Client - Failed to submit data to the server 
-DEBUG main com.sliit.spm.core.App - ACCScanner start analyzing...
-INFO main com.sliit.spm.core.App - Analyzing project ACC...
-INFO main com.sliit.spm.core.App - Found source path E:\Development\algorithemic-complexity-calculator
-INFO main com.sliit.spm.acc.FileHandler - Found 24 Files in source path
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \ACC\.mvn\wrapper\MavenWrapperDownloader.java
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \ACC\src\main\java\com\sliit\spm\AccApplication.java
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \ACC\src\main\java\com\sliit\spm\controller\ProjectController.java
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \ACC\src\main\java\com\sliit\spm\model\Line.java
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \ACC\src\main\java\com\sliit\spm\model\Project.java
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \ACC\src\main\java\com\sliit\spm\model\ProjectFile.java
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \ACC\src\main\java\com\sliit\spm\repository\ProjectRepo.java
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \ACC\src\main\java\com\sliit\spm\service\impl\ProjectServiceImpl.java
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \ACC\src\main\java\com\sliit\spm\service\ProjectService.java
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \ACC\src\test\java\com\sliit\spm\ACC\AccApplicationTests.java
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \ACCScanner\sampleTest\FibonacciMain.java
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \ACCScanner\sampleTest\MyException.java
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \ACCScanner\src\main\java\com\sliit\spm\acc\Ci.java
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \ACCScanner\src\main\java\com\sliit\spm\acc\Cs.java
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \ACCScanner\src\main\java\com\sliit\spm\acc\Ctc.java
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \ACCScanner\src\main\java\com\sliit\spm\acc\FileHandler.java
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \ACCScanner\src\main\java\com\sliit\spm\core\App.java
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \ACCScanner\src\main\java\com\sliit\spm\model\Line.java
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \ACCScanner\src\main\java\com\sliit\spm\model\Project.java
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \ACCScanner\src\main\java\com\sliit\spm\model\ProjectFile.java
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \ACCScanner\src\main\java\com\sliit\spm\utils\Client.java
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \ACCScanner\src\main\java\com\sliit\spm\utils\ErrorMessages.java
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \ACCScanner\src\main\java\com\sliit\spm\utils\MethodAndVariableFinder.java
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \ACCScanner\src\main\java\com\sliit\spm\utils\PropertyReader.java
-DEBUG main com.sliit.spm.utils.Client - Submitting analysis data to the server...
-ERROR main com.sliit.spm.utils.Client - Failed to submit data to the server 
-DEBUG main com.sliit.spm.core.App - ACCScanner start analyzing...
-INFO main com.sliit.spm.core.App - Analyzing project ACC...
-INFO main com.sliit.spm.core.App - Found source path E:\Development\algorithemic-complexity-calculator\sampleTest
-INFO main com.sliit.spm.acc.FileHandler - Found 0 Files in source path
-DEBUG main com.sliit.spm.utils.Client - Submitting analysis data to the server...
-ERROR main com.sliit.spm.utils.Client - Failed to submit data to the server 
-DEBUG main com.sliit.spm.core.App - ACCScanner start analyzing...
-INFO main com.sliit.spm.core.App - Analyzing project ACC...
-INFO main com.sliit.spm.core.App - Found source path E:\Development\algorithemic-complexity-calculator\ACCScanner\sampleTest
-INFO main com.sliit.spm.acc.FileHandler - Found 2 Files in source path
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \FibonacciMain.java
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \MyException.java
-DEBUG main com.sliit.spm.utils.Client - Submitting analysis data to the server...
-ERROR main com.sliit.spm.utils.Client - Failed to submit data to the server 
-DEBUG main com.sliit.spm.core.App - ACCScanner start analyzing...
-INFO main com.sliit.spm.core.App - Analyzing project ACC...
-INFO main com.sliit.spm.core.App - Found source path E:\Development\algorithemic-complexity-calculator\ACCScanner\sampleTest
-INFO main com.sliit.spm.acc.FileHandler - Found 3 Files in source path
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \FibonacciMain.java
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \MyException.java
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \SwitchStatementTest.java
-DEBUG main com.sliit.spm.utils.Client - Submitting analysis data to the server...
-ERROR main com.sliit.spm.utils.Client - Failed to submit data to the server 
-DEBUG main com.sliit.spm.core.App - ACCScanner start analyzing...
-INFO main com.sliit.spm.core.App - Analyzing project ACC...
-INFO main com.sliit.spm.core.App - Found source path E:\Development\algorithemic-complexity-calculator\ACCScanner\sampleTest
-INFO main com.sliit.spm.acc.FileHandler - Found 3 Files in source path
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \FibonacciMain.java
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \MyException.java
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \SwitchStatementTest.java
-DEBUG main com.sliit.spm.utils.Client - Submitting analysis data to the server...
-ERROR main com.sliit.spm.utils.Client - Failed to submit data to the server 
-DEBUG main com.sliit.spm.core.App - ACCScanner start analyzing...
-INFO main com.sliit.spm.core.App - Analyzing project ACC...
-INFO main com.sliit.spm.core.App - Found source path E:\Development\algorithemic-complexity-calculator\ACCScanner\sampleTest
-INFO main com.sliit.spm.acc.FileHandler - Found 3 Files in source path
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \FibonacciMain.java
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \MyException.java
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \SwitchStatementTest.java
-DEBUG main com.sliit.spm.utils.Client - Submitting analysis data to the server...
-ERROR main com.sliit.spm.utils.Client - Failed to submit data to the server 
-DEBUG main com.sliit.spm.core.App - ACCScanner start analyzing...
-INFO main com.sliit.spm.core.App - Analyzing project ACC...
-INFO main com.sliit.spm.core.App - Found source path E:\Development\algorithemic-complexity-calculator\ACCScanner\sampleTest
-INFO main com.sliit.spm.acc.FileHandler - Found 3 Files in source path
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \FibonacciMain.java
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \MyException.java
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \SwitchStatementTest.java
-DEBUG main com.sliit.spm.utils.Client - Submitting analysis data to the server...
-ERROR main com.sliit.spm.utils.Client - Failed to submit data to the server 
-DEBUG main com.sliit.spm.core.App - ACCScanner start analyzing...
-INFO main com.sliit.spm.core.App - Analyzing project ACC...
-INFO main com.sliit.spm.core.App - Found source path E:\Development\algorithemic-complexity-calculator\ACCScanner\sampleTest
-INFO main com.sliit.spm.acc.FileHandler - Found 3 Files in source path
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \FibonacciMain.java
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \MyException.java
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \SwitchStatementTest.java
-DEBUG main com.sliit.spm.utils.Client - Submitting analysis data to the server...
-ERROR main com.sliit.spm.utils.Client - Failed to submit data to the server 
-DEBUG main com.sliit.spm.core.App - ACCScanner start analyzing...
-INFO main com.sliit.spm.core.App - Analyzing project ACC...
-INFO main com.sliit.spm.core.App - Found source path E:\Development\algorithemic-complexity-calculator\ACCScanner\sampleTest
-INFO main com.sliit.spm.acc.FileHandler - Found 3 Files in source path
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \FibonacciMain.java
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \MyException.java
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \SwitchStatementTest.java
-DEBUG main com.sliit.spm.utils.Client - Submitting analysis data to the server...
-ERROR main com.sliit.spm.utils.Client - Failed to submit data to the server 
-DEBUG main com.sliit.spm.core.App - ACCScanner start analyzing...
-INFO main com.sliit.spm.core.App - Analyzing project ACC...
-INFO main com.sliit.spm.core.App - Found source path E:\Development\algorithemic-complexity-calculator\ACCScanner\sampleTest
-INFO main com.sliit.spm.acc.FileHandler - Found 3 Files in source path
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \FibonacciMain.java
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \MyException.java
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \SwitchStatementTest.java
-DEBUG main com.sliit.spm.utils.Client - Submitting analysis data to the server...
-ERROR main com.sliit.spm.utils.Client - Failed to submit data to the server 
-DEBUG main com.sliit.spm.core.App - ACCScanner start analyzing...
-INFO main com.sliit.spm.core.App - Analyzing project ACC...
-INFO main com.sliit.spm.core.App - Found source path E:\Development\algorithemic-complexity-calculator\ACCScanner\sampleTest
-INFO main com.sliit.spm.acc.FileHandler - Found 3 Files in source path
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \FibonacciMain.java
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \MyException.java
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \SwitchStatementTest.java
-DEBUG main com.sliit.spm.utils.Client - Submitting analysis data to the server...
-ERROR main com.sliit.spm.utils.Client - Failed to submit data to the server 
-DEBUG main com.sliit.spm.core.App - ACCScanner start analyzing...
-INFO main com.sliit.spm.core.App - Analyzing project ACC...
-INFO main com.sliit.spm.core.App - Found source path E:\Development\algorithemic-complexity-calculator\ACCScanner\sampleTest
-INFO main com.sliit.spm.acc.FileHandler - Found 3 Files in source path
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \FibonacciMain.java
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \MyException.java
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \SwitchStatementTest.java
-DEBUG main com.sliit.spm.utils.Client - Submitting analysis data to the server...
-ERROR main com.sliit.spm.utils.Client - Failed to submit data to the server 
-DEBUG main com.sliit.spm.core.App - ACCScanner start analyzing...
-INFO main com.sliit.spm.core.App - Analyzing project ACC...
-INFO main com.sliit.spm.core.App - Found source path E:\Development\algorithemic-complexity-calculator\ACCScanner\sampleTest
-INFO main com.sliit.spm.acc.FileHandler - Found 3 Files in source path
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \FibonacciMain.java
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \MyException.java
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \SwitchStatementTest.java
-DEBUG main com.sliit.spm.utils.Client - Submitting analysis data to the server...
-ERROR main com.sliit.spm.utils.Client - Failed to submit data to the server 
-DEBUG main com.sliit.spm.core.App - ACCScanner start analyzing...
-INFO main com.sliit.spm.core.App - Analyzing project ACC...
-INFO main com.sliit.spm.core.App - Found source path E:\Development\algorithemic-complexity-calculator\ACCScanner\sampleTest
-INFO main com.sliit.spm.acc.FileHandler - Found 3 Files in source path
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \FibonacciMain.java
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \MyException.java
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \SwitchStatementTest.java
-DEBUG main com.sliit.spm.utils.Client - Submitting analysis data to the server...
-ERROR main com.sliit.spm.utils.Client - Failed to submit data to the server 
-DEBUG main com.sliit.spm.core.App - ACCScanner start analyzing...
-INFO main com.sliit.spm.core.App - Analyzing project ACC...
-INFO main com.sliit.spm.core.App - Found source path E:\Development\algorithemic-complexity-calculator\ACCScanner\sampleTest
-INFO main com.sliit.spm.acc.FileHandler - Found 3 Files in source path
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \FibonacciMain.java
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \MyException.java
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \SwitchStatementTest.java
-DEBUG main com.sliit.spm.utils.Client - Submitting analysis data to the server...
-ERROR main com.sliit.spm.utils.Client - Failed to submit data to the server 
-DEBUG main com.sliit.spm.core.App - ACCScanner start analyzing...
-INFO main com.sliit.spm.core.App - Analyzing project ACC...
-INFO main com.sliit.spm.core.App - Found source path E:\Development\algorithemic-complexity-calculator\ACCScanner\sampleTest
-INFO main com.sliit.spm.acc.FileHandler - Found 4 Files in source path
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \FibonacciMain.java
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \MyException.java
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \SwitchStatementTest.java
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
 ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
 ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
 ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
@@ -844,7 +202,6 @@ ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
 ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
 ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
 DEBUG main com.sliit.spm.utils.Client - Submitting analysis data to the server...
-ERROR main com.sliit.spm.utils.Client - Failed to submit data to the server 
 DEBUG main com.sliit.spm.core.App - ACCScanner start analyzing...
 INFO main com.sliit.spm.core.App - Analyzing project ACC...
 INFO main com.sliit.spm.core.App - Found source path E:\Development\algorithemic-complexity-calculator\ACCScanner\sampleTest
@@ -936,309 +293,104 @@ INFO main com.sliit.spm.core.App - Analyzing project ACC...
 INFO main com.sliit.spm.core.App - Found source path E:\Development\algorithemic-complexity-calculator\ACCScanner\sampleTest
 INFO main com.sliit.spm.acc.FileHandler - Found 4 Files in source path
 DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \FibonacciMain.java
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
 DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \MyException.java
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
 DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \SwitchStatementTest.java
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
 DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \test.java
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
 DEBUG main com.sliit.spm.utils.Client - Submitting analysis data to the server...
+INFO main com.sliit.spm.utils.Client - {"projectKey":"ACC","sourcePath":"E:\\Development\\algorithemic-complexity-calculator\\ACCScanner\\sampleTest","language":"Java","files":[{"relativePath":"\\FibonacciMain.java","linesData":[{"lineNo":1,"data":"public class FibonacciMain {","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":2,"data":"    public static long fibonacci(long number) {","cs":4,"ctc":0,"cnc":0,"ci":2,"cps":8,"tw":0,"cr":16},{"lineNo":3,"data":"        if ((number == 0) || (number == 1)) {","cs":8,"ctc":2,"cnc":1,"ci":2,"cps":40,"tw":0,"cr":80},{"lineNo":4,"data":"            return number;","cs":1,"ctc":0,"cnc":1,"ci":2,"cps":3,"tw":0,"cr":6},{"lineNo":5,"data":"        } else {","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":6,"data":"            // recursion step","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":7,"data":"            return fibonacci(number - 1) + fibonacci(number - 2);","cs":9,"ctc":0,"cnc":0,"ci":2,"cps":18,"tw":0,"cr":36},{"lineNo":8,"data":"        }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":9,"data":"    }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":10,"data":"","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":11,"data":"    public static void main(String args[]) {","cs":4,"ctc":0,"cnc":0,"ci":2,"cps":8,"tw":0,"cr":0},{"lineNo":12,"data":"        for (int count = 0; count <= 10; count++) {","cs":10,"ctc":2,"cnc":1,"ci":2,"cps":50,"tw":0,"cr":0},{"lineNo":13,"data":"            System.out.println(\"Fibonacci of \" + count + \" is \" + fibonacci(count));","cs":13,"ctc":0,"cnc":1,"ci":2,"cps":39,"tw":0,"cr":0},{"lineNo":14,"data":"        }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":15,"data":"    }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":16,"data":"}   ","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0}],"cp":0},{"relativePath":"\\MyException.java","linesData":[{"lineNo":1,"data":"import java.io.*;","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":2,"data":"","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":3,"data":"public class MyException {","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":4,"data":"    static void accessFiles() throws FileNotFoundException {","cs":5,"ctc":0,"cnc":0,"ci":2,"cps":10,"tw":0,"cr":20},{"lineNo":5,"data":"        try {","cs":0,"ctc":0,"cnc":0,"ci":2,"cps":0,"tw":0,"cr":0},{"lineNo":6,"data":"            FileReader f = new FileReader(\"D:\\\\Exceptions.doc\");","cs":7,"ctc":0,"cnc":0,"ci":2,"cps":14,"tw":0,"cr":28},{"lineNo":7,"data":"            System.out.println(\"File found\");","cs":6,"ctc":0,"cnc":0,"ci":2,"cps":12,"tw":0,"cr":24},{"lineNo":8,"data":"        } catch (FileNotFoundException e) {","cs":3,"ctc":1,"cnc":0,"ci":2,"cps":9,"tw":0,"cr":0},{"lineNo":9,"data":"            System.out.println(e.getMessage(asa));","cs":8,"ctc":0,"cnc":0,"ci":2,"cps":16,"tw":0,"cr":0},{"lineNo":10,"data":"            throw e; // Rethrows the exception","cs":3,"ctc":0,"cnc":0,"ci":2,"cps":6,"tw":0,"cr":0},{"lineNo":11,"data":"        }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":12,"data":"    }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":13,"data":"","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":14,"data":"    public static void main(String[] args) {","cs":4,"ctc":0,"cnc":0,"ci":2,"cps":8,"tw":0,"cr":0},{"lineNo":15,"data":"        try {","cs":0,"ctc":0,"cnc":0,"ci":2,"cps":0,"tw":0,"cr":0},{"lineNo":16,"data":"            accessFiles();","cs":1,"ctc":0,"cnc":0,"ci":2,"cps":2,"tw":0,"cr":0},{"lineNo":17,"data":"        } catch (FileNotFoundException e) {","cs":3,"ctc":1,"cnc":0,"ci":2,"cps":9,"tw":0,"cr":0},{"lineNo":18,"data":"            System.out.println(\"File cannot be found!\");","cs":6,"ctc":0,"cnc":0,"ci":2,"cps":12,"tw":0,"cr":0},{"lineNo":19,"data":"        }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":20,"data":"    }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":21,"data":"}","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0}],"cp":0},{"relativePath":"\\SwitchStatementTest.java","linesData":[{"lineNo":1,"data":"public class SwitchStatementTest extends a implements c, v {","cs":1,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":2,"data":"    public static long test(long number) {","cs":4,"ctc":0,"cnc":0,"ci":5,"cps":20,"tw":0,"cr":40},{"lineNo":3,"data":"        int x;","cs":1,"ctc":0,"cnc":0,"ci":5,"cps":5,"tw":0,"cr":10},{"lineNo":4,"data":"        switch (var) {","cs":1,"ctc":2,"cnc":1,"ci":5,"cps":6,"tw":0,"cr":12},{"lineNo":5,"data":"            case x:","cs":1,"ctc":0,"cnc":1,"ci":5,"cps":6,"tw":0,"cr":12},{"lineNo":6,"data":"                break;","cs":0,"ctc":0,"cnc":1,"ci":5,"cps":0,"tw":0,"cr":0},{"lineNo":7,"data":"            case \"aa\":","cs":2,"ctc":0,"cnc":1,"ci":5,"cps":12,"tw":0,"cr":24},{"lineNo":8,"data":"                break;","cs":0,"ctc":0,"cnc":1,"ci":5,"cps":0,"tw":0,"cr":0},{"lineNo":9,"data":"            default:","cs":0,"ctc":0,"cnc":1,"ci":5,"cps":0,"tw":0,"cr":0},{"lineNo":10,"data":"        }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":11,"data":"    }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":12,"data":"","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":13,"data":"    public static void main(String args[]) {","cs":4,"ctc":0,"cnc":0,"ci":5,"cps":20,"tw":0,"cr":0},{"lineNo":14,"data":"        for (int count = 0; count <= 10; count++) {","cs":10,"ctc":2,"cnc":1,"ci":5,"cps":80,"tw":0,"cr":0},{"lineNo":15,"data":"            System.out.println(\"Fibonacci of \" + count + \" is \" + fibonacci(count));","cs":13,"ctc":0,"cnc":1,"ci":5,"cps":78,"tw":0,"cr":0},{"lineNo":16,"data":"        }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":17,"data":"    }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":18,"data":"}   ","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0}],"cp":0},{"relativePath":"\\test.java","linesData":[{"lineNo":1,"data":"public class FibonacciMain {","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":2,"data":" public static long fibonacci(long number) {","cs":4,"ctc":0,"cnc":0,"ci":2,"cps":8,"tw":0,"cr":16},{"lineNo":3,"data":"  if ((number == 0) || (number == 1)) {","cs":8,"ctc":2,"cnc":1,"ci":2,"cps":40,"tw":0,"cr":80},{"lineNo":4,"data":"   return number;","cs":1,"ctc":0,"cnc":1,"ci":2,"cps":3,"tw":0,"cr":6},{"lineNo":5,"data":"  } else {","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":6,"data":"   // recursion step","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":7,"data":"   return fibonacci(number - 1) + fibonacci(number - 2);","cs":9,"ctc":0,"cnc":0,"ci":2,"cps":18,"tw":0,"cr":36},{"lineNo":8,"data":"  }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":9,"data":" }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":10,"data":" public static long fibonacci1(long number) {","cs":5,"ctc":0,"cnc":0,"ci":2,"cps":10,"tw":0,"cr":20},{"lineNo":11,"data":"  if ((number == 0) || (number == 1)) {","cs":8,"ctc":2,"cnc":1,"ci":2,"cps":40,"tw":0,"cr":80},{"lineNo":12,"data":"   return number;","cs":1,"ctc":0,"cnc":1,"ci":2,"cps":3,"tw":0,"cr":6},{"lineNo":13,"data":"  } else {","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":14,"data":"   // recursion step","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":15,"data":"   return fibonacci1(number - 1) + fibonacci(number - 2);","cs":10,"ctc":0,"cnc":0,"ci":2,"cps":20,"tw":0,"cr":40},{"lineNo":16,"data":"  }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":17,"data":" }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":18,"data":"","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":19,"data":" public static void main(String args[]) {","cs":4,"ctc":0,"cnc":0,"ci":2,"cps":8,"tw":0,"cr":0},{"lineNo":20,"data":"  for (int count = 0; count <= 10; count++) {","cs":10,"ctc":2,"cnc":1,"ci":2,"cps":50,"tw":0,"cr":0},{"lineNo":21,"data":"","cs":0,"ctc":0,"cnc":1,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":22,"data":"   System.out.println(\"Fibonacci of \" + count + \" is \" + fibonacci(count));","cs":13,"ctc":0,"cnc":1,"ci":2,"cps":39,"tw":0,"cr":0},{"lineNo":23,"data":"  }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":24,"data":" }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":25,"data":"}","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0}],"cp":0}]}
 ERROR main com.sliit.spm.utils.Client - Failed to submit data to the server 
 DEBUG main com.sliit.spm.core.App - ACCScanner start analyzing...
 INFO main com.sliit.spm.core.App - Analyzing project ACC...
 INFO main com.sliit.spm.core.App - Found source path E:\Development\algorithemic-complexity-calculator\ACCScanner\sampleTest
 INFO main com.sliit.spm.acc.FileHandler - Found 4 Files in source path
 DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \FibonacciMain.java
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
 DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \MyException.java
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
 DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \SwitchStatementTest.java
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
 DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \test.java
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
 DEBUG main com.sliit.spm.utils.Client - Submitting analysis data to the server...
+INFO main com.sliit.spm.utils.Client - {"projectKey":"ACC","sourcePath":"E:\\Development\\algorithemic-complexity-calculator\\ACCScanner\\sampleTest","language":"Java","files":[{"relativePath":"\\FibonacciMain.java","linesData":[{"lineNo":1,"data":"public class FibonacciMain {","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":2,"data":"    public static long fibonacci(long number) {","cs":4,"ctc":0,"cnc":0,"ci":2,"cps":8,"tw":2,"cr":16},{"lineNo":3,"data":"        if ((number == 0) || (number == 1)) {","cs":8,"ctc":2,"cnc":1,"ci":2,"cps":40,"tw":5,"cr":80},{"lineNo":4,"data":"            return number;","cs":1,"ctc":0,"cnc":1,"ci":2,"cps":3,"tw":3,"cr":6},{"lineNo":5,"data":"        } else {","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":6,"data":"            // recursion step","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":7,"data":"            return fibonacci(number - 1) + fibonacci(number - 2);","cs":9,"ctc":0,"cnc":0,"ci":2,"cps":18,"tw":2,"cr":36},{"lineNo":8,"data":"        }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":9,"data":"    }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":10,"data":"","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":11,"data":"    public static void main(String args[]) {","cs":4,"ctc":0,"cnc":0,"ci":2,"cps":8,"tw":2,"cr":0},{"lineNo":12,"data":"        for (int count = 0; count <= 10; count++) {","cs":10,"ctc":2,"cnc":1,"ci":2,"cps":50,"tw":5,"cr":0},{"lineNo":13,"data":"            System.out.println(\"Fibonacci of \" + count + \" is \" + fibonacci(count));","cs":13,"ctc":0,"cnc":1,"ci":2,"cps":39,"tw":3,"cr":0},{"lineNo":14,"data":"        }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":15,"data":"    }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":16,"data":"}   ","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0}],"cp":0},{"relativePath":"\\MyException.java","linesData":[{"lineNo":1,"data":"import java.io.*;","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":2,"data":"","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":3,"data":"public class MyException {","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":4,"data":"    static void accessFiles() throws FileNotFoundException {","cs":5,"ctc":0,"cnc":0,"ci":2,"cps":10,"tw":2,"cr":20},{"lineNo":5,"data":"        try {","cs":0,"ctc":0,"cnc":0,"ci":2,"cps":0,"tw":2,"cr":0},{"lineNo":6,"data":"            FileReader f = new FileReader(\"D:\\\\Exceptions.doc\");","cs":7,"ctc":0,"cnc":0,"ci":2,"cps":14,"tw":2,"cr":28},{"lineNo":7,"data":"            System.out.println(\"File found\");","cs":6,"ctc":0,"cnc":0,"ci":2,"cps":12,"tw":2,"cr":24},{"lineNo":8,"data":"        } catch (FileNotFoundException e) {","cs":3,"ctc":1,"cnc":0,"ci":2,"cps":9,"tw":3,"cr":0},{"lineNo":9,"data":"            System.out.println(e.getMessage(asa));","cs":8,"ctc":0,"cnc":0,"ci":2,"cps":16,"tw":2,"cr":0},{"lineNo":10,"data":"            throw e; // Rethrows the exception","cs":3,"ctc":0,"cnc":0,"ci":2,"cps":6,"tw":2,"cr":0},{"lineNo":11,"data":"        }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":12,"data":"    }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":13,"data":"","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":14,"data":"    public static void main(String[] args) {","cs":4,"ctc":0,"cnc":0,"ci":2,"cps":8,"tw":2,"cr":0},{"lineNo":15,"data":"        try {","cs":0,"ctc":0,"cnc":0,"ci":2,"cps":0,"tw":2,"cr":0},{"lineNo":16,"data":"            accessFiles();","cs":1,"ctc":0,"cnc":0,"ci":2,"cps":2,"tw":2,"cr":0},{"lineNo":17,"data":"        } catch (FileNotFoundException e) {","cs":3,"ctc":1,"cnc":0,"ci":2,"cps":9,"tw":3,"cr":0},{"lineNo":18,"data":"            System.out.println(\"File cannot be found!\");","cs":6,"ctc":0,"cnc":0,"ci":2,"cps":12,"tw":2,"cr":0},{"lineNo":19,"data":"        }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":20,"data":"    }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":21,"data":"}","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0}],"cp":0},{"relativePath":"\\SwitchStatementTest.java","linesData":[{"lineNo":1,"data":"public class SwitchStatementTest extends a implements c, v {","cs":1,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":2,"data":"    public static long test(long number) {","cs":4,"ctc":0,"cnc":0,"ci":5,"cps":20,"tw":5,"cr":40},{"lineNo":3,"data":"        int x;","cs":1,"ctc":0,"cnc":0,"ci":5,"cps":5,"tw":5,"cr":10},{"lineNo":4,"data":"        switch (var) {","cs":1,"ctc":2,"cnc":1,"ci":5,"cps":6,"tw":6,"cr":12},{"lineNo":5,"data":"            case x:","cs":1,"ctc":0,"cnc":1,"ci":5,"cps":6,"tw":6,"cr":12},{"lineNo":6,"data":"                break;","cs":0,"ctc":0,"cnc":1,"ci":5,"cps":0,"tw":6,"cr":0},{"lineNo":7,"data":"            case \"aa\":","cs":2,"ctc":0,"cnc":1,"ci":5,"cps":12,"tw":6,"cr":24},{"lineNo":8,"data":"                break;","cs":0,"ctc":0,"cnc":1,"ci":5,"cps":0,"tw":6,"cr":0},{"lineNo":9,"data":"            default:","cs":0,"ctc":0,"cnc":1,"ci":5,"cps":0,"tw":6,"cr":0},{"lineNo":10,"data":"        }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":11,"data":"    }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":12,"data":"","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":13,"data":"    public static void main(String args[]) {","cs":4,"ctc":0,"cnc":0,"ci":5,"cps":20,"tw":5,"cr":0},{"lineNo":14,"data":"        for (int count = 0; count <= 10; count++) {","cs":10,"ctc":2,"cnc":1,"ci":5,"cps":80,"tw":8,"cr":0},{"lineNo":15,"data":"            System.out.println(\"Fibonacci of \" + count + \" is \" + fibonacci(count));","cs":13,"ctc":0,"cnc":1,"ci":5,"cps":78,"tw":6,"cr":0},{"lineNo":16,"data":"        }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":17,"data":"    }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":18,"data":"}   ","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0}],"cp":0},{"relativePath":"\\test.java","linesData":[{"lineNo":1,"data":"public class FibonacciMain {","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":2,"data":" public static long fibonacci(long number) {","cs":4,"ctc":0,"cnc":0,"ci":2,"cps":8,"tw":2,"cr":16},{"lineNo":3,"data":"  if ((number == 0) || (number == 1)) {","cs":8,"ctc":2,"cnc":1,"ci":2,"cps":40,"tw":5,"cr":80},{"lineNo":4,"data":"   return number;","cs":1,"ctc":0,"cnc":1,"ci":2,"cps":3,"tw":3,"cr":6},{"lineNo":5,"data":"  } else {","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":6,"data":"   // recursion step","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":7,"data":"   return fibonacci(number - 1) + fibonacci(number - 2);","cs":9,"ctc":0,"cnc":0,"ci":2,"cps":18,"tw":2,"cr":36},{"lineNo":8,"data":"  }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":9,"data":" }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":10,"data":" public static long fibonacci1(long number) {","cs":5,"ctc":0,"cnc":0,"ci":2,"cps":10,"tw":2,"cr":20},{"lineNo":11,"data":"  if ((number == 0) || (number == 1)) {","cs":8,"ctc":2,"cnc":1,"ci":2,"cps":40,"tw":5,"cr":80},{"lineNo":12,"data":"   return number;","cs":1,"ctc":0,"cnc":1,"ci":2,"cps":3,"tw":3,"cr":6},{"lineNo":13,"data":"  } else {","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":14,"data":"   // recursion step","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":15,"data":"   return fibonacci1(number - 1) + fibonacci(number - 2);","cs":10,"ctc":0,"cnc":0,"ci":2,"cps":20,"tw":2,"cr":40},{"lineNo":16,"data":"  }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":17,"data":" }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":18,"data":"","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":19,"data":" public static void main(String args[]) {","cs":4,"ctc":0,"cnc":0,"ci":2,"cps":8,"tw":2,"cr":0},{"lineNo":20,"data":"  for (int count = 0; count <= 10; count++) {","cs":10,"ctc":2,"cnc":1,"ci":2,"cps":50,"tw":5,"cr":0},{"lineNo":21,"data":"","cs":0,"ctc":0,"cnc":1,"ci":0,"cps":0,"tw":1,"cr":0},{"lineNo":22,"data":"   System.out.println(\"Fibonacci of \" + count + \" is \" + fibonacci(count));","cs":13,"ctc":0,"cnc":1,"ci":2,"cps":39,"tw":3,"cr":0},{"lineNo":23,"data":"  }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":24,"data":" }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":25,"data":"}","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0}],"cp":0}]}
 ERROR main com.sliit.spm.utils.Client - Failed to submit data to the server 
 DEBUG main com.sliit.spm.core.App - ACCScanner start analyzing...
 INFO main com.sliit.spm.core.App - Analyzing project ACC...
 INFO main com.sliit.spm.core.App - Found source path E:\Development\algorithemic-complexity-calculator\ACCScanner\sampleTest
 INFO main com.sliit.spm.acc.FileHandler - Found 4 Files in source path
 DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \FibonacciMain.java
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
 DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \MyException.java
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
 DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \SwitchStatementTest.java
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
 DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \test.java
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
 DEBUG main com.sliit.spm.utils.Client - Submitting analysis data to the server...
+INFO main com.sliit.spm.utils.Client - {"projectKey":"ACC","sourcePath":"E:\\Development\\algorithemic-complexity-calculator\\ACCScanner\\sampleTest","language":"Java","files":[{"relativePath":"\\FibonacciMain.java","linesData":[{"lineNo":1,"data":"public class FibonacciMain {","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":2,"data":"    public static long fibonacci(long number) {","cs":4,"ctc":0,"cnc":0,"ci":2,"cps":8,"tw":2,"cr":16},{"lineNo":3,"data":"        if ((number == 0) || (number == 1)) {","cs":8,"ctc":2,"cnc":1,"ci":2,"cps":40,"tw":5,"cr":80},{"lineNo":4,"data":"            return number;","cs":1,"ctc":0,"cnc":1,"ci":2,"cps":3,"tw":3,"cr":6},{"lineNo":5,"data":"        } else {","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":6,"data":"            // recursion step","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":7,"data":"            return fibonacci(number - 1) + fibonacci(number - 2);","cs":9,"ctc":0,"cnc":0,"ci":2,"cps":18,"tw":2,"cr":36},{"lineNo":8,"data":"        }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":9,"data":"    }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":10,"data":"","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":11,"data":"    public static void main(String args[]) {","cs":4,"ctc":0,"cnc":0,"ci":2,"cps":8,"tw":2,"cr":0},{"lineNo":12,"data":"        for (int count = 0; count <= 10; count++) {","cs":10,"ctc":2,"cnc":1,"ci":2,"cps":50,"tw":5,"cr":0},{"lineNo":13,"data":"            System.out.println(\"Fibonacci of \" + count + \" is \" + fibonacci(count));","cs":13,"ctc":0,"cnc":1,"ci":2,"cps":39,"tw":3,"cr":0},{"lineNo":14,"data":"        }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":15,"data":"    }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":16,"data":"}   ","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0}],"cp":235},{"relativePath":"\\MyException.java","linesData":[{"lineNo":1,"data":"import java.io.*;","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":2,"data":"","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":3,"data":"public class MyException {","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":4,"data":"    static void accessFiles() throws FileNotFoundException {","cs":5,"ctc":0,"cnc":0,"ci":2,"cps":10,"tw":2,"cr":20},{"lineNo":5,"data":"        try {","cs":0,"ctc":0,"cnc":0,"ci":2,"cps":0,"tw":2,"cr":0},{"lineNo":6,"data":"            FileReader f = new FileReader(\"D:\\\\Exceptions.doc\");","cs":7,"ctc":0,"cnc":0,"ci":2,"cps":14,"tw":2,"cr":28},{"lineNo":7,"data":"            System.out.println(\"File found\");","cs":6,"ctc":0,"cnc":0,"ci":2,"cps":12,"tw":2,"cr":24},{"lineNo":8,"data":"        } catch (FileNotFoundException e) {","cs":3,"ctc":1,"cnc":0,"ci":2,"cps":9,"tw":3,"cr":0},{"lineNo":9,"data":"            System.out.println(e.getMessage(asa));","cs":8,"ctc":0,"cnc":0,"ci":2,"cps":16,"tw":2,"cr":0},{"lineNo":10,"data":"            throw e; // Rethrows the exception","cs":3,"ctc":0,"cnc":0,"ci":2,"cps":6,"tw":2,"cr":0},{"lineNo":11,"data":"        }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":12,"data":"    }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":13,"data":"","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":14,"data":"    public static void main(String[] args) {","cs":4,"ctc":0,"cnc":0,"ci":2,"cps":8,"tw":2,"cr":0},{"lineNo":15,"data":"        try {","cs":0,"ctc":0,"cnc":0,"ci":2,"cps":0,"tw":2,"cr":0},{"lineNo":16,"data":"            accessFiles();","cs":1,"ctc":0,"cnc":0,"ci":2,"cps":2,"tw":2,"cr":0},{"lineNo":17,"data":"        } catch (FileNotFoundException e) {","cs":3,"ctc":1,"cnc":0,"ci":2,"cps":9,"tw":3,"cr":0},{"lineNo":18,"data":"            System.out.println(\"File cannot be found!\");","cs":6,"ctc":0,"cnc":0,"ci":2,"cps":12,"tw":2,"cr":0},{"lineNo":19,"data":"        }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":20,"data":"    }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":21,"data":"}","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0}],"cp":134},{"relativePath":"\\SwitchStatementTest.java","linesData":[{"lineNo":1,"data":"public class SwitchStatementTest extends a implements c, v {","cs":1,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":2,"data":"    public static long test(long number) {","cs":4,"ctc":0,"cnc":0,"ci":5,"cps":20,"tw":5,"cr":40},{"lineNo":3,"data":"        int x;","cs":1,"ctc":0,"cnc":0,"ci":5,"cps":5,"tw":5,"cr":10},{"lineNo":4,"data":"        switch (var) {","cs":1,"ctc":2,"cnc":1,"ci":5,"cps":6,"tw":6,"cr":12},{"lineNo":5,"data":"            case x:","cs":1,"ctc":0,"cnc":1,"ci":5,"cps":6,"tw":6,"cr":12},{"lineNo":6,"data":"                break;","cs":0,"ctc":0,"cnc":1,"ci":5,"cps":0,"tw":6,"cr":0},{"lineNo":7,"data":"            case \"aa\":","cs":2,"ctc":0,"cnc":1,"ci":5,"cps":12,"tw":6,"cr":24},{"lineNo":8,"data":"                break;","cs":0,"ctc":0,"cnc":1,"ci":5,"cps":0,"tw":6,"cr":0},{"lineNo":9,"data":"            default:","cs":0,"ctc":0,"cnc":1,"ci":5,"cps":0,"tw":6,"cr":0},{"lineNo":10,"data":"        }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":11,"data":"    }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":12,"data":"","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":13,"data":"    public static void main(String args[]) {","cs":4,"ctc":0,"cnc":0,"ci":5,"cps":20,"tw":5,"cr":0},{"lineNo":14,"data":"        for (int count = 0; count <= 10; count++) {","cs":10,"ctc":2,"cnc":1,"ci":5,"cps":80,"tw":8,"cr":0},{"lineNo":15,"data":"            System.out.println(\"Fibonacci of \" + count + \" is \" + fibonacci(count));","cs":13,"ctc":0,"cnc":1,"ci":5,"cps":78,"tw":6,"cr":0},{"lineNo":16,"data":"        }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":17,"data":"    }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":18,"data":"}   ","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0}],"cp":276},{"relativePath":"\\test.java","linesData":[{"lineNo":1,"data":"public class FibonacciMain {","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":2,"data":" public static long fibonacci(long number) {","cs":4,"ctc":0,"cnc":0,"ci":2,"cps":8,"tw":2,"cr":16},{"lineNo":3,"data":"  if ((number == 0) || (number == 1)) {","cs":8,"ctc":2,"cnc":1,"ci":2,"cps":40,"tw":5,"cr":80},{"lineNo":4,"data":"   return number;","cs":1,"ctc":0,"cnc":1,"ci":2,"cps":3,"tw":3,"cr":6},{"lineNo":5,"data":"  } else {","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":6,"data":"   // recursion step","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":7,"data":"   return fibonacci(number - 1) + fibonacci(number - 2);","cs":9,"ctc":0,"cnc":0,"ci":2,"cps":18,"tw":2,"cr":36},{"lineNo":8,"data":"  }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":9,"data":" }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":10,"data":" public static long fibonacci1(long number) {","cs":5,"ctc":0,"cnc":0,"ci":2,"cps":10,"tw":2,"cr":20},{"lineNo":11,"data":"  if ((number == 0) || (number == 1)) {","cs":8,"ctc":2,"cnc":1,"ci":2,"cps":40,"tw":5,"cr":80},{"lineNo":12,"data":"   return number;","cs":1,"ctc":0,"cnc":1,"ci":2,"cps":3,"tw":3,"cr":6},{"lineNo":13,"data":"  } else {","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":14,"data":"   // recursion step","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":15,"data":"   return fibonacci1(number - 1) + fibonacci(number - 2);","cs":10,"ctc":0,"cnc":0,"ci":2,"cps":20,"tw":2,"cr":40},{"lineNo":16,"data":"  }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":17,"data":" }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":18,"data":"","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":19,"data":" public static void main(String args[]) {","cs":4,"ctc":0,"cnc":0,"ci":2,"cps":8,"tw":2,"cr":0},{"lineNo":20,"data":"  for (int count = 0; count <= 10; count++) {","cs":10,"ctc":2,"cnc":1,"ci":2,"cps":50,"tw":5,"cr":0},{"lineNo":21,"data":"","cs":0,"ctc":0,"cnc":1,"ci":0,"cps":0,"tw":1,"cr":0},{"lineNo":22,"data":"   System.out.println(\"Fibonacci of \" + count + \" is \" + fibonacci(count));","cs":13,"ctc":0,"cnc":1,"ci":2,"cps":39,"tw":3,"cr":0},{"lineNo":23,"data":"  }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":24,"data":" }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":25,"data":"}","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0}],"cp":381}],"cp":1026}
 ERROR main com.sliit.spm.utils.Client - Failed to submit data to the server 
 DEBUG main com.sliit.spm.core.App - ACCScanner start analyzing...
 INFO main com.sliit.spm.core.App - Analyzing project ACC...
 INFO main com.sliit.spm.core.App - Found source path E:\Development\algorithemic-complexity-calculator\ACCScanner\sampleTest
 INFO main com.sliit.spm.acc.FileHandler - Found 4 Files in source path
 DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \FibonacciMain.java
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
 DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \MyException.java
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
 DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \SwitchStatementTest.java
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
-ERROR main com.sliit.spm.acc.Cnc - Error calculating Cnc
+DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \test.java
+DEBUG main com.sliit.spm.utils.Client - Submitting analysis data to the server...
+INFO main com.sliit.spm.utils.Client - {"projectKey":"ACC","sourcePath":"E:\\Development\\algorithemic-complexity-calculator\\ACCScanner\\sampleTest","language":"Java","files":[{"relativePath":"\\FibonacciMain.java","linesData":[{"lineNo":1,"data":"public class FibonacciMain {","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":2,"data":"    public static long fibonacci(long number) {","cs":4,"ctc":0,"cnc":0,"ci":2,"cps":8,"tw":2,"cr":16},{"lineNo":3,"data":"        if ((number == 0) || (number == 1)) {","cs":8,"ctc":2,"cnc":1,"ci":2,"cps":40,"tw":5,"cr":80},{"lineNo":4,"data":"            return number;","cs":1,"ctc":0,"cnc":1,"ci":2,"cps":3,"tw":3,"cr":6},{"lineNo":5,"data":"        } else {","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":6,"data":"            // recursion step","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":7,"data":"            return fibonacci(number - 1) + fibonacci(number - 2);","cs":9,"ctc":0,"cnc":0,"ci":2,"cps":18,"tw":2,"cr":36},{"lineNo":8,"data":"        }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":9,"data":"    }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":10,"data":"","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":11,"data":"    public static void main(String args[]) {","cs":4,"ctc":0,"cnc":0,"ci":2,"cps":8,"tw":2,"cr":0},{"lineNo":12,"data":"        for (int count = 0; count <= 10; count++) {","cs":10,"ctc":2,"cnc":1,"ci":2,"cps":50,"tw":5,"cr":0},{"lineNo":13,"data":"            System.out.println(\"Fibonacci of \" + count + \" is \" + fibonacci(count));","cs":13,"ctc":0,"cnc":1,"ci":2,"cps":39,"tw":3,"cr":0},{"lineNo":14,"data":"        }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":15,"data":"    }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":16,"data":"}   ","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0}],"cp":235},{"relativePath":"\\MyException.java","linesData":[{"lineNo":1,"data":"import java.io.*;","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":2,"data":"","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":3,"data":"public class MyException {","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":4,"data":"    static void accessFiles() throws FileNotFoundException {","cs":5,"ctc":0,"cnc":0,"ci":2,"cps":10,"tw":2,"cr":20},{"lineNo":5,"data":"        try {","cs":0,"ctc":0,"cnc":0,"ci":2,"cps":0,"tw":2,"cr":0},{"lineNo":6,"data":"            FileReader f = new FileReader(\"D:\\\\Exceptions.doc\");","cs":7,"ctc":0,"cnc":0,"ci":2,"cps":14,"tw":2,"cr":28},{"lineNo":7,"data":"            System.out.println(\"File found\");","cs":6,"ctc":0,"cnc":0,"ci":2,"cps":12,"tw":2,"cr":24},{"lineNo":8,"data":"        } catch (FileNotFoundException e) {","cs":3,"ctc":1,"cnc":0,"ci":2,"cps":9,"tw":3,"cr":0},{"lineNo":9,"data":"            System.out.println(e.getMessage(asa));","cs":8,"ctc":0,"cnc":0,"ci":2,"cps":16,"tw":2,"cr":0},{"lineNo":10,"data":"            throw e; // Rethrows the exception","cs":3,"ctc":0,"cnc":0,"ci":2,"cps":6,"tw":2,"cr":0},{"lineNo":11,"data":"        }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":12,"data":"    }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":13,"data":"","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":14,"data":"    public static void main(String[] args) {","cs":4,"ctc":0,"cnc":0,"ci":2,"cps":8,"tw":2,"cr":0},{"lineNo":15,"data":"        try {","cs":0,"ctc":0,"cnc":0,"ci":2,"cps":0,"tw":2,"cr":0},{"lineNo":16,"data":"            accessFiles();","cs":1,"ctc":0,"cnc":0,"ci":2,"cps":2,"tw":2,"cr":0},{"lineNo":17,"data":"        } catch (FileNotFoundException e) {","cs":3,"ctc":1,"cnc":0,"ci":2,"cps":9,"tw":3,"cr":0},{"lineNo":18,"data":"            System.out.println(\"File cannot be found!\");","cs":6,"ctc":0,"cnc":0,"ci":2,"cps":12,"tw":2,"cr":0},{"lineNo":19,"data":"        }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":20,"data":"    }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":21,"data":"}","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0}],"cp":134},{"relativePath":"\\SwitchStatementTest.java","linesData":[{"lineNo":1,"data":"public class SwitchStatementTest extends a implements c, v {","cs":1,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":2,"data":"    public static long test(long number) {","cs":4,"ctc":0,"cnc":0,"ci":5,"cps":20,"tw":5,"cr":40},{"lineNo":3,"data":"        int x;","cs":1,"ctc":0,"cnc":0,"ci":5,"cps":5,"tw":5,"cr":10},{"lineNo":4,"data":"        switch (var) {","cs":1,"ctc":2,"cnc":1,"ci":5,"cps":6,"tw":6,"cr":12},{"lineNo":5,"data":"            case x:","cs":1,"ctc":0,"cnc":1,"ci":5,"cps":6,"tw":6,"cr":12},{"lineNo":6,"data":"                break;","cs":0,"ctc":0,"cnc":1,"ci":5,"cps":0,"tw":6,"cr":0},{"lineNo":7,"data":"            case \"aa\":","cs":2,"ctc":0,"cnc":1,"ci":5,"cps":12,"tw":6,"cr":24},{"lineNo":8,"data":"                break;","cs":0,"ctc":0,"cnc":1,"ci":5,"cps":0,"tw":6,"cr":0},{"lineNo":9,"data":"            default:","cs":0,"ctc":0,"cnc":1,"ci":5,"cps":0,"tw":6,"cr":0},{"lineNo":10,"data":"        }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":11,"data":"    }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":12,"data":"","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":13,"data":"    public static void main(String args[]) {","cs":4,"ctc":0,"cnc":0,"ci":5,"cps":20,"tw":5,"cr":0},{"lineNo":14,"data":"        for (int count = 0; count <= 10; count++) {","cs":10,"ctc":2,"cnc":1,"ci":5,"cps":80,"tw":8,"cr":0},{"lineNo":15,"data":"            System.out.println(\"Fibonacci of \" + count + \" is \" + fibonacci(count));","cs":13,"ctc":0,"cnc":1,"ci":5,"cps":78,"tw":6,"cr":0},{"lineNo":16,"data":"        }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":17,"data":"    }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":18,"data":"}   ","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0}],"cp":276},{"relativePath":"\\test.java","linesData":[{"lineNo":1,"data":"public class FibonacciMain {","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":2,"data":" public static long fibonacci(long number) {","cs":4,"ctc":0,"cnc":0,"ci":2,"cps":8,"tw":2,"cr":16},{"lineNo":3,"data":"  if ((number == 0) || (number == 1)) {","cs":8,"ctc":2,"cnc":1,"ci":2,"cps":40,"tw":5,"cr":80},{"lineNo":4,"data":"   return number;","cs":1,"ctc":0,"cnc":1,"ci":2,"cps":3,"tw":3,"cr":6},{"lineNo":5,"data":"  } else {","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":6,"data":"   // recursion step","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":7,"data":"   return fibonacci(number - 1) + fibonacci(number - 2);","cs":9,"ctc":0,"cnc":0,"ci":2,"cps":18,"tw":2,"cr":36},{"lineNo":8,"data":"  }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":9,"data":" }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":10,"data":" public static long fibonacci1(long number) {","cs":5,"ctc":0,"cnc":0,"ci":2,"cps":10,"tw":2,"cr":20},{"lineNo":11,"data":"  if ((number == 0) || (number == 1)) {","cs":8,"ctc":2,"cnc":1,"ci":2,"cps":40,"tw":5,"cr":80},{"lineNo":12,"data":"   return number;","cs":1,"ctc":0,"cnc":1,"ci":2,"cps":3,"tw":3,"cr":6},{"lineNo":13,"data":"  } else {","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":14,"data":"   // recursion step","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":15,"data":"   return fibonacci1(number - 1) + fibonacci(number - 2);","cs":10,"ctc":0,"cnc":0,"ci":2,"cps":20,"tw":2,"cr":40},{"lineNo":16,"data":"  }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":17,"data":" }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":18,"data":"","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":19,"data":" public static void main(String args[]) {","cs":4,"ctc":0,"cnc":0,"ci":2,"cps":8,"tw":2,"cr":0},{"lineNo":20,"data":"  for (int count = 0; count <= 10; count++) {","cs":10,"ctc":2,"cnc":1,"ci":2,"cps":50,"tw":5,"cr":0},{"lineNo":21,"data":"","cs":0,"ctc":0,"cnc":1,"ci":0,"cps":0,"tw":1,"cr":0},{"lineNo":22,"data":"   System.out.println(\"Fibonacci of \" + count + \" is \" + fibonacci(count));","cs":13,"ctc":0,"cnc":1,"ci":2,"cps":39,"tw":3,"cr":0},{"lineNo":23,"data":"  }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":24,"data":" }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":25,"data":"}","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0}],"cp":381}],"cp":1026}
+ERROR main com.sliit.spm.utils.Client - Failed to submit data to the server 
+DEBUG main com.sliit.spm.core.App - ACCScanner start analyzing...
+INFO main com.sliit.spm.core.App - Analyzing project ACC...
+INFO main com.sliit.spm.core.App - Found source path E:\Development\algorithemic-complexity-calculator\ACCScanner\sampleTest
+INFO main com.sliit.spm.acc.FileHandler - Found 4 Files in source path
+DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \FibonacciMain.java
+DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \MyException.java
+DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \SwitchStatementTest.java
+DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \test.java
+DEBUG main com.sliit.spm.utils.Client - Submitting analysis data to the server...
+INFO main com.sliit.spm.utils.Client - {"projectKey":"ACC","sourcePath":"E:\\Development\\algorithemic-complexity-calculator\\ACCScanner\\sampleTest","language":"Java","files":[{"relativePath":"\\FibonacciMain.java","linesData":[{"lineNo":1,"data":"public class FibonacciMain {","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":2,"data":"    public static long fibonacci(long number) {","cs":4,"ctc":0,"cnc":0,"ci":2,"cps":8,"tw":2,"cr":16},{"lineNo":3,"data":"        if ((number == 0) || (number == 1)) {","cs":8,"ctc":2,"cnc":1,"ci":2,"cps":40,"tw":5,"cr":80},{"lineNo":4,"data":"            return number;","cs":1,"ctc":0,"cnc":1,"ci":2,"cps":3,"tw":3,"cr":6},{"lineNo":5,"data":"        } else {","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":6,"data":"            // recursion step","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":7,"data":"            return fibonacci(number - 1) + fibonacci(number - 2);","cs":9,"ctc":0,"cnc":1,"ci":2,"cps":27,"tw":3,"cr":54},{"lineNo":8,"data":"        }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":9,"data":"    }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":10,"data":"","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":11,"data":"    public static void main(String args[]) {","cs":4,"ctc":0,"cnc":0,"ci":2,"cps":8,"tw":2,"cr":0},{"lineNo":12,"data":"        for (int count = 0; count <= 10; count++) {","cs":10,"ctc":2,"cnc":1,"ci":2,"cps":50,"tw":5,"cr":0},{"lineNo":13,"data":"            System.out.println(\"Fibonacci of \" + count + \" is \" + fibonacci(count));","cs":13,"ctc":0,"cnc":1,"ci":2,"cps":39,"tw":3,"cr":0},{"lineNo":14,"data":"        }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":15,"data":"    }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":16,"data":"}   ","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0}],"cp":253},{"relativePath":"\\MyException.java","linesData":[{"lineNo":1,"data":"import java.io.*;","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":2,"data":"","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":3,"data":"public class MyException {","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":4,"data":"    static void accessFiles() throws FileNotFoundException {","cs":5,"ctc":0,"cnc":0,"ci":2,"cps":10,"tw":2,"cr":20},{"lineNo":5,"data":"        try {","cs":0,"ctc":0,"cnc":0,"ci":2,"cps":0,"tw":2,"cr":0},{"lineNo":6,"data":"            FileReader f = new FileReader(\"D:\\\\Exceptions.doc\");","cs":7,"ctc":0,"cnc":0,"ci":2,"cps":14,"tw":2,"cr":28},{"lineNo":7,"data":"            System.out.println(\"File found\");","cs":6,"ctc":0,"cnc":0,"ci":2,"cps":12,"tw":2,"cr":24},{"lineNo":8,"data":"        } catch (FileNotFoundException e) {","cs":3,"ctc":1,"cnc":0,"ci":2,"cps":9,"tw":3,"cr":0},{"lineNo":9,"data":"            System.out.println(e.getMessage(asa));","cs":8,"ctc":0,"cnc":0,"ci":2,"cps":16,"tw":2,"cr":0},{"lineNo":10,"data":"            throw e; // Rethrows the exception","cs":3,"ctc":0,"cnc":0,"ci":2,"cps":6,"tw":2,"cr":0},{"lineNo":11,"data":"        }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":12,"data":"    }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":13,"data":"","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":14,"data":"    public static void main(String[] args) {","cs":4,"ctc":0,"cnc":0,"ci":2,"cps":8,"tw":2,"cr":0},{"lineNo":15,"data":"        try {","cs":0,"ctc":0,"cnc":0,"ci":2,"cps":0,"tw":2,"cr":0},{"lineNo":16,"data":"            accessFiles();","cs":1,"ctc":0,"cnc":0,"ci":2,"cps":2,"tw":2,"cr":0},{"lineNo":17,"data":"        } catch (FileNotFoundException e) {","cs":3,"ctc":1,"cnc":0,"ci":2,"cps":9,"tw":3,"cr":0},{"lineNo":18,"data":"            System.out.println(\"File cannot be found!\");","cs":6,"ctc":0,"cnc":0,"ci":2,"cps":12,"tw":2,"cr":0},{"lineNo":19,"data":"        }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":20,"data":"    }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":21,"data":"}","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0}],"cp":134},{"relativePath":"\\SwitchStatementTest.java","linesData":[{"lineNo":1,"data":"public class SwitchStatementTest extends a implements c, v {","cs":1,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":2,"data":"    public static long test(long number) {","cs":4,"ctc":0,"cnc":0,"ci":5,"cps":20,"tw":5,"cr":40},{"lineNo":3,"data":"        int x;","cs":1,"ctc":0,"cnc":0,"ci":5,"cps":5,"tw":5,"cr":10},{"lineNo":4,"data":"        switch (var) {","cs":1,"ctc":2,"cnc":1,"ci":5,"cps":6,"tw":6,"cr":12},{"lineNo":5,"data":"            case x:","cs":1,"ctc":0,"cnc":1,"ci":5,"cps":6,"tw":6,"cr":12},{"lineNo":6,"data":"                break;","cs":0,"ctc":0,"cnc":1,"ci":5,"cps":0,"tw":6,"cr":0},{"lineNo":7,"data":"            case \"aa\":","cs":2,"ctc":0,"cnc":1,"ci":5,"cps":12,"tw":6,"cr":24},{"lineNo":8,"data":"                break;","cs":0,"ctc":0,"cnc":1,"ci":5,"cps":0,"tw":6,"cr":0},{"lineNo":9,"data":"            default:","cs":0,"ctc":0,"cnc":1,"ci":5,"cps":0,"tw":6,"cr":0},{"lineNo":10,"data":"        }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":11,"data":"    }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":12,"data":"","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":13,"data":"    public static void main(String args[]) {","cs":4,"ctc":0,"cnc":0,"ci":5,"cps":20,"tw":5,"cr":0},{"lineNo":14,"data":"        for (int count = 0; count <= 10; count++) {","cs":10,"ctc":2,"cnc":1,"ci":5,"cps":80,"tw":8,"cr":0},{"lineNo":15,"data":"            System.out.println(\"Fibonacci of \" + count + \" is \" + fibonacci(count));","cs":13,"ctc":0,"cnc":1,"ci":5,"cps":78,"tw":6,"cr":0},{"lineNo":16,"data":"        }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":17,"data":"    }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":18,"data":"}   ","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0}],"cp":276},{"relativePath":"\\test.java","linesData":[{"lineNo":1,"data":"public class FibonacciMain {","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":2,"data":" public static long fibonacci(long number) {","cs":4,"ctc":0,"cnc":0,"ci":2,"cps":8,"tw":2,"cr":16},{"lineNo":3,"data":"  if ((number == 0) || (number == 1)) {","cs":8,"ctc":2,"cnc":1,"ci":2,"cps":40,"tw":5,"cr":80},{"lineNo":4,"data":"   return number;","cs":1,"ctc":0,"cnc":1,"ci":2,"cps":3,"tw":3,"cr":6},{"lineNo":5,"data":"  } else {","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":6,"data":"   // recursion step","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":7,"data":"   return fibonacci(number - 1) + fibonacci(number - 2);","cs":9,"ctc":0,"cnc":1,"ci":2,"cps":27,"tw":3,"cr":54},{"lineNo":8,"data":"  }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":9,"data":" }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":10,"data":" public static long fibonacci1(long number) {","cs":5,"ctc":0,"cnc":0,"ci":2,"cps":10,"tw":2,"cr":20},{"lineNo":11,"data":"  if ((number == 0) || (number == 1)) {","cs":8,"ctc":2,"cnc":1,"ci":2,"cps":40,"tw":5,"cr":80},{"lineNo":12,"data":"   return number;","cs":1,"ctc":0,"cnc":1,"ci":2,"cps":3,"tw":3,"cr":6},{"lineNo":13,"data":"  } else {","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":14,"data":"   // recursion step","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":15,"data":"   return fibonacci1(number - 1) + fibonacci(number - 2);","cs":10,"ctc":0,"cnc":1,"ci":2,"cps":30,"tw":3,"cr":60},{"lineNo":16,"data":"  }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":17,"data":" }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":18,"data":"","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":19,"data":" public static void main(String args[]) {","cs":4,"ctc":0,"cnc":0,"ci":2,"cps":8,"tw":2,"cr":0},{"lineNo":20,"data":"  for (int count = 0; count <= 10; count++) {","cs":10,"ctc":2,"cnc":1,"ci":2,"cps":50,"tw":5,"cr":0},{"lineNo":21,"data":"","cs":0,"ctc":0,"cnc":1,"ci":0,"cps":0,"tw":1,"cr":0},{"lineNo":22,"data":"   System.out.println(\"Fibonacci of \" + count + \" is \" + fibonacci(count));","cs":13,"ctc":0,"cnc":1,"ci":2,"cps":39,"tw":3,"cr":0},{"lineNo":23,"data":"  }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":24,"data":" }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":25,"data":"}","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0}],"cp":419}],"cp":1082}
+ERROR main com.sliit.spm.utils.Client - Failed to submit data to the server 
+DEBUG main com.sliit.spm.core.App - ACCScanner start analyzing...
+INFO main com.sliit.spm.core.App - Analyzing project ACC...
+INFO main com.sliit.spm.core.App - Found source path E:\Development\algorithemic-complexity-calculator\ACCScanner\sampleTest
+INFO main com.sliit.spm.acc.FileHandler - Found 4 Files in source path
+DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \FibonacciMain.java
+DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \MyException.java
+DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \SwitchStatementTest.java
+DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \test.java
+DEBUG main com.sliit.spm.utils.Client - Submitting analysis data to the server...
+INFO main com.sliit.spm.utils.Client - {"projectKey":"ACC","sourcePath":"E:\\Development\\algorithemic-complexity-calculator\\ACCScanner\\sampleTest","language":"Java","files":[{"relativePath":"\\FibonacciMain.java","linesData":[{"lineNo":1,"data":"public class FibonacciMain {","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":2,"data":"    public static long fibonacci(long number) {","cs":4,"ctc":0,"cnc":0,"ci":2,"cps":8,"tw":2,"cr":16},{"lineNo":3,"data":"        if ((number == 0) || (number == 1)) {","cs":8,"ctc":2,"cnc":0,"ci":2,"cps":32,"tw":4,"cr":64},{"lineNo":4,"data":"            return number;","cs":1,"ctc":0,"cnc":0,"ci":2,"cps":2,"tw":2,"cr":4},{"lineNo":5,"data":"        } else {","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":6,"data":"            // recursion step","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":7,"data":"            return fibonacci(number - 1) + fibonacci(number - 2);","cs":9,"ctc":0,"cnc":0,"ci":2,"cps":18,"tw":2,"cr":36},{"lineNo":8,"data":"        }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":9,"data":"    }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":10,"data":"","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":11,"data":"    public static void main(String args[]) {","cs":4,"ctc":0,"cnc":0,"ci":2,"cps":8,"tw":2,"cr":0},{"lineNo":12,"data":"        for (int count = 0; count <= 10; count++) {","cs":10,"ctc":2,"cnc":0,"ci":2,"cps":40,"tw":4,"cr":0},{"lineNo":13,"data":"            System.out.println(\"Fibonacci of \" + count + \" is \" + fibonacci(count));","cs":13,"ctc":0,"cnc":0,"ci":2,"cps":26,"tw":2,"cr":0},{"lineNo":14,"data":"        }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":15,"data":"    }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":16,"data":"}   ","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0}],"cp":194},{"relativePath":"\\MyException.java","linesData":[{"lineNo":1,"data":"import java.io.*;","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":2,"data":"","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":3,"data":"public class MyException {","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":4,"data":"    static void accessFiles() throws FileNotFoundException {","cs":5,"ctc":0,"cnc":0,"ci":2,"cps":10,"tw":2,"cr":20},{"lineNo":5,"data":"        try {","cs":0,"ctc":0,"cnc":0,"ci":2,"cps":0,"tw":2,"cr":0},{"lineNo":6,"data":"            FileReader f = new FileReader(\"D:\\\\Exceptions.doc\");","cs":7,"ctc":0,"cnc":0,"ci":2,"cps":14,"tw":2,"cr":28},{"lineNo":7,"data":"            System.out.println(\"File found\");","cs":6,"ctc":0,"cnc":0,"ci":2,"cps":12,"tw":2,"cr":24},{"lineNo":8,"data":"        } catch (FileNotFoundException e) {","cs":3,"ctc":1,"cnc":0,"ci":2,"cps":9,"tw":3,"cr":0},{"lineNo":9,"data":"            System.out.println(e.getMessage(asa));","cs":8,"ctc":0,"cnc":0,"ci":2,"cps":16,"tw":2,"cr":0},{"lineNo":10,"data":"            throw e; // Rethrows the exception","cs":3,"ctc":0,"cnc":0,"ci":2,"cps":6,"tw":2,"cr":0},{"lineNo":11,"data":"        }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":12,"data":"    }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":13,"data":"","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":14,"data":"    public static void main(String[] args) {","cs":4,"ctc":0,"cnc":0,"ci":2,"cps":8,"tw":2,"cr":0},{"lineNo":15,"data":"        try {","cs":0,"ctc":0,"cnc":0,"ci":2,"cps":0,"tw":2,"cr":0},{"lineNo":16,"data":"            accessFiles();","cs":1,"ctc":0,"cnc":0,"ci":2,"cps":2,"tw":2,"cr":0},{"lineNo":17,"data":"        } catch (FileNotFoundException e) {","cs":3,"ctc":1,"cnc":0,"ci":2,"cps":9,"tw":3,"cr":0},{"lineNo":18,"data":"            System.out.println(\"File cannot be found!\");","cs":6,"ctc":0,"cnc":0,"ci":2,"cps":12,"tw":2,"cr":0},{"lineNo":19,"data":"        }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":20,"data":"    }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":21,"data":"}","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0}],"cp":134},{"relativePath":"\\SwitchStatementTest.java","linesData":[{"lineNo":1,"data":"public class SwitchStatementTest extends a implements c, v {","cs":1,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":2,"data":"    public static long test(long number) {","cs":4,"ctc":0,"cnc":0,"ci":5,"cps":20,"tw":5,"cr":40},{"lineNo":3,"data":"        int x;","cs":1,"ctc":0,"cnc":0,"ci":5,"cps":5,"tw":5,"cr":10},{"lineNo":4,"data":"        switch (var) {","cs":1,"ctc":2,"cnc":0,"ci":5,"cps":5,"tw":5,"cr":10},{"lineNo":5,"data":"            case x:","cs":1,"ctc":0,"cnc":0,"ci":5,"cps":5,"tw":5,"cr":10},{"lineNo":6,"data":"                break;","cs":0,"ctc":0,"cnc":0,"ci":5,"cps":0,"tw":5,"cr":0},{"lineNo":7,"data":"            case \"aa\":","cs":2,"ctc":0,"cnc":0,"ci":5,"cps":10,"tw":5,"cr":20},{"lineNo":8,"data":"                break;","cs":0,"ctc":0,"cnc":0,"ci":5,"cps":0,"tw":5,"cr":0},{"lineNo":9,"data":"            default:","cs":0,"ctc":0,"cnc":0,"ci":5,"cps":0,"tw":5,"cr":0},{"lineNo":10,"data":"        }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":11,"data":"    }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":12,"data":"","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":13,"data":"    public static void main(String args[]) {","cs":4,"ctc":0,"cnc":0,"ci":5,"cps":20,"tw":5,"cr":0},{"lineNo":14,"data":"        for (int count = 0; count <= 10; count++) {","cs":10,"ctc":2,"cnc":0,"ci":5,"cps":70,"tw":7,"cr":0},{"lineNo":15,"data":"            System.out.println(\"Fibonacci of \" + count + \" is \" + fibonacci(count));","cs":13,"ctc":0,"cnc":0,"ci":5,"cps":65,"tw":5,"cr":0},{"lineNo":16,"data":"        }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":17,"data":"    }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":18,"data":"}   ","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0}],"cp":245},{"relativePath":"\\test.java","linesData":[{"lineNo":1,"data":"public class FibonacciMain {","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":2,"data":" public static long fibonacci(long number) {","cs":4,"ctc":0,"cnc":0,"ci":2,"cps":8,"tw":2,"cr":16},{"lineNo":3,"data":"  if ((number == 0) || (number == 1)) {","cs":8,"ctc":2,"cnc":0,"ci":2,"cps":32,"tw":4,"cr":64},{"lineNo":4,"data":"   return number;","cs":1,"ctc":0,"cnc":0,"ci":2,"cps":2,"tw":2,"cr":4},{"lineNo":5,"data":"  } else {","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":6,"data":"   // recursion step","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":7,"data":"   return fibonacci(number - 1) + fibonacci(number - 2);","cs":9,"ctc":0,"cnc":0,"ci":2,"cps":18,"tw":2,"cr":36},{"lineNo":8,"data":"  }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":9,"data":" }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":10,"data":" public static long fibonacci1(long number) {","cs":5,"ctc":0,"cnc":0,"ci":2,"cps":10,"tw":2,"cr":20},{"lineNo":11,"data":"  if ((number == 0) || (number == 1)) {","cs":8,"ctc":2,"cnc":0,"ci":2,"cps":32,"tw":4,"cr":64},{"lineNo":12,"data":"   return number;","cs":1,"ctc":0,"cnc":0,"ci":2,"cps":2,"tw":2,"cr":4},{"lineNo":13,"data":"  } else {","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":14,"data":"   // recursion step","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":15,"data":"   return fibonacci1(number - 1) + fibonacci(number - 2);","cs":10,"ctc":0,"cnc":0,"ci":2,"cps":20,"tw":2,"cr":40},{"lineNo":16,"data":"  }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":17,"data":" }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":18,"data":"","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":19,"data":" public static void main(String args[]) {","cs":4,"ctc":0,"cnc":0,"ci":2,"cps":8,"tw":2,"cr":0},{"lineNo":20,"data":"  for (int count = 0; count <= 10; count++) {","cs":10,"ctc":2,"cnc":0,"ci":2,"cps":40,"tw":4,"cr":0},{"lineNo":21,"data":"","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":22,"data":"   System.out.println(\"Fibonacci of \" + count + \" is \" + fibonacci(count));","cs":13,"ctc":0,"cnc":0,"ci":2,"cps":26,"tw":2,"cr":0},{"lineNo":23,"data":"  }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":24,"data":" }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":25,"data":"}","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0}],"cp":322}],"cp":895}
+ERROR main com.sliit.spm.utils.Client - Failed to submit data to the server 
+DEBUG main com.sliit.spm.core.App - ACCScanner start analyzing...
+INFO main com.sliit.spm.core.App - Analyzing project ACC...
+INFO main com.sliit.spm.core.App - Found source path E:\Development\algorithemic-complexity-calculator\ACCScanner\sampleTest
+INFO main com.sliit.spm.acc.FileHandler - Found 4 Files in source path
+DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \FibonacciMain.java
+WARN main com.sliit.spm.acc.Cnc - No match found
+DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \MyException.java
+DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \SwitchStatementTest.java
+DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \test.java
+WARN main com.sliit.spm.acc.Cnc - No match found
+WARN main com.sliit.spm.acc.Cnc - No match found
+DEBUG main com.sliit.spm.utils.Client - Submitting analysis data to the server...
+INFO main com.sliit.spm.utils.Client - {"projectKey":"ACC","sourcePath":"E:\\Development\\algorithemic-complexity-calculator\\ACCScanner\\sampleTest","language":"Java","files":[{"relativePath":"\\FibonacciMain.java","linesData":[{"lineNo":1,"data":"public class FibonacciMain {","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":2,"data":"    public static long fibonacci(long number) {","cs":4,"ctc":0,"cnc":0,"ci":2,"cps":8,"tw":2,"cr":16},{"lineNo":3,"data":"        if ((number == 0) || (number == 1)) {","cs":8,"ctc":2,"cnc":1,"ci":2,"cps":40,"tw":5,"cr":80},{"lineNo":4,"data":"            return number;","cs":1,"ctc":0,"cnc":1,"ci":2,"cps":3,"tw":3,"cr":6},{"lineNo":5,"data":"        } else {","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":6,"data":"            // recursion step","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":7,"data":"            return fibonacci(number - 1) + fibonacci(number - 2);","cs":9,"ctc":0,"cnc":1,"ci":2,"cps":27,"tw":3,"cr":54},{"lineNo":8,"data":"        }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":9,"data":"    }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":10,"data":"","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":11,"data":"    public static void main(String args[]) {","cs":4,"ctc":0,"cnc":0,"ci":2,"cps":8,"tw":2,"cr":0},{"lineNo":12,"data":"        for (int count = 0; count <= 10; count++) {","cs":10,"ctc":2,"cnc":1,"ci":2,"cps":50,"tw":5,"cr":0},{"lineNo":13,"data":"            System.out.println(\"Fibonacci of \" + count + \" is \" + fibonacci(count));","cs":13,"ctc":0,"cnc":1,"ci":2,"cps":39,"tw":3,"cr":0},{"lineNo":14,"data":"        }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":15,"data":"    }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":16,"data":"}   ","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0}],"cp":253},{"relativePath":"\\MyException.java","linesData":[{"lineNo":1,"data":"import java.io.*;","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":2,"data":"","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":3,"data":"public class MyException {","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":4,"data":"    static void accessFiles() throws FileNotFoundException {","cs":5,"ctc":0,"cnc":0,"ci":2,"cps":10,"tw":2,"cr":20},{"lineNo":5,"data":"        try {","cs":0,"ctc":0,"cnc":0,"ci":2,"cps":0,"tw":2,"cr":0},{"lineNo":6,"data":"            FileReader f = new FileReader(\"D:\\\\Exceptions.doc\");","cs":7,"ctc":0,"cnc":0,"ci":2,"cps":14,"tw":2,"cr":28},{"lineNo":7,"data":"            System.out.println(\"File found\");","cs":6,"ctc":0,"cnc":0,"ci":2,"cps":12,"tw":2,"cr":24},{"lineNo":8,"data":"        } catch (FileNotFoundException e) {","cs":3,"ctc":1,"cnc":0,"ci":2,"cps":9,"tw":3,"cr":0},{"lineNo":9,"data":"            System.out.println(e.getMessage(asa));","cs":8,"ctc":0,"cnc":0,"ci":2,"cps":16,"tw":2,"cr":0},{"lineNo":10,"data":"            throw e; // Rethrows the exception","cs":3,"ctc":0,"cnc":0,"ci":2,"cps":6,"tw":2,"cr":0},{"lineNo":11,"data":"        }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":12,"data":"    }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":13,"data":"","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":14,"data":"    public static void main(String[] args) {","cs":4,"ctc":0,"cnc":0,"ci":2,"cps":8,"tw":2,"cr":0},{"lineNo":15,"data":"        try {","cs":0,"ctc":0,"cnc":0,"ci":2,"cps":0,"tw":2,"cr":0},{"lineNo":16,"data":"            accessFiles();","cs":1,"ctc":0,"cnc":0,"ci":2,"cps":2,"tw":2,"cr":0},{"lineNo":17,"data":"        } catch (FileNotFoundException e) {","cs":3,"ctc":1,"cnc":0,"ci":2,"cps":9,"tw":3,"cr":0},{"lineNo":18,"data":"            System.out.println(\"File cannot be found!\");","cs":6,"ctc":0,"cnc":0,"ci":2,"cps":12,"tw":2,"cr":0},{"lineNo":19,"data":"        }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":20,"data":"    }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":21,"data":"}","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0}],"cp":134},{"relativePath":"\\SwitchStatementTest.java","linesData":[{"lineNo":1,"data":"public class SwitchStatementTest extends a implements c, v {","cs":1,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":2,"data":"    public static long test(long number) {","cs":4,"ctc":0,"cnc":0,"ci":5,"cps":20,"tw":5,"cr":40},{"lineNo":3,"data":"        int x;","cs":1,"ctc":0,"cnc":0,"ci":5,"cps":5,"tw":5,"cr":10},{"lineNo":4,"data":"        switch (var) {","cs":1,"ctc":2,"cnc":1,"ci":5,"cps":6,"tw":6,"cr":12},{"lineNo":5,"data":"            case x:","cs":1,"ctc":0,"cnc":1,"ci":5,"cps":6,"tw":6,"cr":12},{"lineNo":6,"data":"                break;","cs":0,"ctc":0,"cnc":1,"ci":5,"cps":0,"tw":6,"cr":0},{"lineNo":7,"data":"            case \"aa\":","cs":2,"ctc":0,"cnc":1,"ci":5,"cps":12,"tw":6,"cr":24},{"lineNo":8,"data":"                break;","cs":0,"ctc":0,"cnc":1,"ci":5,"cps":0,"tw":6,"cr":0},{"lineNo":9,"data":"            default:","cs":0,"ctc":0,"cnc":1,"ci":5,"cps":0,"tw":6,"cr":0},{"lineNo":10,"data":"        }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":11,"data":"    }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":12,"data":"","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":13,"data":"    public static void main(String args[]) {","cs":4,"ctc":0,"cnc":0,"ci":5,"cps":20,"tw":5,"cr":0},{"lineNo":14,"data":"        for (int count = 0; count <= 10; count++) {","cs":10,"ctc":2,"cnc":1,"ci":5,"cps":80,"tw":8,"cr":0},{"lineNo":15,"data":"            System.out.println(\"Fibonacci of \" + count + \" is \" + fibonacci(count));","cs":13,"ctc":0,"cnc":1,"ci":5,"cps":78,"tw":6,"cr":0},{"lineNo":16,"data":"        }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":17,"data":"    }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":18,"data":"}   ","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0}],"cp":276},{"relativePath":"\\test.java","linesData":[{"lineNo":1,"data":"public class FibonacciMain {","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":2,"data":" public static long fibonacci(long number) {","cs":4,"ctc":0,"cnc":0,"ci":2,"cps":8,"tw":2,"cr":16},{"lineNo":3,"data":"  if ((number == 0) || (number == 1)) {","cs":8,"ctc":2,"cnc":1,"ci":2,"cps":40,"tw":5,"cr":80},{"lineNo":4,"data":"   return number;","cs":1,"ctc":0,"cnc":1,"ci":2,"cps":3,"tw":3,"cr":6},{"lineNo":5,"data":"  } else {","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":6,"data":"   // recursion step","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":7,"data":"   return fibonacci(number - 1) + fibonacci(number - 2);","cs":9,"ctc":0,"cnc":1,"ci":2,"cps":27,"tw":3,"cr":54},{"lineNo":8,"data":"  }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":9,"data":" }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":10,"data":" public static long fibonacci1(long number) {","cs":5,"ctc":0,"cnc":0,"ci":2,"cps":10,"tw":2,"cr":20},{"lineNo":11,"data":"  if ((number == 0) || (number == 1)) {","cs":8,"ctc":2,"cnc":1,"ci":2,"cps":40,"tw":5,"cr":80},{"lineNo":12,"data":"   return number;","cs":1,"ctc":0,"cnc":1,"ci":2,"cps":3,"tw":3,"cr":6},{"lineNo":13,"data":"  } else {","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":14,"data":"   // recursion step","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":15,"data":"   return fibonacci1(number - 1) + fibonacci(number - 2);","cs":10,"ctc":0,"cnc":1,"ci":2,"cps":30,"tw":3,"cr":60},{"lineNo":16,"data":"  }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":17,"data":" }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":18,"data":"","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":19,"data":" public static void main(String args[]) {","cs":4,"ctc":0,"cnc":0,"ci":2,"cps":8,"tw":2,"cr":0},{"lineNo":20,"data":"  for (int count = 0; count <= 10; count++) {","cs":10,"ctc":2,"cnc":1,"ci":2,"cps":50,"tw":5,"cr":0},{"lineNo":21,"data":"","cs":0,"ctc":0,"cnc":1,"ci":0,"cps":0,"tw":1,"cr":0},{"lineNo":22,"data":"   System.out.println(\"Fibonacci of \" + count + \" is \" + fibonacci(count));","cs":13,"ctc":0,"cnc":1,"ci":2,"cps":39,"tw":3,"cr":0},{"lineNo":23,"data":"  }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":24,"data":" }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":25,"data":"}","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0}],"cp":419}],"cp":1082}
+ERROR main com.sliit.spm.utils.Client - Failed to submit data to the server 
+DEBUG main com.sliit.spm.core.App - ACCScanner start analyzing...
+INFO main com.sliit.spm.core.App - Analyzing project ACC...
+INFO main com.sliit.spm.core.App - Found source path E:\Development\algorithemic-complexity-calculator\ACCScanner\sampleTest
+INFO main com.sliit.spm.acc.FileHandler - Found 4 Files in source path
+DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \FibonacciMain.java
+DEBUG main com.sliit.spm.core.App - ACCScanner start analyzing...
+INFO main com.sliit.spm.core.App - Analyzing project ACC...
+INFO main com.sliit.spm.core.App - Found source path E:\Development\algorithemic-complexity-calculator\ACCScanner\sampleTest
+INFO main com.sliit.spm.acc.FileHandler - Found 4 Files in source path
+DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \FibonacciMain.java
+DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \MyException.java
+DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \SwitchStatementTest.java
+DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \test.java
+DEBUG main com.sliit.spm.utils.Client - Submitting analysis data to the server...
+INFO main com.sliit.spm.utils.Client - {"projectKey":"ACC","sourcePath":"E:\\Development\\algorithemic-complexity-calculator\\ACCScanner\\sampleTest","language":"Java","files":[{"relativePath":"\\FibonacciMain.java","linesData":[{"lineNo":1,"data":"public class FibonacciMain {","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":2,"data":"    public static long fibonacci(long number) {","cs":4,"ctc":0,"cnc":0,"ci":2,"cps":8,"tw":2,"cr":16},{"lineNo":3,"data":"        if ((number == 0) || (number == 1)) {","cs":8,"ctc":2,"cnc":1,"ci":2,"cps":40,"tw":5,"cr":80},{"lineNo":4,"data":"            return number;","cs":1,"ctc":0,"cnc":1,"ci":2,"cps":3,"tw":3,"cr":6},{"lineNo":5,"data":"        } else {","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":6,"data":"            // recursion step","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":7,"data":"            return fibonacci(number - 1) + fibonacci(number - 2);","cs":9,"ctc":0,"cnc":1,"ci":2,"cps":27,"tw":3,"cr":54},{"lineNo":8,"data":"        }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":9,"data":"    }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":10,"data":"","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":11,"data":"    public static void main(String args[]) {","cs":4,"ctc":0,"cnc":0,"ci":2,"cps":8,"tw":2,"cr":0},{"lineNo":12,"data":"        for (int count = 0; count <= 10; count++) {","cs":10,"ctc":2,"cnc":1,"ci":2,"cps":50,"tw":5,"cr":0},{"lineNo":13,"data":"            System.out.println(\"Fibonacci of \" + count + \" is \" + fibonacci(count));","cs":13,"ctc":0,"cnc":1,"ci":2,"cps":39,"tw":3,"cr":0},{"lineNo":14,"data":"        }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":15,"data":"    }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":16,"data":"}   ","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0}],"cp":253},{"relativePath":"\\MyException.java","linesData":[{"lineNo":1,"data":"import java.io.*;","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":2,"data":"","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":3,"data":"public class MyException {","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":4,"data":"    static void accessFiles() throws FileNotFoundException {","cs":5,"ctc":0,"cnc":0,"ci":2,"cps":10,"tw":2,"cr":20},{"lineNo":5,"data":"        try {","cs":0,"ctc":0,"cnc":0,"ci":2,"cps":0,"tw":2,"cr":0},{"lineNo":6,"data":"            FileReader f = new FileReader(\"D:\\\\Exceptions.doc\");","cs":7,"ctc":0,"cnc":0,"ci":2,"cps":14,"tw":2,"cr":28},{"lineNo":7,"data":"            System.out.println(\"File found\");","cs":6,"ctc":0,"cnc":0,"ci":2,"cps":12,"tw":2,"cr":24},{"lineNo":8,"data":"        } catch (FileNotFoundException e) {","cs":3,"ctc":1,"cnc":0,"ci":2,"cps":9,"tw":3,"cr":0},{"lineNo":9,"data":"            System.out.println(e.getMessage(asa));","cs":8,"ctc":0,"cnc":0,"ci":2,"cps":16,"tw":2,"cr":0},{"lineNo":10,"data":"            throw e; // Rethrows the exception","cs":3,"ctc":0,"cnc":0,"ci":2,"cps":6,"tw":2,"cr":0},{"lineNo":11,"data":"        }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":12,"data":"    }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":13,"data":"","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":14,"data":"    public static void main(String[] args) {","cs":4,"ctc":0,"cnc":0,"ci":2,"cps":8,"tw":2,"cr":0},{"lineNo":15,"data":"        try {","cs":0,"ctc":0,"cnc":0,"ci":2,"cps":0,"tw":2,"cr":0},{"lineNo":16,"data":"            accessFiles();","cs":1,"ctc":0,"cnc":0,"ci":2,"cps":2,"tw":2,"cr":0},{"lineNo":17,"data":"        } catch (FileNotFoundException e) {","cs":3,"ctc":1,"cnc":0,"ci":2,"cps":9,"tw":3,"cr":0},{"lineNo":18,"data":"            System.out.println(\"File cannot be found!\");","cs":6,"ctc":0,"cnc":0,"ci":2,"cps":12,"tw":2,"cr":0},{"lineNo":19,"data":"        }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":20,"data":"    }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":21,"data":"}","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0}],"cp":134},{"relativePath":"\\SwitchStatementTest.java","linesData":[{"lineNo":1,"data":"public class SwitchStatementTest extends a implements c, v {","cs":1,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":2,"data":"    public static long test(long number) {","cs":4,"ctc":0,"cnc":0,"ci":5,"cps":20,"tw":5,"cr":40},{"lineNo":3,"data":"        int x;","cs":1,"ctc":0,"cnc":0,"ci":5,"cps":5,"tw":5,"cr":10},{"lineNo":4,"data":"        switch (var) {","cs":1,"ctc":2,"cnc":1,"ci":5,"cps":6,"tw":6,"cr":12},{"lineNo":5,"data":"            case x:","cs":1,"ctc":0,"cnc":1,"ci":5,"cps":6,"tw":6,"cr":12},{"lineNo":6,"data":"                break;","cs":0,"ctc":0,"cnc":1,"ci":5,"cps":0,"tw":6,"cr":0},{"lineNo":7,"data":"            case \"aa\":","cs":2,"ctc":0,"cnc":1,"ci":5,"cps":12,"tw":6,"cr":24},{"lineNo":8,"data":"                break;","cs":0,"ctc":0,"cnc":1,"ci":5,"cps":0,"tw":6,"cr":0},{"lineNo":9,"data":"            default:","cs":0,"ctc":0,"cnc":1,"ci":5,"cps":0,"tw":6,"cr":0},{"lineNo":10,"data":"        }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":11,"data":"    }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":12,"data":"","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":13,"data":"    public static void main(String args[]) {","cs":4,"ctc":0,"cnc":0,"ci":5,"cps":20,"tw":5,"cr":0},{"lineNo":14,"data":"        for (int count = 0; count <= 10; count++) {","cs":10,"ctc":2,"cnc":1,"ci":5,"cps":80,"tw":8,"cr":0},{"lineNo":15,"data":"            System.out.println(\"Fibonacci of \" + count + \" is \" + fibonacci(count));","cs":13,"ctc":0,"cnc":1,"ci":5,"cps":78,"tw":6,"cr":0},{"lineNo":16,"data":"        }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":17,"data":"    }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":18,"data":"}   ","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0}],"cp":276},{"relativePath":"\\test.java","linesData":[{"lineNo":1,"data":"public class FibonacciMain {","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":2,"data":" public static long fibonacci(long number) {","cs":4,"ctc":0,"cnc":0,"ci":2,"cps":8,"tw":2,"cr":16},{"lineNo":3,"data":"  if ((number == 0) || (number == 1)) {","cs":8,"ctc":2,"cnc":1,"ci":2,"cps":40,"tw":5,"cr":80},{"lineNo":4,"data":"   return number;","cs":1,"ctc":0,"cnc":1,"ci":2,"cps":3,"tw":3,"cr":6},{"lineNo":5,"data":"  } else {","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":6,"data":"   // recursion step","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":7,"data":"   return fibonacci(number - 1) + fibonacci(number - 2);","cs":9,"ctc":0,"cnc":1,"ci":2,"cps":27,"tw":3,"cr":54},{"lineNo":8,"data":"  }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":9,"data":" }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":10,"data":" public static long fibonacci1(long number) {","cs":5,"ctc":0,"cnc":0,"ci":2,"cps":10,"tw":2,"cr":20},{"lineNo":11,"data":"  if ((number == 0) || (number == 1)) {","cs":8,"ctc":2,"cnc":1,"ci":2,"cps":40,"tw":5,"cr":80},{"lineNo":12,"data":"   return number;","cs":1,"ctc":0,"cnc":1,"ci":2,"cps":3,"tw":3,"cr":6},{"lineNo":13,"data":"  } else {","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":14,"data":"   // recursion step","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":15,"data":"   return fibonacci1(number - 1) + fibonacci(number - 2);","cs":10,"ctc":0,"cnc":1,"ci":2,"cps":30,"tw":3,"cr":60},{"lineNo":16,"data":"  }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":17,"data":" }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":18,"data":"","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":19,"data":" public static void main(String args[]) {","cs":4,"ctc":0,"cnc":0,"ci":2,"cps":8,"tw":2,"cr":0},{"lineNo":20,"data":"  for (int count = 0; count <= 10; count++) {","cs":10,"ctc":2,"cnc":1,"ci":2,"cps":50,"tw":5,"cr":0},{"lineNo":21,"data":"","cs":0,"ctc":0,"cnc":1,"ci":0,"cps":0,"tw":1,"cr":0},{"lineNo":22,"data":"   System.out.println(\"Fibonacci of \" + count + \" is \" + fibonacci(count));","cs":13,"ctc":0,"cnc":1,"ci":2,"cps":39,"tw":3,"cr":0},{"lineNo":23,"data":"  }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":24,"data":" }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":25,"data":"}","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0}],"cp":419}],"cp":1082}
+ERROR main com.sliit.spm.utils.Client - Failed to submit data to the server 
+DEBUG main com.sliit.spm.core.App - ACCScanner start analyzing...
+INFO main com.sliit.spm.core.App - Analyzing project ACC...
+INFO main com.sliit.spm.core.App - Found source path E:\Development\algorithemic-complexity-calculator\ACCScanner\sampleTest
+INFO main com.sliit.spm.acc.FileHandler - Found 4 Files in source path
+DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \FibonacciMain.java
+DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \MyException.java
+DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \SwitchStatementTest.java
+DEBUG main com.sliit.spm.acc.FileHandler - Analyzing file \test.java
+DEBUG main com.sliit.spm.utils.Client - Submitting analysis data to the server...
+INFO main com.sliit.spm.utils.Client - {"projectKey":"ACC","sourcePath":"E:\\Development\\algorithemic-complexity-calculator\\ACCScanner\\sampleTest","language":"Java","files":[{"relativePath":"\\FibonacciMain.java","linesData":[{"lineNo":1,"data":"public class FibonacciMain {","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":2,"data":"    public static long fibonacci(long number) {","cs":4,"ctc":0,"cnc":0,"ci":2,"cps":8,"tw":2,"cr":16},{"lineNo":3,"data":"        if ((number == 0) || (number == 1)) {","cs":8,"ctc":2,"cnc":1,"ci":2,"cps":40,"tw":5,"cr":80},{"lineNo":4,"data":"            return number;","cs":1,"ctc":0,"cnc":1,"ci":2,"cps":3,"tw":3,"cr":6},{"lineNo":5,"data":"        } else {","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":6,"data":"            // recursion step","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":7,"data":"            return fibonacci(number - 1) + fibonacci(number - 2);","cs":9,"ctc":0,"cnc":1,"ci":2,"cps":27,"tw":3,"cr":54},{"lineNo":8,"data":"        }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":9,"data":"    }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":10,"data":"","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":11,"data":"    public static void main(String args[]) {","cs":4,"ctc":0,"cnc":0,"ci":2,"cps":8,"tw":2,"cr":0},{"lineNo":12,"data":"        for (int count = 0; count <= 10; count++) {","cs":10,"ctc":2,"cnc":1,"ci":2,"cps":50,"tw":5,"cr":0},{"lineNo":13,"data":"            System.out.println(\"Fibonacci of \" + count + \" is \" + fibonacci(count));","cs":13,"ctc":0,"cnc":1,"ci":2,"cps":39,"tw":3,"cr":0},{"lineNo":14,"data":"        }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":15,"data":"    }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":16,"data":"}   ","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0}],"cp":253},{"relativePath":"\\MyException.java","linesData":[{"lineNo":1,"data":"import java.io.*;","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":2,"data":"","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":3,"data":"public class MyException {","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":4,"data":"    static void accessFiles() throws FileNotFoundException {","cs":5,"ctc":0,"cnc":0,"ci":2,"cps":10,"tw":2,"cr":0},{"lineNo":5,"data":"        try {","cs":0,"ctc":0,"cnc":0,"ci":2,"cps":0,"tw":2,"cr":0},{"lineNo":6,"data":"            FileReader f = new FileReader(\"D:\\\\Exceptions.doc\");","cs":7,"ctc":0,"cnc":0,"ci":2,"cps":14,"tw":2,"cr":0},{"lineNo":7,"data":"            System.out.println(\"File found\");","cs":6,"ctc":0,"cnc":0,"ci":2,"cps":12,"tw":2,"cr":0},{"lineNo":8,"data":"        } catch (FileNotFoundException e) {","cs":3,"ctc":1,"cnc":0,"ci":2,"cps":9,"tw":3,"cr":0},{"lineNo":9,"data":"            System.out.println(e.getMessage(asa));","cs":8,"ctc":0,"cnc":0,"ci":2,"cps":16,"tw":2,"cr":0},{"lineNo":10,"data":"            throw e; // Rethrows the exception","cs":3,"ctc":0,"cnc":0,"ci":2,"cps":6,"tw":2,"cr":0},{"lineNo":11,"data":"        }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":12,"data":"    }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":13,"data":"","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":14,"data":"    public static void main(String[] args) {","cs":4,"ctc":0,"cnc":0,"ci":2,"cps":8,"tw":2,"cr":0},{"lineNo":15,"data":"        try {","cs":0,"ctc":0,"cnc":0,"ci":2,"cps":0,"tw":2,"cr":0},{"lineNo":16,"data":"            accessFiles();","cs":1,"ctc":0,"cnc":0,"ci":2,"cps":2,"tw":2,"cr":0},{"lineNo":17,"data":"        } catch (FileNotFoundException e) {","cs":3,"ctc":1,"cnc":0,"ci":2,"cps":9,"tw":3,"cr":0},{"lineNo":18,"data":"            System.out.println(\"File cannot be found!\");","cs":6,"ctc":0,"cnc":0,"ci":2,"cps":12,"tw":2,"cr":0},{"lineNo":19,"data":"        }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":20,"data":"    }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":21,"data":"}","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0}],"cp":98},{"relativePath":"\\SwitchStatementTest.java","linesData":[{"lineNo":1,"data":"public class SwitchStatementTest extends a implements c, v {","cs":1,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":2,"data":"    public static long test(long number) {","cs":4,"ctc":0,"cnc":0,"ci":5,"cps":20,"tw":5,"cr":0},{"lineNo":3,"data":"        int x;","cs":1,"ctc":0,"cnc":0,"ci":5,"cps":5,"tw":5,"cr":0},{"lineNo":4,"data":"        switch (var) {","cs":1,"ctc":2,"cnc":1,"ci":5,"cps":6,"tw":6,"cr":0},{"lineNo":5,"data":"            case x:","cs":1,"ctc":0,"cnc":1,"ci":5,"cps":6,"tw":6,"cr":0},{"lineNo":6,"data":"                break;","cs":0,"ctc":0,"cnc":1,"ci":5,"cps":0,"tw":6,"cr":0},{"lineNo":7,"data":"            case \"aa\":","cs":2,"ctc":0,"cnc":1,"ci":5,"cps":12,"tw":6,"cr":0},{"lineNo":8,"data":"                break;","cs":0,"ctc":0,"cnc":1,"ci":5,"cps":0,"tw":6,"cr":0},{"lineNo":9,"data":"            default:","cs":0,"ctc":0,"cnc":1,"ci":5,"cps":0,"tw":6,"cr":0},{"lineNo":10,"data":"        }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":11,"data":"    }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":12,"data":"","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":13,"data":"    public static void main(String args[]) {","cs":4,"ctc":0,"cnc":0,"ci":5,"cps":20,"tw":5,"cr":0},{"lineNo":14,"data":"        for (int count = 0; count <= 10; count++) {","cs":10,"ctc":2,"cnc":1,"ci":5,"cps":80,"tw":8,"cr":0},{"lineNo":15,"data":"            System.out.println(\"Fibonacci of \" + count + \" is \" + fibonacci(count));","cs":13,"ctc":0,"cnc":1,"ci":5,"cps":78,"tw":6,"cr":0},{"lineNo":16,"data":"        }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":17,"data":"    }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":18,"data":"}   ","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0}],"cp":227},{"relativePath":"\\test.java","linesData":[{"lineNo":1,"data":"public class FibonacciMain {","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":2,"data":" public static long fibonacci(long number) {","cs":4,"ctc":0,"cnc":0,"ci":2,"cps":8,"tw":2,"cr":16},{"lineNo":3,"data":"  if ((number == 0) || (number == 1)) {","cs":8,"ctc":2,"cnc":1,"ci":2,"cps":40,"tw":5,"cr":80},{"lineNo":4,"data":"   return number;","cs":1,"ctc":0,"cnc":1,"ci":2,"cps":3,"tw":3,"cr":6},{"lineNo":5,"data":"  } else {","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":6,"data":"   // recursion step","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":7,"data":"   return fibonacci(number - 1) + fibonacci(number - 2);","cs":9,"ctc":0,"cnc":1,"ci":2,"cps":27,"tw":3,"cr":54},{"lineNo":8,"data":"  }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":9,"data":" }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":10,"data":" public static long fibonacci1(long number) {","cs":5,"ctc":0,"cnc":0,"ci":2,"cps":10,"tw":2,"cr":20},{"lineNo":11,"data":"  if ((number == 0) || (number == 1)) {","cs":8,"ctc":2,"cnc":1,"ci":2,"cps":40,"tw":5,"cr":80},{"lineNo":12,"data":"   return number;","cs":1,"ctc":0,"cnc":1,"ci":2,"cps":3,"tw":3,"cr":6},{"lineNo":13,"data":"  } else {","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":14,"data":"   // recursion step","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":15,"data":"   return fibonacci1(number - 1) + fibonacci(number - 2);","cs":10,"ctc":0,"cnc":1,"ci":2,"cps":30,"tw":3,"cr":60},{"lineNo":16,"data":"  }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":17,"data":" }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":18,"data":"","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":19,"data":" public static void main(String args[]) {","cs":4,"ctc":0,"cnc":0,"ci":2,"cps":8,"tw":2,"cr":0},{"lineNo":20,"data":"  for (int count = 0; count <= 10; count++) {","cs":10,"ctc":2,"cnc":1,"ci":2,"cps":50,"tw":5,"cr":0},{"lineNo":21,"data":"","cs":0,"ctc":0,"cnc":1,"ci":0,"cps":0,"tw":1,"cr":0},{"lineNo":22,"data":"   System.out.println(\"Fibonacci of \" + count + \" is \" + fibonacci(count));","cs":13,"ctc":0,"cnc":1,"ci":2,"cps":39,"tw":3,"cr":0},{"lineNo":23,"data":"  }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":24,"data":" }","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0},{"lineNo":25,"data":"}","cs":0,"ctc":0,"cnc":0,"ci":0,"cps":0,"tw":0,"cr":0}],"cp":419}],"cp":997}
