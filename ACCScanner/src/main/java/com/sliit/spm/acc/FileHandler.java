@@ -105,12 +105,12 @@ public class FileHandler {
                         Cs.calcCs(lineObj, line, methodsAndVariables);
                         Ci.calcCi(lineObj, line);
                         Ctc.calcCtc(lineObj, line);
+                        Cnc.calcCnc(lineObj, line);
 
                         //IMPORTANT THIS FUNCTION SHOULD BE CALLED AFTER ALL THE OTHER COMPLEXITIES ARE CALCULATED AND "CPS" VALUE IS ADDED.
                         //THIS FUNCTION SHOULD BE CALLED AFTER EVERYTHING IS DONE.
                         //ADDED HERE FOR TESTING PURPOSES
                         Cr.calcCr(lineObj, line, recursiveLineNumbers);
-                        Cnc.calcCnc(lineObj, line);
                     }
 
                     if (line.trim().endsWith("*/")) {
