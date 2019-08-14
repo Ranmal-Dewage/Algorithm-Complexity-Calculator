@@ -8,6 +8,7 @@ public class Project {
     String sourcePath;
     String language;
     List<ProjectFile> files;
+    int cp;
 
     public List<ProjectFile> getFiles() {
         return files;
@@ -41,6 +42,14 @@ public class Project {
         this.language = language;
     }
 
+    public int getCp() {
+        return cp;
+    }
+
+    public void setCp(int cp) {
+        this.cp = cp;
+    }
+
     @Override
     public String toString() {
         return "Project{" +
@@ -48,6 +57,7 @@ public class Project {
                 ", sourcePath='" + sourcePath + '\'' +
                 ", language='" + language + '\'' +
                 ", files=" + files +
+                ", cp=" + cp +
                 '}';
     }
 }
