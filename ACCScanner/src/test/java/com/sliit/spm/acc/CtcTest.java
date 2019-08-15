@@ -3,30 +3,29 @@
  */
 package com.sliit.spm.acc;
 
-import static org.junit.Assert.assertEquals;
-
-import java.util.Arrays;
-import java.util.Collection;
-
+import com.sliit.spm.model.Line;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
-import com.sliit.spm.model.Line;
+import java.util.Arrays;
+import java.util.Collection;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * @author Vimukthi Rajapaksha
  * @date Aug 12, 2019
  */
 @RunWith(Parameterized.class)
-public class CtcTests {
+public class CtcTest {
 
 	private String line;
 	private int expectedResult;
 	private Line lineObj;
 
-	public CtcTests(String line, int expectedResult) {
+	public CtcTest(String line, int expectedResult) {
 		this.line = line;
 		this.expectedResult = expectedResult;
 		lineObj = new Line();
