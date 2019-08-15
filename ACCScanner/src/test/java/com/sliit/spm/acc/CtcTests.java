@@ -35,17 +35,19 @@ public class CtcTests {
 	@Parameters
 	public static Collection<?> params() {
 		return Arrays.asList(new Object[][] { 
-			{ "", 0 },
+			{ "", 0 }, 
 			{ "if(true) {", 1 },
 			{ "if((number == 0) || (number == 1)) {", 2 },
 			{ "for (int i = 0; i < array.length; i++) {", 2 },
 			{ "while (100 > 5) {", 2 },
-			{ "} catch (Exception e) {", 1 } });
+			{ "} catch (Exception e) {", 1 } 
+		});
 	}
 
 	@Test
 	public void testCalcCtc() {
-		assertEquals(expectedResult, Ctc.generateCtc(lineObj, line));
+		Ctc.calcCtc(lineObj, line);
+		assertEquals(expectedResult, lineObj.getCtc());
 	}
 
 }
