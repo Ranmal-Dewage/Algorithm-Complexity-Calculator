@@ -137,8 +137,8 @@ public class FileHandler {
 
                 projectFiles.add(projectFile);
                 RecursiveMethodLineNumberFinder.resetData();
-                Ci.resetCi();
-                Ctc.setSwitchCtc();
+                Ci.resetCi(); //reset ci value after file ends
+                Ctc.setSwitchCtc(); //add switch ctc value
 
             } catch (IOException e) {
                 LOGGER.error("Error reading file", e);
