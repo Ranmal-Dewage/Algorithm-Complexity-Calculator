@@ -34,6 +34,11 @@ public class ProjectController {
 		return new ResponseEntity<>(projectService.getByKey(key), HttpStatus.OK);
 	}
 
+	@GetMapping("/projects/{key}/history")
+	public ResponseEntity<?> getProjectHistory(@PathVariable("key") String key) {
+		return new ResponseEntity<>(projectService.getHistoryByKey(key), HttpStatus.OK);
+	}
+
 	@GetMapping("/projects")
 	public ResponseEntity<?> getProjects() {
 		return new ResponseEntity<>(projectService.getAll(), HttpStatus.OK);

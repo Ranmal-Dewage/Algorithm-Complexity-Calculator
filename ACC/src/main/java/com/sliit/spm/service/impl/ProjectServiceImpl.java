@@ -3,21 +3,17 @@
  */
 package com.sliit.spm.service.impl;
 
-import java.time.LocalDateTime;
-import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
-
-import com.sliit.spm.model.Projects;
-import com.sliit.spm.repository.ProjectsRepo;
+import com.sliit.spm.model.Analysis;
+import com.sliit.spm.model.Project;
+import com.sliit.spm.repository.AnalysisRepo;
+import com.sliit.spm.repository.ProjectRepo;
+import com.sliit.spm.service.ProjectService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.sliit.spm.model.Project;
-import com.sliit.spm.repository.ProjectRepo;
-import com.sliit.spm.service.ProjectService;
-
-//import static org.springframework.data.domain.Sort;
+import java.time.Instant;
+import java.util.List;
+import java.util.Optional;
 
 /**
  * @author it16166752
@@ -29,30 +25,23 @@ public class ProjectServiceImpl implements ProjectService {
     ProjectRepo projectRepo;
 
     @Autowired
-    ProjectsRepo projectsRepo;
+    AnalysisRepo analysisRepo;
 
     @Override
     public Project save(Project project) {
 
-        project.setCreatedTime(LocalDateTime.now());
+        Analysis analysis = new Analysis();
+        analysis.setCreatedTime(Instant.now().getEpochSecond());
+        analysis.setProject(project);
+        analysis.setProjectKey(project.getProjectKey());
+        analysisRepo.save(analysis);
 
-        Optional<Projects> oProjects = projectsRepo.findByProjectKey(project.getProjectKey());
-        Projects projects;
-        if (oProjects.isPresent()) {
-            projects = oProjects.get();
-        } else {
-            projects = new Projects();
-            projects.setProjectKey(project.getProjectKey());
-        }
-        projects.addProject(project);
-
-        projectsRepo.save(projects);
-        return project;
+        return projectRepo.save(project);
     }
 
     @Override
     public Optional<Project> getByKey(String projectKey) {
-        return projectRepo.findByProjectKey(projectKey);
+        return projectRepo.findById(projectKey);
     }
 
     @Override
@@ -60,7 +49,10 @@ public class ProjectServiceImpl implements ProjectService {
         return projectRepo.findAll();
     }
 
-    public List<Project> getAllByCreatedTime() {
-        return projectRepo.findByOrderByCreatedTimeAsc().stream().limit(10).collect(Collectors.toList());
+
+
+    @Override
+    public Optional<List<Analysis>> getHistoryByKey(String key) {
+        return analysisRepo.findFirst10ByOrderByCreatedTimeDesc(key);
     }
 }
