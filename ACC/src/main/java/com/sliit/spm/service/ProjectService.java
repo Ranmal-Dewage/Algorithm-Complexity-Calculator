@@ -20,5 +20,5 @@ public interface ProjectService {
 
 	public List<Project> getAll();
 
-	public Optional<List<Analysis>> getHistoryByKey(String key);
+	public List<Analysis> getHistoryByKey(String key);
 }

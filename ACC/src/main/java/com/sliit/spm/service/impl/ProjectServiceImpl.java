@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.Instant;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -52,7 +53,18 @@ public class ProjectServiceImpl implements ProjectService {
 
 
     @Override
-    public Optional<List<Analysis>> getHistoryByKey(String key) {
-        return analysisRepo.findFirst10ByOrderByCreatedTimeDesc(key);
+    public List<Analysis> getHistoryByKey(String key) {
+//        return analysisRepo.findFirst10ByOrderByCreatedTimeDesc(key);
+        List<Analysis> li = analysisRepo.findAll();
+        if(li.size() > 0) {
+        	List<Analysis> al = new ArrayList<>();
+        	for(Analysis a : li) {
+        		if(a.getProjectKey().equals(key)) {
+        			al.add(a);
+        		}
+        	}
+        	return al;
+        }
+        return null;
     }
 }
