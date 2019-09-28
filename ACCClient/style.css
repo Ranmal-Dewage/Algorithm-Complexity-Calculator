@@ -1,0 +1,46 @@
+.mainImg {
+    max-width: 25%;
+}
+.navBarImg {
+    max-width: 80%;
+}
+
+a.projNavLink:link {
+    color: #2F86EC
+ }
+  
+  a.projNavLink:visited {
+    color: #2F86EC
+ }
+  
+  a.projNavLink:hover {                  
+    color: #255B9A
+ }
+  
+  a.projNavLink:active {
+    color:#2F86EC
+}
+.projText{
+    color:#4C4C4C
+}
+span.error {
+    margin-left: 1%; 
+    padding-left: 3%;
+    padding-right: 3%;
+    border: 2px solid #E3494C;
+    background-color: #E3494C;
+    border-radius: 12px;
+    color:white;
+    font-size:60%;
+  }
+
+  span.pass {
+    margin-left: 1%; 
+    padding-left: 3%;
+    padding-right: 3%;
+    border: 2px solid #3CC02B;
+    background-color: #3CC02B;
+    border-radius: 12px;
+    color:white;
+    font-size:60%;
+  }
