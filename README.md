@@ -195,10 +195,15 @@ eg:- java -DprojectKey=ACC -DsourcePath=E:\Development\algorithemic-complexity-c
 
 4) Go to the url http://localhost:1234/home in your browser.
 	
-Team Viking Raiders
+# Developed by VIKING RAIDERS Team;
+* Ranmal Dewage
+* Tenusha Guruge
+* Vimukthi Rajapaksha
+* Aravinda Kulasooriya
+
 
 ## Copyright
 
-(C) 2019 Viking Raiders
+(C) 2019 Ranmal Dewage(ranmal.b.dewage@gmail.com)
 <br>
 [ranmaldewage.wordpress.com](https://ranmaldewage.wordpress.com)
