@@ -110,7 +110,7 @@ public class FileHandler {
                     //calculate complexity if line is not commented
                     if (!singleLineCommented && !multiLineCommented) {
                         Cs.calcCs(lineObj, line, methodsAndVariables);
-                        Ci.calcCi(lineObj, line);
+                        Ci.calcCi(lineObj, line, project.getLanguage());
                         Ctc.calcCtc(lineObj, line);
                         Cnc.calcCnc(lineObj, line);
                         Cr.calcCr(lineObj, recursiveLineNumbers);

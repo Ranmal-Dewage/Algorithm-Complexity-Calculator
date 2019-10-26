@@ -1,12 +1,13 @@
 /**
- * 
+ *
  */
 package com.sliit.spm.service;
 
+import com.sliit.spm.model.Analysis;
+import com.sliit.spm.model.Project;
+
 import java.util.List;
 import java.util.Optional;
-
-import com.sliit.spm.model.Project;
 
 /**
  * @author it16166752
@@ -19,5 +20,5 @@ public interface ProjectService {
 
 	public List<Project> getAll();
 
-	public List<Project> getAllByCreatedTime();
+	public List<Analysis> getHistoryByKey(String key);
 }
