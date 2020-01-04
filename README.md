@@ -1,4 +1,4 @@
-# Algorithemic Complexity Calculator (ACC)
+# Algorithmic Complexity Calculator (ACC)
 
 ## Introduction
 
@@ -190,7 +190,7 @@ NOTE: When running the ACCScanner the path should contain the given config folde
 
 ```
 java -DprojectKey={Unique Project Key} -DsourcePath={Path to the project source folder} -jar {ACCScanner jar file name}
-eg:- java -DprojectKey=ACC -DsourcePath=E:\Development\algorithemic-complexity-calculator -jar core-1.0-SNAPSHOT-jar-with-dependencies.jar
+eg:- java -DprojectKey=ACC -DsourcePath=E:\Development\algorithmic-complexity-calculator -jar core-1.0-SNAPSHOT-jar-with-dependencies.jar
 ```
 
 4) Go to the url http://localhost:1234/home in your browser.
