@@ -18,7 +18,7 @@ The Algorithmic Complexity Calculator (ACC) contains three major components, ACC
 <p></p><br />
 
 <img src="https://i.ibb.co/cTZNTGG/component-diagram.png" alt="Capture7" border="0">
-Figure_1: component diagram
+Figure 1: component diagram
 <p></p><br />
 ACC scanner does the complexity calculation process. At last the generated output will send as a post API request to ACC engine. The ACC engine inserts the requested values into the database. End user can use the web client to view the current progress and historical records about the scanned projects.
 
@@ -78,16 +78,16 @@ There is a quality gate that uses the complexity values of all the files. Using 
 <p></p><br />
 
 <img src="https://i.ibb.co/YLVYd49/home.png" alt="Capture7" border="0">
-Figure_2: acc client dashboard
+Figure 2: acc client dashboard
 <p></p><br />
 <img src="https://i.ibb.co/gmfzjX5/files.png" alt="Capture7" border="0">
-Figure_3: file complexity
+Figure 3: file complexity
 <p></p><br />
 <img src="https://i.ibb.co/P17sp9g/file-data.png" alt="Capture7" border="0">
-Figure_4: line complexity
+Figure 4: line complexity
 <p></p><br />
 <img src="https://i.ibb.co/LgBSgZQ/history.png" alt="Capture7" border="0">
-Figure_5: analysis history
+Figure 5: analysis history
 <p></p><br />
 
 ## Complexity Calculation Methodology
